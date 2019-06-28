@@ -6,13 +6,11 @@ There have been two main types of surveys for searching for CO emitters in the u
 
 Blind surveys are the opposite of targeted surveys. Instead of choosing the targets and looking at them specifically, blind surveys choose an area of the sky and search for any CO emissions within that cosmic volume, allowing for any emissions above the sensitivity limit of the survey to be found. This allows for a sort of census of all the gas within a cosmic volume [CITE]. 
 
-[PARAGRAPH EACH AND WHAT THEY DID RELEVANT TO WHAT I AM DOING: Goal by end of Work Day]
-
 [SECTION ON THE STATISTICS OF THE DATACUBES, EXPECT NOISE -> EMAILS ON EXPECTED NUMBER OF SOURCES AT DIFFERENT SN CUTOFFS]
 
 [ADD THE ONES ON WHERE GOT THE CUTOUTS, ]
 
-Previous blind surveys include the COLDz survey in the GOODS-North region, the PdBI survey [EXPAND], as well as the first two surveys in the ASPECS program, ASPECS Pilot and ASPECS Large Program. 
+Previous blind surveys include the COLDz survey in the GOODS-North region, the PdBI survey, as well as the first two surveys in the ASPECS program, ASPECS Pilot and ASPECS Large Program. 
 
 The PdBI survey was a molecular line survey in the Hubble Deep Field North (HDF-N) in 3mm using the IRAM Plateau de Bure Interferometer (PdBI) \cite{decarli2014molecular}. This survey was designed to cover all CO transitions detectable above z $>$ 2, and well as overing the redshift ranges of z $<$ 0.45, and 1 $<$ z $<$ 1.9. The survey identified 17 line candidates, with most of the candidates falling in intermediate redshifts (z $<$ 3), and with 7 of the line candidates matching to galaxies in their catalog \cite{decarli2014molecular}. 
 
@@ -25,6 +23,7 @@ The Large Program looked wider, but shallower, covering a roughly five square ar
 \section{This survey}
 
 The Wide ASPECS survey builds upon the Pilot and Large Program, going much wider, but also shallower. This means that Wide ASPECS cannot capture as dim CO emitters, but because of the much larger cosmic volume looked at, it can find rarer, but very bright CO emitters that did not happen to fall within the Large Program and Pilot survey bounds [CITE/EXPAND]. 
+
 The data for this survey was observed in ALMA Cycle SOMETHING and was done in [SURVEY DESCRIPTION]. This raw data was processed with CASA ([SEARCH EMAILS FOR IT]). This resulted in 6 data cubes, one for each frequency setting. 
 
 \begin{figure}[tbp]
@@ -52,6 +51,8 @@ The majority of the ancillary data comes from the Hubble Space Telescope (HST) C
 
 \subsection{SED Fitting}
 
+[PUT UNDER METHODS?]
+
 To estimate the properties of the galaxies in the catalog, the SED fitting program MAGPHYS was used \cite{da2008simple, da2015alma}. MAGPHYS uses precomputed models to fit to the SED and create likelihoods on the different parameters that makes up an SED. MAGPHYS computes a marginalized likelihood distribution for each of the different physical parameters of the observed galaxy through comparing the observed SED with the precomputed models. It also outputs the best-fit total SED for a given galaxy. In this report, the MAGPHYS high-z extension was used \cite{da2015alma}.
 
 An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showing the model, the likelihood values for various physical properties of the galaxy, and the data points used to compute the SED in red. The distribution of the stellar mass, and star formation rates of all the galaxies fitted with MAGPHYS are shown in Fig. \ref{fig:MAGPHYS_Properties}. Galaxies whose computed star formation rate was at or below [INSERT CUTOFF POINT] were removed from the rest of the analysis, as this indicated a very poor MAGPHYS fit. 
@@ -74,13 +75,43 @@ As an overview, the method for finding lines, computing the fidelity, cross-matc
 
 \subsection{Line Search and Fidelity}
 
+
+[For a perfectly gaussian
+noise, a 5-sigma feature appears every ~1.74 million realizations (one
+in 370 at S/N=3). The map is HUGE! We have an area of ~52 arcmin2,
+which roughly corresponds ~40,000 times the synthesized beam area. We
+have ~1900 independent channels in the sum of the four cubes analyzed
+so far, so the total number of independent resolution elements in the
+entire survey is ~77 millions. So, for a purely gaussian noise, you
+would already expect ~45 line candidates at S/N=5
+
+1) for gaussian noise, the significativity of line candidates
+increases very quickly with S/N above S/N~5. E.g., a S/N=6 noise
+features appears every ~0.5 billion realizations, so for many
+respects, S/N>6 is a relatively safe ground even for our enormous
+dataset.
+
+    2) at the level of significance we're dealing with, with
+practically "signal--free" cubes, the noise is symmetrical around
+zero, so we can have a good sampling of the noise properties from the
+statistics of negative features. In other words, we don't need to
+assume gaussianity, we can simply fit the *observed* distribution of
+noise candidates, with the only (very reasonable) assumption that the
+noise is symmetric around zero. This translates into a definition of
+"fidelity" or "reliability" of each line candidate, which is basically
+the probability that a line candidate is *not* due to noise.]
+
+[FIND MY RESPONSE AND NUMBER FOR 6 DATACUBES -> 60 something total?]
+
+The first challenge is to find signals in the datacubes. These datacubes are very noisy and have [TOTAL RESOLUTION ELEMENTS], with the noise being symmetric around zero. This means that there should be roughly [ACTUAL NUMBER] features at a S/N $>$ 5 that are just noise peaks. As the S/N cut goes up though, the number of features goes down dramatically, with a S/N $>$ 6 resulting in only one feature per ~0.5 billion realizations. [DOUBLE CHECK AND MAKE CLEANER]
+
 To find possible CO emitters, a search for CO lines is done by the findclumps algorithm first described in \cite{walter2016alma} [AND NEW LINE SEARCH ONE]. This code searches along the spectral axis with different kernel widths in order to maximize the sensitivity to signal associated with line candidates of different intrinsic widths. The data cubes are searched for lines at any spatial position and spectral coordinate, without any prior based on data from other wavelengths. This is done to minimize any bias in the selection. findclumps returns a list of potential line candidates that then have duplicates removed, which is done by grouping line candidates based on their spatial and spectral position in the cube from each group, only storing the candidate with the highest S/N. This results in 11941 candidates at S/N$>$5.0, 1096 at S/N$>$5.5, 78 at S/N$>$6.0, and 6 at S/N$>$6.5. 
 
 To get a sense of how many of these line candidates are false positives, the fidelity of the lines are then computed. To obtain the fidelity, a line search on the negative data cubes is performed. The negative cubes are obtained by multiplying all the values in each data cube by -1, and rerunning the line search. This catalog of negative lines is then used to compute the fidelity. The fidelity of a line at a given S/N and line width, $\Delta v$, is defined as 
 
 $$ fideltiy(S/N, \Delta v) = 1 - \frac{N_{neg}(S/N, \Delta v)}{N_{pos}(S/N, \Delta v)} $$ [CITE].
 
-The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally larger for wider line widths [INCLUDE REASON]. For this report, there were 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 $>$ 0.6, 52 $>$ 0.5, and 69 $>$ 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates. A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
+The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally larger for wider line widths [INCLUDE REASON]. For this report, there were 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 at $>$ 0.6, 52 at $>$ 0.5, and 69 at $>$ 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates. A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Fidelity_map.png}
