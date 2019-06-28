@@ -6,7 +6,17 @@ There have been two main types of surveys for searching for CO emitters in the u
 
 Blind surveys are the opposite of targeted surveys. Instead of choosing the targets and looking at them specifically, blind surveys choose an area of the sky and search for any CO emissions within that cosmic volume, allowing for any emissions above the sensitivity limit of the survey to be found. This allows for a sort of census of all the gas within a cosmic volume [CITE]. 
 
-Previous blind surveys include the COLDz survey [EXPAND ON THAT] in the GOODS-North region, the PdBI survey [EXPAND], as well as the first two surveys in the ASPECS program, ASPECS Pilot and ASPECS Large Program. 
+[PARAGRAPH EACH AND WHAT THEY DID RELEVANT TO WHAT I AM DOING: Goal by end of Work Day]
+
+[SECTION ON THE STATISTICS OF THE DATACUBES, EXPECT NOISE -> EMAILS ON EXPECTED NUMBER OF SOURCES AT DIFFERENT SN CUTOFFS]
+
+[ADD THE ONES ON WHERE GOT THE CUTOUTS, ]
+
+Previous blind surveys include the COLDz survey in the GOODS-North region, the PdBI survey [EXPAND], as well as the first two surveys in the ASPECS program, ASPECS Pilot and ASPECS Large Program. 
+
+The PdBI survey was a molecular line survey in the Hubble Deep Field North (HDF-N) in 3mm using the IRAM Plateau de Bure Interferometer (PdBI) \cite{decarli2014molecular}. This survey was designed to cover all CO transitions detectable above z $>$ 2, and well as overing the redshift ranges of z $<$ 0.45, and 1 $<$ z $<$ 1.9. The survey identified 17 line candidates, with most of the candidates falling in intermediate redshifts (z $<$ 3), and with 7 of the line candidates matching to galaxies in their catalog \cite{decarli2014molecular}. 
+
+COLDz, or the CO Luminosity Density at High-z (COLDz) targeted CO(1-0) emissions from galaxies at redshifts between 1.95-2.85 and CO(2-1) emission between z = 4.91 - 6.70 using the Very Large Array (VLA)\cite{pavesi2018co}. This survey aimed to perform a similar role as ASPECS, covering a wide area of around 51 arcminute$^2$, as well as a roughly 9 arcminute$^2$ area much more deeply. This survey blindly selected starburst and massive main sequence galaxies in the GOODS-North and COSMOS fields. This survey found seven secure CO line detections, and 57 above their SNR threshold, including many that did not have optical or near infrared counterparts, suggesting that those candidates are potentially from a population of gas-rich, but optically dark galaxies \cite{pavesi2018co}.
 
 The ASPECS Pilot and Large Programs both looked at regions in the Hubble Ultra Deep Field, with Wide ASPECS being the third survey in the sequence. The Pilot program looked incredibly deeply in the 1.2mm and 3mm bands at a small, one arcsecond region of the Hubble eXtremely Deep Field (XDF). The spectral coverage of the Pilot meant that it could detect CO transitions almost continuously from z = 0 to z = 8, as well as CII emissions from z = 6 to z = 8 \cite{walter2016alma}. This allowed for the characterization of CO emitters all the way to a z = 8, as well as given constraints on the knee of the CO luminosity function [CITE]. 
 
@@ -14,9 +24,8 @@ The Large Program looked wider, but shallower, covering a roughly five square ar
 
 \section{This survey}
 
-
 The Wide ASPECS survey builds upon the Pilot and Large Program, going much wider, but also shallower. This means that Wide ASPECS cannot capture as dim CO emitters, but because of the much larger cosmic volume looked at, it can find rarer, but very bright CO emitters that did not happen to fall within the Large Program and Pilot survey bounds [CITE/EXPAND]. 
-The data for this survey was observed in ALMA Cycle SOMETHING and was done in [SURVEY DESCRIPTION]. This raw data was processed with CASA (). This resulted in 6 data cubes, one for each frequency setting. 
+The data for this survey was observed in ALMA Cycle SOMETHING and was done in [SURVEY DESCRIPTION]. This raw data was processed with CASA ([SEARCH EMAILS FOR IT]). This resulted in 6 data cubes, one for each frequency setting. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Wide_ASPECS_Coverage.png}
@@ -31,6 +40,8 @@ The data for this survey was observed in ALMA Cycle SOMETHING and was done in [S
 \label{fig:ASPECS_Freq}
 \end{figure}
 
+[INSERT TABLE OF COSMIC VOLUME PROBED AT EACH TRANSITION]
+
 \subsection{Ancillary Data}
 
 In addition to each of those datacubes, there is a lot of ancillary data available as the GOODS-South region is one of the most studied regions of the sky. This data has been collected through combining multiple other catalogs, first described in [LIST OF CATALOGS], comprising over 30 wavelength bands for over 63000 galaxies in and around the footprint of Wide ASPECS. 26000 galaxies lie within the footprint of Wide ASPECS, of which ~4000 have spectroscopic redshifts, and 22000 have photometric redshifts. 
@@ -43,12 +54,18 @@ The majority of the ancillary data comes from the Hubble Space Telescope (HST) C
 
 To estimate the properties of the galaxies in the catalog, the SED fitting program MAGPHYS was used \cite{da2008simple, da2015alma}. MAGPHYS uses precomputed models to fit to the SED and create likelihoods on the different parameters that makes up an SED. MAGPHYS computes a marginalized likelihood distribution for each of the different physical parameters of the observed galaxy through comparing the observed SED with the precomputed models. It also outputs the best-fit total SED for a given galaxy. In this report, the MAGPHYS high-z extension was used \cite{da2015alma}.
 
-An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showing the model, the likelihood values for various physical properties of the galaxy, and the data points used to compute the SED in red.
+An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showing the model, the likelihood values for various physical properties of the galaxy, and the data points used to compute the SED in red. The distribution of the stellar mass, and star formation rates of all the galaxies fitted with MAGPHYS are shown in Fig. \ref{fig:MAGPHYS_Properties}. Galaxies whose computed star formation rate was at or below [INSERT CUTOFF POINT] were removed from the rest of the analysis, as this indicated a very poor MAGPHYS fit. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{19265.pdf}
 \caption{Example MAGPHYS Output, from the most massive matched galaxy. The blue line is the spectrum of the galaxy without attenuation. The black line is the model used by MAGPHYS. The red dots are the data points. The bottom row of graphs show the probability distribution for various physical properties.}
 \label{fig:MAGPHYS_Example}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering \includegraphics[width=120mm]{19265.pdf}
+\caption{Distribution of star formation rate for all galaxies in the catalog. [CHANGE TO ACTUAL PLOT]}
+\label{fig:MAGPHYS_Properties}
 \end{figure}
 
 \section{Method}
@@ -73,9 +90,9 @@ The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. A
 
 \begin{table}
 \centering
-\caption{Number of sources per channel width for the adopted fidelity cut of $>$ 0.6.}
+\caption{Number of sources, and S/N cutoffs, per channel width for the adopted fidelity cut of $>$ 0.6.}
 \begin{tabular}{ccc}
-Channels & S/N & Sources \\
+Channels & S/N & N. Sources \\
 \hline
 3 & 6.28 & 3 \\
 5 & 6.22 & 4 \\
@@ -83,9 +100,9 @@ Channels & S/N & Sources \\
 9 & 6.14 & 2 \\
 11 & 6.12 & 6 \\
 13 & 6.17 & 4 \\
-15 & 6.1 & 3 \\
+15 & 6.10 & 3 \\
 17 & 6.19 & 3 \\
-19 & 6.0 & 2 \\
+19 & 6.00 & 2 \\
 \end{tabular}
 \end{table}\label{table:Fid_NumTable}
 
