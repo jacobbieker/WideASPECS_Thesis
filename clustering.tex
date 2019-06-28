@@ -2,13 +2,16 @@
 
 \section{Previous Work}
 
-PUT DISCUSSION OF OTHER CLUSTERING HERE
+PUT DISCUSSION OF OTHER CLUSTERING HERE [CLUSTERING OF OTHER COLLECTIONS OF GALAXIES, VARIOUS RANGES, LOOK AT HiCKOX et al. 2011-2012]
 
-Previous work on clustering
+Previous work on clustering has been looked at different subpopulations of galaxies. 
 
 \section{Method}
 
+To compute the clustering and halo mass, a few steps must be done. 
+
 \subsection{Autocorrelation Function}
+
 The clustering is computed through a two point correlation function. The first step s to calculate the angular correlation function $ \omega(\theta)$. Once $ \omega(\theta)$ is computed, the second step is to obtain the two-point correlation function parameters of $r_0$ and $\gamma$.
 
 The two-point correlation function is the the probability above Poisson of finding a galaxy in a volume element $dV$ at a physical separation $r$ from another randomly chosen galaxy, such that $$ dP = n[1 + \Eta(r)]dV$$, [REWORD] where $n$ is the mean space density of the galaxies in the sample. The estimator comes from Landy \& Szalay (1993) where $$ \omega(\theta) = \frac{1}{RR}(DD-2DR + RR)$$, there $DD$, $DR$, and $RR$ are the number of data-data, data-random, and random-random galaxy pairs at a separation $\theta$, where each of the three collections is normalized to sum to 1. 
@@ -32,11 +35,19 @@ For this analysis, all CO line candidates above the 0.6 fidelity threshold were 
 
 \subsection{Halo Mass Calculation}
 
-To determine the halo mass from the calculations [INCLUDE HALO MASS CALCULATIONS]
+To determine the halo mass from the calculations[INCLUDE HALO MASS CALCULATIONS]
+
+\cite{hickox2011clustering} used the HALOFIT code of Smith et al. 2003, to dtermine the non-linear power spectrum $\Delta_{NL}^2(k,z)$ of dark matter, assuming the cosmology and the slope of the initial fluctuation power spectrum $\Gamma = \Omega_mh = 0.21$. The Fourier transform of the nonlinear-dimensionless power spectrum gives the real-sapce correlation function $\Eta(r)$, which is then integrated to $\pi = 100 h^{-1} Mpc$ following Equation [INSERT] to obtain the dar kmatter projected correlation function $\omega^{DM}_p(R,z)$.
+
+To obtain $\omega(\theta)$ for the dark matter, Limber's equation is used to project the power spectrum into the angular correlation. Specifically a Monte Carlo integration of Equation (A6) in Myers et al. 2007 is used to obtain $\omega(\theta)$ for dark matter. For each angular correlation analysis, we compute the average ration between the best-fit power law model and the dark matter $\omega(\theta)$ on scales from 8 arcminutes to 50 arcminutes, where $\omega(\theta$ is dominated by the two-halo term. This ratio gives us $b^2_{CO}$ for the CO autocorrelations. 
+
+Finally, using $b^2_{CO}$ to estimate the charactersitic mass of the dark matter halos hosting each subset of 
+
+\cite{hickox2011clustering} showed that for SMG galaxies, around a redshift of 2, the autocorrelation length $r_0 \approx 6 h^{-1} Mpc$. 
 
 \section{Results}
 
-As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well. When converted to $r_0$, the fidelity cuts result in $r_0$ values of 23 +- 5 for fidelity $>$ 0.7, 20 +- 2 for fidelity $>$ 0.6, 8 +- 1.5 for fidelity $>$ 0.5, and no $r_0$ for fidelity > 0.4, as the $A$ value is consistent with 0.
+As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well. When converted to $r_0$, the fidelity cuts result in $r_0$ values of 23 +- 5 for fidelity $>$ 0.7, 20 +- 2 for fidelity $>$ 0.6, 8 +- 1.5 for fidelity $>$ 0.5, and no $r_0$ for fidelity > 0.4, as the $A$ value is consistent with 0. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Fidelity/Log_4Panel_Data_Vs_Random_bin10_NFalse_Num10000.png}
@@ -56,8 +67,14 @@ As should be expected, as the fidelity cut goes up, meaning a larger portion of 
 
 [INCLUDE CLUSTERING TABLE HERE WITH RESULTS, A, r0, errors on both, number of sources used in each] \label{table:Clustering}
 
+[INCLUDE PLOT OF DIFFERENT R0 VALUES DEPENDENT ON CLUSTERING -> HOW THAT AFFECTS THE VALUES]
+
+[INCLUDE REDSHIFT DISTRIBUTION PLOT]
+
+[TALK ABOUT DIFFERENCES BETWEEN LINEAR AND GAUSSIAN SENSETIVITY]
+
 \section{Discussion}
 
-The clustering results do show that there is a larger $r_0$ as the fidelity cut becomes higher, suggesting that there are real sources in the sample. On the other hand, the clustering measurement is still very noisy and future work will be required to get a better final clustering measurement.
+The clustering results do show that there is a larger $r_0$ as the fidelity cut becomes higher, suggesting that there are real sources in the sample. On the other hand, the clustering measurement is still very noisy and future work will be required to get a better final clustering measurement. 
 
 In comparison to other clustering measurements, \cite{hickox2011clustering} found an $r_0$ for quasers to be between 5.5 and 

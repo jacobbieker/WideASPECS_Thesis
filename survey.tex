@@ -57,7 +57,7 @@ As an overview, the method for finding lines, computing the fidelity, cross-matc
 
 \subsection{Line Search and Fidelity}
 
-To find possible CO emitters, a search for CO lines is done by the findclumps algorithm first described in \cite{walter2016alma} [AND NEW LINE SEARCH ONE]. This code searches along the spectral axis with different kernel widths in order to maximize the sensitivity to signal associated with line candidates of different intrinsic widths. The data cubes are searched for lines at any spatial position and spectral coordinate, without any prior based on data from other wavelengths. This is done to minimize any bias in the selection function. findclumps returns a list of potential line candidates that then have duplicates removed, which is done by grouping line candidates based on their spatial and spectral position in the cube from each group, only storing the candidate with the highest S/N. This results in 11941 candidates at S/N$>$5.0, 1096 at S/N$>$5.5, 78 at S/N$>$6.0, and 6 at S/N$>$6.5. 
+To find possible CO emitters, a search for CO lines is done by the findclumps algorithm first described in \cite{walter2016alma} [AND NEW LINE SEARCH ONE]. This code searches along the spectral axis with different kernel widths in order to maximize the sensitivity to signal associated with line candidates of different intrinsic widths. The data cubes are searched for lines at any spatial position and spectral coordinate, without any prior based on data from other wavelengths. This is done to minimize any bias in the selection. findclumps returns a list of potential line candidates that then have duplicates removed, which is done by grouping line candidates based on their spatial and spectral position in the cube from each group, only storing the candidate with the highest S/N. This results in 11941 candidates at S/N$>$5.0, 1096 at S/N$>$5.5, 78 at S/N$>$6.0, and 6 at S/N$>$6.5. 
 
 To get a sense of how many of these line candidates are false positives, the fidelity of the lines are then computed. To obtain the fidelity, a line search on the negative data cubes is performed. The negative cubes are obtained by multiplying all the values in each data cube by -1, and rerunning the line search. This catalog of negative lines is then used to compute the fidelity. The fidelity of a line at a given S/N and line width, $\Delta v$, is defined as 
 
@@ -99,7 +99,7 @@ If there is not a match to a galaxy in the catalog, or if the galaxy's redshift 
 
 \section{Results}
 
-The mass versus star formation rate is shown for the general galactic population and the ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Walter et al. 2014 [CITE] main sequences are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected.
+The mass versus star formation rate is shown for the general galactic population and the ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Walter et al. 2014 [CITE] main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. [WHAT ARE MAIN SEQUENCE GALAXIES? WHY DOES IT MATTER?]
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Mstar_vs_SFR_all_closest_sep_1_0_sn_fid_60.png}
@@ -111,7 +111,7 @@ The mass versus star formation rate is shown for the general galactic population
 
 The final catalog of CO line emitters is shown in Table \ref{table:Catalog}. 24 lines match to a CO transition, 3 of those match to galaxies in the catalog.
 
-[INCLUDE IDs FOR THE MATCHED ONES?, SORT BASED ON S/N, MAKE LOOK LIKE OTHER TABLES?, INCLUDE ALL 35 LINES, EVEN THOSE WITHOUT LINE IDENTIFICATIONS]
+[INCLUDE IDs FOR THE MATCHED ONES?, MAKE LOOK LIKE OTHER TABLES?, INCLUDE ALL 35 LINES, EVEN THOSE WITHOUT LINE IDENTIFICATIONS]
 
 \begin{table}
 \centering
@@ -147,6 +147,7 @@ RA (J2000) & DEC (J2000) & Observed CO (GHz) & Transition & Z (Matched) & Z (CO)
 
 [DISCUSS TABLE MORE]
 
+[ADD SSFR? THEN EASIER TO TALK ABOUT MAIN SEQUENCE?]
 
 \section{Discussion}
 
