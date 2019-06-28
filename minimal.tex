@@ -68,33 +68,25 @@ Because of this process, galaxies are composed of gas, dust, and stars in varyin
 
 These differences in behavior result in different amounts and kinds of light being emitted from different types of galaxies. Young stars, for example, tend to emit most of their light in the ultraviolet, and so galaxies with large amounts of ultraviolet light tend to have had large amounts of recent star formation. Gas, on the other hand, tends to absorb the ultraviolet and visible light emitted by stars and re-emits the light at longer wavelengths, such as the infrared. Because of this, by looking at all the light that a galaxy emits, the spectral energy distribution (SED), the properties and makeup of a galaxy can be estimated.
 
-\section{Observing gas in galaxies}
+\section{Observing Galaxies}
 
-For example, star formation has not stayed at a constant rate through cosmic time. Generally, galaxies had a higher star formation rate (SFR) in the past than today, with the peak star formation happening around 10 billion years ago, as seen in Fig. \ref{fig:SFR_History}. To sustain this star formation rate, there needs to be enough gas available to make new stars, and it has been observed that the fraction of gas in galaxies tends to increase with increased redshift [CITE, Scoville et al 2016]. 
+Parts of a galaxy are easy to observe, and other parts are not. Stars are relatively simple to observe, simply point a telescope like Hubble long enough at a point in the sky and they start to show up. Gas on the other hand, especially the cold gas that collapses to form stars, is much more difficult to detect. 
 
-One very important component in galaxies to understand their evolution and the makeup of the universe as a whole is to observe the gas present in galaxies. Most of the gas in the universe is made up of hydrogen. Unfortunately for astronomers, molecular hydrogen, $H_2$, is only bright enough to observe when it is relatively hot, around 500 Kelvin \cite{decarli2019alma}. As the gas does not generally get this hot in the cold gas that births stars, a different molecule is used, carbon monoxide (CO). CO is the second most common molecule after $H_2$, but has the advantages of having bright rotational transitions that can be observed all the way to very high redshifts \cite{walter2016alma, decarli2019alma}. Additionally, the amount of $H_2$ gas can be inferred from the amount of CO that can be detected, through using a conversion factor called $\alpha_{CO}$ [CITE]. 
+Most of the gas in the universe is made up of hydrogen. Unfortunately for astronomers, molecular hydrogen, $H_2$, is only bright enough to observe when it is relatively hot, around 500 Kelvin \cite{decarli2019alma}. As the gas does not generally get this hot in the cold gas that births stars, carbon monoxide (CO) is used instead. CO is the second most common molecule after $H_2$, but has the advantages of having bright rotational transitions that can be observed all the way to very high redshifts \cite{walter2016alma, decarli2019alma}. Additionally, the amount of $H_2$ gas can be inferred from the amount of CO that can be detected, by using a straightforward conversion factor called $\alpha_{CO}$ [CITE]. 
 
-To observe these CO transitions, large radio and (sub)mm telescopes are used, such as the Jansky Very Large Array (VLA) and Atacama Large Millimieter/submillimeter Array (ALMA). These telescopes can observe in the radio and (sub)mm wavelengths needed to view redshifted CO transitions on Earth's surface \cite{decarli2019alma}. [EXPAND ON OBSERVATIONS]
-
-These observations, to discover the gas in galaxies, are an important complement to studies focused on observing the stars and light emitted by galaxies, as those studies could miss dark gas-rich galaxies that would be found by CO surveys. The amount of gas has large implications on the development of the galaxies throughout cosmic time. [INCLUDE MORE ABOUT HOW GAS IS NECESSARY TO UNDERSTAND -> ASPECS PAPERS]
-
-\begin{figure}[tbp]
-\centering \includegraphics[width=100mm]{results_text/figure9a.jpg}
-\caption{Comoving star formation rate density as a function of redshift, taken from observations in the ultraviolet and infrared, showing the  star formation history as traced by stars themselves. This report focuses on learning more about the gas that would create these stars. By observing molecular gas we can constrain star formation rate from a different and complementary approach, because we are not observing stars directly but instead we are observing regions where stars form. Figure taken from \cite{madau2014cosmic}.}
-\label{fig:SFR_History}
-\end{figure}
-
+These CO transition lines show up in the radio and (sub)mm spectrum, requiring telescopes such as ALMA to the Jansky Very Large Array (VLA) to detect them on Earth \cite{decarli2019alma}. 
 
 \section{From observations to models}
 
-All these observations, in gamma and X-rays, visible light, infrared, radio and other wavelengths, of a galaxy gives us part of the spectral energy distribution, or SED, of a galaxy. The more wavelengths a galaxy is measured in, the better constrained the SED, and the more complete our understanding of its energy distribution. We use our observed fluxes and values as inputs into programs that use simulated models to estimate a galaxy's physical parameters and total SED.
+All these observations, in gamma and X-rays, visible light, infrared, radio and other wavelengths, of a galaxy gives us part of the SED of a galaxy. The more wavelengths a galaxy is measured in, the better constrained the SED, and the more complete our understanding of its energy distribution. The observed fluxes and values are used as inputs into programs that use simulated models to estimate a galaxy's physical parameters and total SED.
 
+\section{Galaxies in Groups}
 
-\section{Galaxies in groups}
+The next stage after observing and modelling individual galaxies is to look at galaxies in clusters. By looking at the distribution of galaxies in a given region of space, we can determine how densely packed together they are, which gives an insight into the amount of dark matter that surrounds a cluster of galaxies. [INSERT WHY IMPORTANT]
 
-Going from single galaxies and their SEDs and componenets, the next stage is to look at galaxies together. By looking at the distribution of galaxies in a given region of space, we can determine how densely packed they are together, which gives an insight into the halo mass that these galaxies reside. [INCLUDE WHY HALO MASS MATTERS] The dark matter halo
+Galaxies are not distributed entirely randomly in the universe. On the largest scales, the universe is isotropic and homogeneous, but on smaller scales, galaxies tend to form large filaments and clusters in space. Computing the two-point correlation function and clustering parameters attempts to give a sense to how clustered a set of galaxies are. The more clustered the galaxies are, generally the more massive the halo of dark matter that surrounds them. [DOUBLE CHECK THIS]
 
-Galaxies are not distributed entirely randomly in the universe, on the largest scales, the universe is isotropic and homogeneous, but on smaller scales, galaxies tend to form large filaments and clusters in space. Computing the two-point correlation function and clustering parameters attempts to give a sense to how clustered a set of galaxies are. The more clustered the galaxies are, generally the higher the halo mass that surrounds them. [DOUBLE CHECK THIS]
+\section{This Report}
 
 This report is organized as follows. Chapter 2 focuses on the setup of the survey, the methods used to detect and cross-match lines, and the properties of those matched galaxies. Chapter 3 focuses on the clustering of CO emitters in the survey volume, and compares the clustering of sources in this survey to those of other populations of galaxies. The final chapter, chapter 4, contains the conclusions and possible future work. 
 
@@ -117,6 +109,14 @@ The future work includes improving the clustering measurement by performing the 
 
 \appendix
 \input{appendix.tex}
+
+For example, star formation has not stayed at a constant rate through cosmic time. Generally, galaxies had a higher star formation rate (SFR) in the past than today, with the peak star formation happening around 10 billion years ago, as seen in Fig. \ref{fig:SFR_History}. To sustain this star formation rate, there needs to be enough gas available to make new stars, and it has been observed that the fraction of gas in galaxies tends to increase with increased redshift [CITE, Scoville et al 2016]. 
+
+\begin{figure}[tbp]
+\centering \includegraphics[width=100mm]{results_text/figure9a.jpg}
+\caption{Comoving star formation rate density as a function of redshift, taken from observations in the ultraviolet and infrared, showing the  star formation history as traced by stars themselves. This report focuses on learning more about the gas that would create these stars. By observing molecular gas we can constrain star formation rate from a different and complementary approach, because we are not observing stars directly but instead we are observing regions where stars form. Figure taken from \cite{madau2014cosmic}.}
+\label{fig:SFR_History}
+\end{figure}
 
 \bibliography{refs}
 
