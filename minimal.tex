@@ -13,38 +13,7 @@
 \affiliation{Leiden Observatory, Leiden University} 
 \address{P.O. Box 9513, 2300 RA Leiden, The Netherlands} 
 
-\abstract{In this report, data from the Wide ASPECS survey is used to look at the clustering and halo masses of CO emitters within the GOODS-South region of the sky. This survey builds on the results of the ASPECS Pilot and Large Program surveys, cross-matching detected CO lines to galaxies. There is a clear increase in the two-point correlation function at higher fidelities for the CO line candidates. In addition, properties of CO emitting galaxies are  examined.}
-
-Doesn't read that clearly. Don't know what to get at. Need what I am doing first. Why does it matter, no real jumps back and forth, gas explictly, just talked baout right before. It needs to be reordered, 
-
-Go from what I am doing, to how the Universe made it.
-
-Talk about large and small structures, need to explain halo mass. Not very focused, need to focus more. -> Not really talk about large structures. 
-
-Make MAGPHYS more accessible, or shorter and put in the Survey part, 
-
-Change the we things to something else
-
-
-
-Go from here to here to here in first paragraph, then go through it
-
-
-New plan: Start with my research and what I am doing -> Work semi-backwards. 
-
-
-
-Once I establish what I am doing, talk about how what I am looking at came into existence -> Universe with microperturbations, structure grows into dense pockets of gas -> stars -> galaxies -> clusters of galaxies. And we observe those galaxies with light they emit -> use that light to construct models -> those models help us understand the properties of those galaxies -> look at lots of galaxies together to determine properties of the Universe at large scales, such as the halo masses that these clusters reside in.
-
-New Plan:
-
-Short paragraph going over CO emitters/ Gas in galaxies -> Then what my research is -> Then the whole how it came into existence. 
-
-[Cosmic rays constantly bombard the Earth, generating air showers that create flashes of light that can be detected by telescopes. Those air showers can inform us about the properties of the source of that particle in the sky if they are from the right type of particle, such as a gamma-ray. The telescopes that detect the output of these showers, Imaging Air Cherenkov Telescopes (IACT), have amassed collections of millions of events with thousands more added during every observation run. The sheer number of events, coupled with both hadron and gamma-ray events creating nearly indistinguishable signals, complicates effective analysis and extraction of useful information, such as the original particle's type, energy, and source location.
-
-The massive amount of data makes it an ideal problem for using machine learning and, in fact, most IACTs use a type of machine learning called random forests to do so. The random forests classify the events and estimate the source and energy based on features that have been extracted from the images of the events. In this project another type of machine learning called neural networks is applied to this problem to explore whether neural networks can outperform the current approach using the raw images. Convolutional neural networks have been chosen for their success at image analysis. If the neural networks can outperform the random forests, then the turnaround time from the event being detected to the final analysis output would be much shorter because there would be no need to extract the features from the images first. This would be beneficial for detecting transient events and quicker followups on interesting events.
-
-In addition, this project serves to further explore the application of neural networks to single-telescope data of this type. Previous research into neural network applications using IACT image data has been limited to instances where an event appears in multiple telescopes that are arranged in an array, such as the HESS telescope in Namibia, or VERITAS in Arizona \cite{shilon2018application, holch2017probing, feng2016analysis}. The amount of information that is available to the neural networks for this project is significantly limited in comparison because of the single view that is available for each event. If the neural networks can still discriminate between event types and estimate the source and energy correctly, then our discoveries would not be limited by the number of telescopes available.]
+\abstract{In this report, data from the Wide ASPECS survey is used to look at the clustering and halo masses of CO emitters within the GOODS-South region of the sky. The survey builds on the results of the ASPECS Pilot and Large Program surveys, cross-matching detected CO lines to galaxies. There is a clear increase in the two-point correlation function at higher fidelities for the CO line candidates.}
 
 \begin{document}
 
@@ -55,38 +24,35 @@ In addition, this project serves to further explore the application of neural ne
 
 \chapter{Introduction}
 
-Gas is the building block of stars and galaxies, and cold gas constitutes the majority of the interstellar medium (ISM). This gas can inform us about the evolution of galaxies and large scale structure in the universe, especially as observations cover larger and larger volumes of space. Using radio and submm telescopes, such as the Atacama Millimeter/Submillimeter Array (ALMA), this can be observed through looking for the transition lines of carbon monoixde (CO). In the Wide ALMA Spectroscopic Survey in the Hubble Ultra Deep Field (Wide ASPECS) survey, ALMA has been used to observe the largest volume of space yet for CO emissions, on the order of 550,000 cMpc, enabling for the first time the ability to look at these CO emitters in bulk. 
-This project is focused on using Wide ASPECS to estimate the properties of CO emitters, determine how clustered together CO emitters are in space, and constrain the mass of the large scale dark matter halos that these emitters reside within. Additionally, this research works to cross-match detected CO lines with galaxies present in the survey volume, and builds the basis for future work on constraining the CO luminosity function and the density of molecular gas, building upon the success of the previous ASPECS Pilot and Large Program surveys \cite{walter2016alma, decarli2019alma}. 
+Gas is the building block of stars and galaxies, and cold gas constitutes the majority of the interstellar medium (ISM). This gas can inform us about the evolution of galaxies and large scale structure in the universe, especially as observations cover larger and larger volumes of space. Using radio and submm telescopes, such as the Atacama Millimeter/Submillimeter Array (ALMA), this can be observed through looking for the transition lines of carbon monoxide (CO). In the Wide ALMA Spectroscopic Survey in the Hubble Ultra Deep Field (Wide ASPECS) survey, ALMA has been used to observe the largest volume of space yet for CO emissions, on the order of 550,000 cMpc, enabling for the first time the ability to look at these CO emitters in bulk.
 
------------- Starting Here: Go with now the physics background to what I just said I was doing -> So how these came to be, and how we go from observations to reality
+This project is focused on using Wide ASPECS to estimate the properties of CO emitters, determine how clustered together CO emitters are in space, and constrain the mass of the dark matter halos that these emitters reside within. Additionally, this research works to cross-match detected CO lines with galaxies present in the survey volume, and builds the basis for future work on constraining the CO luminosity function and the density of molecular gas, building upon the success of the previous ASPECS Pilot and Large Program surveys \cite{walter2016alma, decarli2019alma}. 
 
 \section{From the Beginning}
 
-The initial seeds that created the large scale structure of the galaxy all come from tiny differences, observable today in the cosmic microwave background. These differences caused dark matter, the unseen matter that makes up 70\% of all matter in the universe, to clump together. These clumps of dark matter pulled in gas in giant clouds. Some of the gas would further collapse to create stars, and the form galaxies.
+The initial seeds that created the large scale structure of the universe all come from tiny perturbations, observable today in the cosmic microwave background. These differences caused dark matter, the unseen matter that makes up 85\% of all matter in the universe, to clump together. These clumps of dark matter pulled in gas, creating giant clouds. Some of the gas would further collapse to create stars, and together form galaxies.
 
-Because of this process, galaxies are composed of gas, dust, and stars in varying quantities, and so evolve in different ways. Starburst galaxies, for example, are undergoing massive amounts of star formation, and therefore are very bright, and are using up the gas available to them fairly quickly. On the other hand, other galaxies have much lower masses and much lower star formation rates, that result in them depleting their gas at a much slower rate.
+Because of this process, galaxies are composed of gas, dust, and stars in varying quantities, and so evolve in different ways. Starburst galaxies, for example, are undergoing massive amounts of star formation, and therefore are very bright and are using up the gas available to them fairly quickly. On the other hand, other galaxies have much lower masses and much lower star formation rates, that result in them depleting their gas at a much slower rate. [AWKWARD MAKE CLEARER]
 
-These differences in behavior result in different amounts and kinds of light being emitted from different types of galaxies. Young stars, for example, tend to emit most of their light in the ultraviolet, and so galaxies with large amounts of ultraviolet light tend to have had large amounts of recent star formation. Gas, on the other hand, tends to absorb the ultraviolet and visible light emitted by stars and re-emits the light at longer wavelengths, such as the infrared. Because of this, by looking at all the light that a galaxy emits, the spectral energy distribution (SED), the properties and makeup of a galaxy can be estimated.
+These differences in behavior result in varying amounts and kinds of light being emitted from distinct types of galaxies. Young stars, for example, tend to emit most of their light in the ultraviolet, and so galaxies with large amounts of ultraviolet light tend to have had large amounts of recent star formation. Gas, on the other hand, tends to absorb the ultraviolet and visible light emitted by stars and re-emits the light at longer wavelengths, such as the infrared. Because of this, by looking at all the light that a galaxy emits, the spectral energy distribution (SED), the properties and makeup of a galaxy can be estimated.
 
 \section{Observing Galaxies}
 
 Parts of a galaxy are easy to observe, and other parts are not. Stars are relatively simple to observe, simply point a telescope like Hubble long enough at a point in the sky and they start to show up. Gas on the other hand, especially the cold gas that collapses to form stars, is much more difficult to detect. 
 
-Most of the gas in the universe is made up of hydrogen. Unfortunately for astronomers, molecular hydrogen, $H_2$, is only bright enough to observe when it is relatively hot, around 500 Kelvin \cite{decarli2019alma}. As the gas does not generally get this hot in the cold gas that births stars, carbon monoxide (CO) is used instead. CO is the second most common molecule after $H_2$, but has the advantages of having bright rotational transitions that can be observed all the way to very high redshifts \cite{walter2016alma, decarli2019alma}. Additionally, the amount of $H_2$ gas can be inferred from the amount of CO that can be detected, by using a straightforward conversion factor called $\alpha_{CO}$ [CITE]. 
+Most of the gas in the universe is made up of hydrogen. Unfortunately for astronomers, molecular hydrogen, $H_2$, is only bright enough to observe when it is relatively hot, around 500 Kelvin \cite{decarli2019alma}. As the gas does not generally get this hot in the cold gas that births stars [REWORD], carbon monoxide (CO) is used instead. CO is the second most common molecule after $H_2$, but has the advantages of having bright rotational transitions that can be observed all the way to very high redshifts \cite{walter2016alma, decarli2019alma}. Additionally, the amount of $H_2$ gas can be inferred from the amount of CO that can be detected, by using a straightforward conversion factor called $\alpha_{CO}$ [CITE]. 
 
-These CO transition lines show up in the radio and (sub)mm spectrum, requiring telescopes such as ALMA to the Jansky Very Large Array (VLA) to detect them on Earth \cite{decarli2019alma}. 
+These CO transition lines show up in the radio and (sub)mm spectrum, requiring telescopes such as ALMA and the Jansky Very Large Array (VLA) to detect them on Earth \cite{decarli2019alma}. 
 
-\section{From observations to models}
+\section{From Observations to Models}
 
-All these observations, in gamma and X-rays, visible light, infrared, radio and other wavelengths, of a galaxy gives us part of the SED of a galaxy. The more wavelengths a galaxy is measured in, the better constrained the SED, and the more complete our understanding of its energy distribution. The observed fluxes and values are used as inputs into programs that use simulated models to estimate a galaxy's physical parameters and total SED.
+All the observations, in gamma and X-rays, visible light, infrared, radio and other wavelengths, of a galaxy gives us part of the SED of a galaxy. The more wavelengths a galaxy is measured in, the better constrained the SED, and the more complete our understanding of its energy distribution. The observed fluxes and values are used as inputs into programs that use simulated models to estimate a galaxy's physical parameters and total SED. These programs, such as MAGPHYS \cite{da2008simple, da2015alma}, match the observed SED to precomputed models and outputs likelihood estimates on the properties of a given galaxy, such as the star formation rate, mass, dust temperature, and more.
 
 \section{Galaxies in Groups}
 
 The next stage after observing and modelling individual galaxies is to look at galaxies in clusters. By looking at the distribution of galaxies in a given region of space, we can determine how densely packed together they are, which gives an insight into the amount of dark matter that surrounds a cluster of galaxies. [INSERT WHY IMPORTANT]
 
 Galaxies are not distributed entirely randomly in the universe. On the largest scales, the universe is isotropic and homogeneous, but on smaller scales, galaxies tend to form large filaments and clusters in space. Computing the two-point correlation function and clustering parameters attempts to give a sense to how clustered a set of galaxies are. The more clustered the galaxies are, generally the more massive the halo of dark matter that surrounds them. [DOUBLE CHECK THIS]
-
-\section{This Report}
 
 This report is organized as follows. Chapter 2 focuses on the setup of the survey, the methods used to detect and cross-match lines, and the properties of those matched galaxies. Chapter 3 focuses on the clustering of CO emitters in the survey volume, and compares the clustering of sources in this survey to those of other populations of galaxies. The final chapter, chapter 4, contains the conclusions and possible future work. 
 

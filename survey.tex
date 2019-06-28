@@ -1,4 +1,4 @@
-\chapter{Molecular Line Survey}
+\chapter{Spectral Line Survey}
 
 \section{Previous Work}
 
@@ -10,26 +10,26 @@ Previous blind surveys include the COLDz survey [EXPAND ON THAT] in the GOODS-No
 
 The ASPECS Pilot and Large Programs both looked at regions in the Hubble Ultra Deep Field, with Wide ASPECS being the third survey in the sequence. The Pilot program looked incredibly deeply in the 1.2mm and 3mm bands at a small, one arcsecond region of the Hubble eXtremely Deep Field (XDF). The spectral coverage of the Pilot meant that it could detect CO transitions almost continuously from z = 0 to z = 8, as well as CII emissions from z = 6 to z = 8 \cite{walter2016alma}. This allowed for the characterization of CO emitters all the way to a z = 8, as well as given constraints on the knee of the CO luminosity function [CITE]. 
 
-The Large Program looked wider, but shallower, covering a roughly five square arcminute area of the Hubble Ultra Deep Field (HUDF) surrounding the ASPECS Pilot region. It was a 150 hour molecular deep field taken at 1.2mm and 3mm \cite{decarli2019alma}.  The greater volume probed by the Large Program allowed for constraining the density of gas in the Universe, as well as better constraints on the CO luminosity function. The survey blindy revealed the molecular gas content in normal, star-forming main-sequence galaxies \cite{decarli2019alma}. 
+The Large Program looked wider, but shallower, covering a roughly five square arcminute area of the Hubble Ultra Deep Field (HUDF) surrounding the ASPECS Pilot region. It was a 150 hour molecular deep field taken at 1.2mm and 3mm \cite{decarli2019alma}.  The greater volume probed by the Large Program allowed for constraining the density of gas in the Universe, as well as better constraints on the CO luminosity function. The survey blindly revealed the molecular gas content in normal, star-forming main-sequence galaxies \cite{decarli2019alma}. 
 
 \section{This survey}
 
+
+The Wide ASPECS survey builds upon the Pilot and Large Program, going much wider, but also shallower. This means that Wide ASPECS cannot capture as dim CO emitters, but because of the much larger cosmic volume looked at, it can find rarer, but very bright CO emitters that did not happen to fall within the Large Program and Pilot survey bounds [CITE/EXPAND]. 
+The data for this survey was observed in ALMA Cycle SOMETHING and was done in [SURVEY DESCRIPTION]. This raw data was processed with CASA (). This resulted in 6 data cubes, one for each frequency setting. 
+
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Wide_ASPECS_Coverage.png}
-\caption{Spatial coverage of ASPECS Pilot (Green), Large Program (White), and Wide (Yellow) showing each of the individual pointings. The area covered by the Pilot is $~$1 arcmin$^2$, by the Large Program $~$5 arcmin$^2$, and by Wide ASPECS, $~$52.5 armin$^2$. The cyan box is the extent of the CANDELS-South region, showing where a wealth of ancillary data has been collected in over 30 wavelengths [CITE].}
+\caption{Spatial coverage of ASPECS Pilot (Green), Large Program (White), and Wide (Yellow) showing each of the individual pointings. The area covered by the Pilot is $~$1 arcmin$^2$, by the Large Program $~$5 arcmin$^2$, and by Wide ASPECS, $~$52.5 armin$^2$. The cyan box is the 50\% sensitivity extent of the survey. This region covers the area of the deepest CANDELS observations, where a wealth of ancillary data has been collected in over 30 wavelengths [CITE].}
 \label{fig:ASPECS_Coverage}
 \end{figure}
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=120mm]{Wide_ASPECS_Freq.png}
-\caption{Spectral and redshift coverage of Wide ASPECS. Wide ASPECS is designed to detect CO line transitions at z$<$0.4, 1.1 $<$ z $<$ 1.8, and 2.2 $<$ z $<$ 4.4. [CITE OR CHANGE PLOT]}
+\caption{Spectral and redshift coverage of Wide ASPECS in relation to the redshift distribution of galaxies within the survey field. Wide ASPECS is designed to detect CO line transitions at z$<$0.4, 1.1 $<$ z $<$ 1.8, and 2.2 $<$ z $<$ 4.4. [CITE OR CHANGE PLOT]}
 \label{fig:ASPECS_Freq}
 \end{figure}
-
-
-The Wide ASPECS survey builds upon the Pilot and Large Program, going much wider, but also shallower. This means that Wide ASPECS cannot capture as dim CO emitters, but because of the much larger cosmic volume looked at, it can find rarer, but very bright CO emitters that did not happen to fall within the Large Program and Pilot survey bounds [CITE/EXPAND]. 
-The data for this survey was observed in ALMA Cycle SOMETHING and was done in [SURVEY DESCRIPTION]. This raw data was processed with CASA (). This resulted in 6 data cubes, one for each frequency setting. 
 
 \subsection{Ancillary Data}
 
@@ -39,9 +39,9 @@ The majority of the ancillary data comes from the Hubble Space Telescope (HST) C
 
 [GO THROUGH THE GALAXY TRIMMER, KEEP THE LINE IF THE POINT PASSES INSPECTION, THEN DO THE CALCULATION FOR PHOTO AND SPECTROSCOPIC, SAVE OUT CATALOG TO THEN RERUN THE STUFF ON]
 
-\subsubsection{MAGPHYS}
+\subsection{SED Fitting}
 
-One program that does this is MAGPHYS \cite{da2008simple, da2015alma}. MAGPHYS uses precomputed models to fit to the SED and create likelihoods on the different parameters that makes up an SED. This allows us to estimate the mass, star formation rate, dust temperature, etc. using as the input the SED and the redshift of the galaxy. In the SED fitting, different components of the galaxy contributes to different wavelengths. Young stars are bright in the UV and visible spectrum, so many young stars pushes a galaxy's SED more into the UV end of the spectrum. On the other hand, gas and dust absorbs the light from stars within the galaxy and re-irradiates that light as infrared, making a galaxy with lots of gas be redder and dimmer than one without. The SED takes all of this into account, and MAGPHYS outputs a likelihood distribution for the different parameters, as well as the best-fit total SED for a given galaxy. An extension of MAGPHYS, the MAGPHYS high-z extension \cite{da2015alma}, which takes into account more of the [INCLUDE MORE ON HIGH Z DIFFERENCES] was used for the SED fitting in this report. 
+To estimate the properties of the galaxies in the catalog, the SED fitting program MAGPHYS was used \cite{da2008simple, da2015alma}. MAGPHYS uses precomputed models to fit to the SED and create likelihoods on the different parameters that makes up an SED. MAGPHYS computes a marginalized likelihood distribution for each of the different physical parameters of the observed galaxy through comparing the observed SED with the precomputed models. It also outputs the best-fit total SED for a given galaxy. In this report, the MAGPHYS high-z extension was used \cite{da2015alma}.
 
 An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showing the model, the likelihood values for various physical properties of the galaxy, and the data points used to compute the SED in red.
 
@@ -71,7 +71,7 @@ The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. A
 \label{fig:Fid_map}
 \end{figure}
 
-\subsection{Cross-matching and redshift determination}
+\subsection{Cross-matching and Redshift Determination}
 
 Once the lines and been found, and the fidelity computed, the next step is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. If a line matched to more than a single galaxy, then the following steps are performed to differentiate which galaxy the line should be matched to. The first step is to calculate the CO transition for the line assuming the line is matched to each of the galaxies. Once that is determined, the difference in redshift between the CO redshift and the galaxy's redshift, the $\delta z$, is calculated. The matched galaxy that gives the smallest $|\delta z|$ is then saved as the matched galaxy for that line candidate. 
 
@@ -91,7 +91,7 @@ The mass versus star formation rate is shown for the general galactic population
 
 \subsection{Catalog}
 
-The final catalog of CO line emitters is shown in Table \ref{table:Catalog}. 
+The final catalog of CO line emitters is shown in Table \ref{table:Catalog}. 24 lines match to a CO transition, 3 of those match to galaxies in the catalog.
 
 [INCLUDE IDs FOR THE MATCHED ONES?, SORT BASED ON S/N, MAKE LOOK LIKE OTHER TABLES?, INCLUDE ALL 35 LINES, EVEN THOSE WITHOUT LINE IDENTIFICATIONS]
 
@@ -99,21 +99,31 @@ The final catalog of CO line emitters is shown in Table \ref{table:Catalog}.
 \centering
 \caption{RA and DEC are in the J2000 system. $v_{CO}$ is in GHz. CO trans. is the estimated CO transition. $z_{catalog}$ is the redshift in the catalog. }
 \begin{tabular}{ccccccccc}
-RA & DEC & $v_{CO}$ & CO trans. & $z_{catalog}$ & $z_{CO} $ & $\Delta$Z & $\Delta$V & S/N \\
-53.11881 & -27.78291 & 104.501 & 3-2 & 2.39 & 2.309 & 0.08 & 7338.53 & 6.43 \\
-53.14886 & -27.82118 & 96.701 & 3-2 & 2.582 & 2.576 & 0.01 & 503.01 & 7.31 \\
-53.16066 & -27.76629 & 86.677 & 2-1 & 1.423 & 1.66 & -0.24 & -26710.83 & 6.6 \\
-53.13447 & -27.74976 & 102.719 & 3-2 & -- & 2.366 & -- & -- & 6.49 \\
-53.11066 & -27.82727 & 85.654 & 3-2 & -- & 3.037 & -- & -- & 6.45 \\
-53.06316 & -27.82356 & 84.623 & 3-2 & -- & 3.086 & -- & -- & 6.15 \\
-53.07696 & -27.8251 & 90.891 & 2-1 & -- & 1.536 & -- & -- & 6.42 \\
-53.09146 & -27.8497 & 106.235 & 3-2 & -- & 2.255 & -- & -- & 6.27 \\
-53.1179 & -27.8184 & 92.876 & 2-1 & -- & 1.482 & -- & -- & 6.21 \\
-53.11182 & -27.82032 & 99.522 & 4-3 & -- & 3.633 & -- & -- & 6.19 \\
-53.09788 & -27.76003 & 90.618 & 3-2 & -- & 2.816 & -- & -- & 6.13 \\
-53.14828 & -27.84444 & 87.302 & 3-2 & -- & 2.961 & -- & -- & 6.1 \\
-53.07796 & -27.80182 & 98.725 & 4-3 & -- & 3.67 & -- & -- & 6.36 \\
-53.07121 & -27.82724 & 88.954 & 3-2 & -- & 2.887 & -- & -- & 6.17 \\
+RA (J2000) & DEC (J2000) & Observed CO (GHz) & Transition & Z (Matched) & Z (CO) & Delta Z & Delta V (Km/s) & S/N \\
+53.14886 & -27.82118 & 96.701 & 3-2 & 2.582 & 2.576 & 0.006 & 503.01 & 7.31 \\
+53.16066 & -27.76629 & 86.677 & 3-2 & -- & 2.989 & 0.0 & 0.0 & 6.6 \\
+53.16003 & -27.76258 & 103.36 & 3-2 & -- & 2.346 & 0.0 & 0.0 & 6.6 \\
+53.13447 & -27.74976 & 102.719 & 3-2 & -- & 2.366 & 0.0 & 0.0 & 6.49 \\
+53.11066 & -27.82727 & 85.654 & 3-2 & -- & 3.037 & 0.0 & 0.0 & 6.45 \\
+53.11881 & -27.78291 & 104.501 & 3-2 & 2.39 & 2.309 & 0.081 & 7338.54 & 6.43 \\
+53.12766 & -27.76666 & 99.553 & 4-3 & -- & 3.631 & 0.0 & 0.0 & 6.42 \\
+53.07696 & -27.8251 & 90.891 & 2-1 & -- & 1.536 & 0.0 & 0.0 & 6.42 \\
+53.07796 & -27.80182 & 98.725 & 4-3 & -- & 3.67 & 0.0 & 0.0 & 6.36 \\
+53.09146 & -27.8497 & 106.235 & 3-2 & -- & 2.255 & 0.0 & 0.0 & 6.27 \\
+53.18748 & -27.81369 & 89.704 & 1-0 & 0.2801 & 0.285 & 0.0 & 0.0 & 6.27 \\
+53.1179 & -27.8184 & 92.876 & 2-1 & -- & 1.482 & 0.0 & 0.0 & 6.21 \\
+53.06549 & -27.84266 & 104.094 & 3-2 & -- & 2.322 & 0.0 & 0.0 & 6.21 \\
+53.11182 & -27.82032 & 99.522 & 4-3 & -- & 3.633 & 0.0 & 0.0 & 6.19 \\
+53.1612 & -27.76049 & 94.618 & 2-1 & -- & 1.437 & 0.0 & 0.0 & 6.19 \\
+53.07121 & -27.82724 & 88.954 & 3-2 & -- & 2.887 & 0.0 & 0.0 & 6.17 \\
+53.19977 & -27.8282 & 100.055 & 3-2 & -- & 2.456 & 0.0 & 0.0 & 6.16 \\
+53.06316 & -27.82356 & 84.623 & 3-2 & -- & 3.086 & 0.0 & 0.0 & 6.15 \\
+53.09788 & -27.76003 & 90.618 & 3-2 & -- & 2.816 & 0.0 & 0.0 & 6.13 \\
+53.16282 & -27.84445 & 90.571 & 3-2 & -- & 2.818 & 0.0 & 0.0 & 6.12 \\
+53.09665 & -27.81229 & 95.259 & 2-1 & -- & 1.42 & 0.0 & 0.0 & 6.12 \\
+53.16516 & -27.82257 & 104.931 & 3-2 & -- & 2.295 & 0.0 & 0.0 & 6.11 \\
+53.08948 & -27.78102 & 86.068 & 3-2 & -- & 3.018 & 0.0 & 0.0 & 6.1 \\
+53.14828 & -27.84444 & 87.302 & 3-2 & -- & 2.961 & 0.0 & 0.0 & 6.1 \\
 \end{tabular}
 \end{table}\label{table:Catalog}
 
