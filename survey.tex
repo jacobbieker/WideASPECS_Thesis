@@ -49,13 +49,27 @@ The majority of the ancillary data comes from the Hubble Space Telescope (HST) C
 
 [GO THROUGH THE GALAXY TRIMMER, KEEP THE LINE IF THE POINT PASSES INSPECTION, THEN DO THE CALCULATION FOR PHOTO AND SPECTROSCOPIC, SAVE OUT CATALOG TO THEN RERUN THE STUFF ON]
 
+26251 in footprint of Wide ASPECS
+2283 wth Spectroscopic Z
+23968 with Photometric Z
+
+After > 1.99 SFR cut:
+
+22073
+2260
+19813
+
+
+
 \subsection{SED Fitting}
 
 [PUT UNDER METHODS?]
 
 To estimate the properties of the galaxies in the catalog, the SED fitting program MAGPHYS was used \cite{da2008simple, da2015alma}. MAGPHYS uses precomputed models to fit to the SED and create likelihoods on the different parameters that makes up an SED. MAGPHYS computes a marginalized likelihood distribution for each of the different physical parameters of the observed galaxy through comparing the observed SED with the precomputed models. It also outputs the best-fit total SED for a given galaxy. In this report, the MAGPHYS high-z extension was used \cite{da2015alma}.
 
-An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showing the model, the likelihood values for various physical properties of the galaxy, and the data points used to compute the SED in red. The distribution of the stellar mass, and star formation rates of all the galaxies fitted with MAGPHYS are shown in Fig. \ref{fig:MAGPHYS_Properties}. Galaxies whose computed star formation rate was at or below [INSERT CUTOFF POINT] were removed from the rest of the analysis, as this indicated a very poor MAGPHYS fit. 
+An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showing the model, the likelihood values for various physical properties of the galaxy, and the data points used to compute the SED in red. The distribution of the stellar mass, and star formation rates of all the galaxies fitted with MAGPHYS are shown in Fig. \ref{fig:MAGPHYS_Properties}. Galaxies whose computed star formation rate was at or below [INSERT CUTOFF POINT] were removed from the rest of the analysis, as this indicated a very poor MAGPHYS fit. This cutoff was at a log(SFR) of less than -2. That left a total of $~$55000 galaxies in the sample. 
+
+With other quality cuts, the number of galaxies drops to 20,000. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{19265.pdf}
