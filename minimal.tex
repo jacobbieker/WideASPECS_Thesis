@@ -56,40 +56,33 @@ In addition, this project serves to further explore the application of neural ne
 \chapter{Introduction}
 
 Gas is the building block of stars and galaxies, and cold gas constitutes the majority of the interstellar medium (ISM). This gas can inform us about the evolution of galaxies and large scale structure in the universe, especially as observations cover larger and larger volumes of space. Using radio and submm telescopes, such as the Atacama Millimeter/Submillimeter Array (ALMA), this can be observed through looking for the transition lines of carbon monoixde (CO). In the Wide ALMA Spectroscopic Survey in the Hubble Ultra Deep Field (Wide ASPECS) survey, ALMA has been used to observe the largest volume of space yet for CO emissions, on the order of 550,000 cMpc, enabling for the first time the ability to look at these CO emitters in bulk. 
+This project is focused on using Wide ASPECS to estimate the properties of CO emitters, determine how clustered together CO emitters are in space, and constrain the mass of the large scale dark matter halos that these emitters reside within. Additionally, this research works to cross-match detected CO lines with galaxies present in the survey volume, and builds the basis for future work on constraining the CO luminosity function and the density of molecular gas, building upon the success of the previous ASPECS Pilot and Large Program surveys \cite{walter2016alma, decarli2019alma}. 
 
-This project is focused on using Wide ASPECS to estimate the properties of CO emitters, as well as determine how clustered together CO emitters are in space, and constrain the mass of the large scale dark matter halos that these emitters reside within. Additionally, this research works to cross-match detected CO lines with galaxies present in the survey volume, and builds the basis for future work on constraining the CO luminosity function and the density of molecular gas.
+------------ Starting Here: Go with now the physics background to what I just said I was doing -> So how these came to be, and how we go from observations to reality
 
------------- Starting Here
+\section{From the Beginning}
 
-The universe is full of various components that come together to create larger and larger structures. Gas clouds collapse to create stars, which cluster together to form galaxies, and galaxies create even larger structures throughout the cosmos because of the distribution of dark matter. These were all precipitated by initial minute temperature differences in the Cosmic Microwave Background (CMB). These temperature differences caused variations in the matter distribution of the universe that later grew to the structures that can be seen today. 
+The initial seeds that created the large scale structure of the galaxy all come from tiny differences, observable today in the cosmic microwave background. These differences caused dark matter, the unseen matter that makes up 70\% of all matter in the universe, to clump together. These clumps of dark matter pulled in gas in giant clouds. Some of the gas would further collapse to create stars, and the form galaxies.
 
-To observe these structures, most observations focus on the brightest, easiest to see components of the universe, stars.  As most stars are too far away to resolve individually, galaxies as a whole are observed to determine their composition and inform the models of galaxy evolution and the evolution of the universe. But stars are only a fraction of all the matter in the universe, with the rest of the visible matter being gas and dust located in clouds that exist in and between galaxies, and from which stars are born. 
+Because of this process, galaxies are composed of gas, dust, and stars in varying quantities, and so evolve in different ways. Starburst galaxies, for example, are undergoing massive amounts of star formation, and therefore are very bright, and are using up the gas available to them fairly quickly. On the other hand, other galaxies have much lower masses and much lower star formation rates, that result in them depleting their gas at a much slower rate.
 
-Understanding how those gas clouds in the past, and now, affect the evolution of galaxies is an active area of research and informs us in how and why galaxies evolve through time. For example, star formation has not stayed at a constant rate through cosmic time. Generally, galaxies had a higher star formation rate (SFR) in the past, than today, with the peak star formation happening around 10 billion years ago, as seen in Fig. \ref{fig:SFR_History}. To sustain this star formation rate, there needs to be enough gas available to make new stars, and it has been observed that the fraction of gas in galaxies tends to increase with increased redshift [CITE, Scoville et al 2016]. 
-
-\begin{figure}[tbp]
-\centering \includegraphics[width=100mm]{results_text/figure9a.jpg}
-\caption{Comoving star formation rate density as a function of redshift, taken from observations in the ultraviolet and infrared, showing the  star formation history as traced by stars themselves. This report focuses on learning more about the gas that would create these stars. By observing molecular gas we can constrain star formation rate from a different and complementary approach, because we are not observing stars directly but instead we are observing regions where stars form. Figure taken from \cite{madau2014cosmic}.}
-\label{fig:SFR_History}
-\end{figure}
-
-\section{Galaxies and their composition}
-
-Galaxies are composed of multiple components, including stars, gas, and dust. Galaxies range from small, dim galaxies with a few hundred to thousand stars, all the way up to galaxies like the Milky Way, with huge spiral arms composed of large clouds of gas and dust, and billions of stars, as well as galaxies with nearly no gas, but a very large, old population of stars. These components interact to produce the images that are seen from telescopes like Hubble in the visible spectrum, but also emits light from high energy gamma-rays to very low energy radio waves. 
-
-Galaxies vary significantly in their compositions, not just in what is there, but in what is happening. Starburst galaxies, for example, are undergoing massive amounts of star formation, and therefore are very bright, and are using up the gas available to them fairly quickly. On the other hand, other galaxies have much lower masses and much lower star formation rates, that result in them depleting their gas at a much slower rate.
-
-Those components all emit and absorb light in different wavelengths. Because stars emit different light at different stages of their lives, as well as dependent on their mass, by looking at the overall spectral energy distribution (SED) of a galaxy, a lot of information can be learned about that galaxy and its history. For example, if the galaxy is emitting a significant amount of ultraviolet light, then the galaxy has had a lot of star formation recently. 
-
-Gas also contributes to the total SED of a galaxy, as gas absorbs optical and ultraviolet light and re-emits light at longer wavelengths, such as the infrared. The gas is primarily composed of hydrogen, with the second most common molecule being carbon monoxide (CO). 
+These differences in behavior result in different amounts and kinds of light being emitted from different types of galaxies. Young stars, for example, tend to emit most of their light in the ultraviolet, and so galaxies with large amounts of ultraviolet light tend to have had large amounts of recent star formation. Gas, on the other hand, tends to absorb the ultraviolet and visible light emitted by stars and re-emits the light at longer wavelengths, such as the infrared. Because of this, by looking at all the light that a galaxy emits, the spectral energy distribution (SED), the properties and makeup of a galaxy can be estimated.
 
 \section{Observing gas in galaxies}
+
+For example, star formation has not stayed at a constant rate through cosmic time. Generally, galaxies had a higher star formation rate (SFR) in the past than today, with the peak star formation happening around 10 billion years ago, as seen in Fig. \ref{fig:SFR_History}. To sustain this star formation rate, there needs to be enough gas available to make new stars, and it has been observed that the fraction of gas in galaxies tends to increase with increased redshift [CITE, Scoville et al 2016]. 
 
 One very important component in galaxies to understand their evolution and the makeup of the universe as a whole is to observe the gas present in galaxies. Most of the gas in the universe is made up of hydrogen. Unfortunately for astronomers, molecular hydrogen, $H_2$, is only bright enough to observe when it is relatively hot, around 500 Kelvin \cite{decarli2019alma}. As the gas does not generally get this hot in the cold gas that births stars, a different molecule is used, carbon monoxide (CO). CO is the second most common molecule after $H_2$, but has the advantages of having bright rotational transitions that can be observed all the way to very high redshifts \cite{walter2016alma, decarli2019alma}. Additionally, the amount of $H_2$ gas can be inferred from the amount of CO that can be detected, through using a conversion factor called $\alpha_{CO}$ [CITE]. 
 
 To observe these CO transitions, large radio and (sub)mm telescopes are used, such as the Jansky Very Large Array (VLA) and Atacama Large Millimieter/submillimeter Array (ALMA). These telescopes can observe in the radio and (sub)mm wavelengths needed to view redshifted CO transitions on Earth's surface \cite{decarli2019alma}. [EXPAND ON OBSERVATIONS]
 
 These observations, to discover the gas in galaxies, are an important complement to studies focused on observing the stars and light emitted by galaxies, as those studies could miss dark gas-rich galaxies that would be found by CO surveys. The amount of gas has large implications on the development of the galaxies throughout cosmic time. [INCLUDE MORE ABOUT HOW GAS IS NECESSARY TO UNDERSTAND -> ASPECS PAPERS]
+
+\begin{figure}[tbp]
+\centering \includegraphics[width=100mm]{results_text/figure9a.jpg}
+\caption{Comoving star formation rate density as a function of redshift, taken from observations in the ultraviolet and infrared, showing the  star formation history as traced by stars themselves. This report focuses on learning more about the gas that would create these stars. By observing molecular gas we can constrain star formation rate from a different and complementary approach, because we are not observing stars directly but instead we are observing regions where stars form. Figure taken from \cite{madau2014cosmic}.}
+\label{fig:SFR_History}
+\end{figure}
 
 
 \section{From observations to models}
@@ -102,10 +95,6 @@ All these observations, in gamma and X-rays, visible light, infrared, radio and 
 Going from single galaxies and their SEDs and componenets, the next stage is to look at galaxies together. By looking at the distribution of galaxies in a given region of space, we can determine how densely packed they are together, which gives an insight into the halo mass that these galaxies reside. [INCLUDE WHY HALO MASS MATTERS] The dark matter halo
 
 Galaxies are not distributed entirely randomly in the universe, on the largest scales, the universe is isotropic and homogeneous, but on smaller scales, galaxies tend to form large filaments and clusters in space. Computing the two-point correlation function and clustering parameters attempts to give a sense to how clustered a set of galaxies are. The more clustered the galaxies are, generally the higher the halo mass that surrounds them. [DOUBLE CHECK THIS]
-
-\section{This research}
-
-This research is focused on using radio observations to estimate the properties of CO emitters, as well as their clustering and halo mass within the GOODS-South region of the sky using data from the Wide ALMA Spectroscopic Survey in the Hubble Ultra Deep Field (Wide ASPECS) survey. This survey probes a very large volume of space, on the order of 550,000 cMpc, allowing for the first constraints on the clustering of CO emitters, and estimates of their halo masses. Additionally, this research works to cross-match detected CO lines with galaxies present in the survey volume, and builds the basis for future work on constraining the CO luminosity function and molecular gas density of high-redshift galaxies. [DO I NEED HIGH-REDSHIFT PART?]
 
 This report is organized as follows. Chapter 2 focuses on the setup of the survey, the methods used to detect and cross-match lines, and the properties of those matched galaxies. Chapter 3 focuses on the clustering of CO emitters in the survey volume, and compares the clustering of sources in this survey to those of other populations of galaxies. The final chapter, chapter 4, contains the conclusions and possible future work. 
 
