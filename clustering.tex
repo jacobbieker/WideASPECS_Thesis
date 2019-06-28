@@ -4,8 +4,11 @@
 
 PUT DISCUSSION OF OTHER CLUSTERING HERE
 
+Previous work on clustering
+
 \section{Method}
 
+\subsection{Autocorrelation Function}
 The clustering is computed through a two point correlation function. The first step s to calculate the angular correlation function $ \omega(\theta)$. Once $ \omega(\theta)$ is computed, the second step is to obtain the two-point correlation function parameters of $r_0$ and $\gamma$.
 
 The two-point correlation function is the the probability above Poisson of finding a galaxy in a volume element $dV$ at a physical separation $r$ from another randomly chosen galaxy, such that $$ dP = n[1 + \Eta(r)]dV$$, [REWORD] where $n$ is the mean space density of the galaxies in the sample. The estimator comes from Landy \& Szalay (1993) where $$ \omega(\theta) = \frac{1}{RR}(DD-2DR + RR)$$, there $DD$, $DR$, and $RR$ are the number of data-data, data-random, and random-random galaxy pairs at a separation $\theta$, where each of the three collections is normalized to sum to 1. 
@@ -19,13 +22,17 @@ $$ \gamma = \beta + 1 $$ $$ A = H_{\gamma}\frac{\int_{0}^{\inf} (dN_1/dz)(dN_2/d
 where $H_{\gamma} = \Gamma(0.5)\Gamma(0.5[\gamma -1])\Gamma(0.5\gamma)$, where $\Gamma$ is the gamma function, $\chi$ is the radial comoving distance, $dN_{1,2}/dz$ are the redshift distributions of the samples, where in the case of autocorrelation, are equal to each other, and $E_z = H_z/c = dz/d\chi$ \cite{hickox2011clustering}. The Hubble parameter $H_z$ can be found from
 $$H_z^2 = H_0^2[\Omega_m(1+z)^3 + \Omega_{\lambda}]$$ \cite{hickox2011clustering}.
 
-For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 CO lines, shown in Fig. \ref{fig:Clustering_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z =1.5 to 3.5, as this is where the majority of the CO lines' redshifts are. Results over the range of z = 0 to z = 4.4 are also shown. 
+For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 sources, shown in Fig. \ref{fig:Clustering_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z = 1.5 to 3.5, as this is where the majority of the CO lines' redshifts are. Results over the range of z = 0 to z = 4.4 are also shown. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{PDFS/NX_V_Y_Sources_20000.png}
 \caption{Random points and sources from the $>$ 0.6 fidelity cut. The random points are distributed uniformly throughout the Wide ASPECS footprint.}
 \label{fig:Clustering_points}
 \end{figure}
+
+\subsection{Halo Mass Calculation}
+
+To determine the halo mass from the calculations [INCLUDE HALO MASS CALCULATIONS]
 
 \section{Results}
 
@@ -52,3 +59,5 @@ As should be expected, as the fidelity cut goes up, meaning a larger portion of 
 \section{Discussion}
 
 The clustering results do show that there is a larger $r_0$ as the fidelity cut becomes higher, suggesting that there are real sources in the sample. On the other hand, the clustering measurement is still very noisy and future work will be required to get a better final clustering measurement.
+
+In comparison to other clustering measurements, \cite{hickox2011clustering} found an $r_0$ for quasers to be between 5.5 and 

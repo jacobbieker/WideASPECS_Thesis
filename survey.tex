@@ -63,13 +63,31 @@ To get a sense of how many of these line candidates are false positives, the fid
 
 $$ fideltiy(S/N, \Delta v) = 1 - \frac{N_{neg}(S/N, \Delta v)}{N_{pos}(S/N, \Delta v)} $$ [CITE].
 
-The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is larger for wider line widths. For this report, there were 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 $>$ 0.6, 52 $>$ 0.5, and 69 $>$ 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates. [INCLUDE TABLE OF FIDELITY, S/N PER WIDTH, NUMBER OF LINES?]
+The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally larger for wider line widths [INCLUDE REASON]. For this report, there were 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 $>$ 0.6, 52 $>$ 0.5, and 69 $>$ 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates. A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Fidelity_map.png}
 \caption{Fidelity vs S/N for the different widths used by findclumps. The red line shows the fidelity = 0.6 cutoff used for the analysis in this report.}
 \label{fig:Fid_map}
 \end{figure}
+
+\begin{table}
+\centering
+\caption{Number of sources per channel width for the adopted fidelity cut of $>$ 0.6.}
+\begin{tabular}{ccc}
+Channels & S/N & Sources \\
+\hline
+3 & 6.28 & 3 \\
+5 & 6.22 & 4 \\
+7 & 6.09 & 8 \\
+9 & 6.14 & 2 \\
+11 & 6.12 & 6 \\
+13 & 6.17 & 4 \\
+15 & 6.1 & 3 \\
+17 & 6.19 & 3 \\
+19 & 6.0 & 2 \\
+\end{tabular}
+\end{table}\label{table:Fid_NumTable}
 
 \subsection{Cross-matching and Redshift Determination}
 
