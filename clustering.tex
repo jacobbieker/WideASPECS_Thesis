@@ -1,18 +1,38 @@
 \chapter{Clustering}
 
+Wide ASPECS' well-defined, large cosmic volume allows for some of the first direct constraints on the clustering bias of CO emitters. This clustering bias can be then used to constrain the typical halo mass in which they reside. 
+
 \section{Previous Work}
-
-PUT DISCUSSION OF OTHER CLUSTERING HERE [CLUSTERING OF OTHER COLLECTIONS OF GALAXIES, VARIOUS RANGES, LOOK AT HiCKOX et al. 2011-2012]
-
-[PARAGRAPH EACH AND WHAT THEY DID RELEVANT TO WHAT I AM DOING]
-
-[GET DONE BY END OF WORK DAY: Previous Clustering Work, Halo Mass calculation from Autocorrelation]
 
 Previous work on clustering has been looked at different subpopulations of galaxies. Hickox et al. 2011 looked at the clustering of quasars and concealed quasars. Hickox et al. 2012 looks at the clustering in SMGs and compares them to clustering found in other surveys. 
 
-\section{Method}
 
-To compute the clustering and halo mass, a few steps must be done. 
+[INCLUDE THE HICKOX et al. 2012 PLOT]
+C
+
+[1. show the 4 panel plot (for only 1 binding choice), with the different S/N cuts (or better for fidelity cuts, if that is not so time consuming to do), to show how the clustering signal is going up. 
+2. Then explain how you selected your final sample (then selecting all candidates with fidelity >0.6) and show the clustering plot for that particular case. For this case show your preferred binning (and remember to choose the starting point of the first bin to have the minimum distances you measured between your candidates). 
+3. Provide the final A and r0 parameters, and mention that you tested the sensitivity of the results with the binning choice (then maybe you can show your different binning choices for this same sample, and the r0 for each one)
+4. we need to make some comments about this result (compare with others r0 in the literature, we can talk more about this). Make clear the point that the measurement is noisy and other strategies need to be done in the future.]
+
+[I don’t think you need to provide details in your report about how the cross-correlation works but just mention that this technique would improve the statistics and just provide some reference of papers in which this technique is used for example Croom+04, Coil+07, Padmanabhan+09, Hickox+11, Hickox+12, etc.]
+
+[Spatial correlation measure-
+ments provide information about the characteristic bias and hence
+mass of the haloes in which galaxies reside (e.g., Kaiser 1984;
+Bardeen et al. 1986), and so provide a robust mass estimate that is
+free of many of the systematics in measuring stellar or black hole
+masses. The observed clustering of SMGs and QSOs can thus allow
+us to test whether these populations are found in similar haloes and
+so may evolve into each other over short timescales. \cite{hickox2011clustering} 2012]
+
+\begin{figure}[tbp]
+\centering \includegraphics[width=120mm]{clustering/Hickox2012_Compare.png}
+\caption{$r_0$ values for a variety of celestial objects as a function of redshift. Figure adapted from \cite{10.1111/j.1365-2966.2011.20303.x}.}
+\label{fig:Hickox_compare}
+\end{figure}
+
+\section{Method}
 
 \subsection{Autocorrelation Function}
 
@@ -51,17 +71,15 @@ For this analysis, all CO line candidates above the 0.6 fidelity threshold were 
 
 To determine the halo mass from the calculations[INCLUDE HALO MASS CALCULATIONS]
 
-\cite{hickox2011clustering} used the HALOFIT code of Smith et al. 2003, to dtermine the non-linear power spectrum $\Delta_{NL}^2(k,z)$ of dark matter, assuming the cosmology and the slope of the initial fluctuation power spectrum $\Gamma = \Omega_mh = 0.21$. The Fourier transform of the nonlinear-dimensionless power spectrum gives the real-sapce correlation function $\Eta(r)$, which is then integrated to $\pi = 100 h^{-1} Mpc$ following Equation [INSERT] to obtain the dar kmatter projected correlation function $\omega^{DM}_p(R,z)$.
+\cite{hickox2011clustering} used the HALOFIT code of Smith et al. 2003, to determine the non-linear power spectrum $\Delta_{NL}^2(k,z)$ of dark matter, assuming the cosmology and the slope of the initial fluctuation power spectrum $\Gamma = \Omega_mh = 0.21$. The Fourier transform of the nonlinear-dimensionless power spectrum gives the real-sapce correlation function $\Eta(r)$, which is then integrated to $\pi = 100 h^{-1} Mpc$ following Equation [INSERT] to obtain the dar kmatter projected correlation function $\omega^{DM}_p(R,z)$.
 
 To obtain $\omega(\theta)$ for the dark matter, Limber's equation is used to project the power spectrum into the angular correlation. Specifically a Monte Carlo integration of Equation (A6) in Myers et al. 2007 is used to obtain $\omega(\theta)$ for dark matter. For each angular correlation analysis, we compute the average ration between the best-fit power law model and the dark matter $\omega(\theta)$ on scales from 8 arcminutes to 50 arcminutes, where $\omega(\theta$ is dominated by the two-halo term. This ratio gives us $b^2_{CO}$ for the CO autocorrelations. 
 
-Finally, using $b^2_{CO}$ to estimate the charactersitic mass of the dark matter halos hosting each subset of 
-
-\cite{hickox2011clustering} showed that for SMG galaxies, around a redshift of 2, the autocorrelation length $r_0 \approx 6 h^{-1} Mpc$. 
+Finally, using $b^2_{CO}$ to estimate the charactersitic mass of the dark matter halos hosting each subset of galaxies. Sheth et al. 2001 derived a relation betwwen dark-matter halo mass and large-scale bias that agrees well with the results of comsological simulations. We use Eqn. (8) of Sheth et al. 2001 to convert $b_{C)}$ and $M_{halo}$, we obtain esimtaes for $M_{halo}$. 
 
 \section{Results}
 
-As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well. When converted to $r_0$, the fidelity cuts result in $r_0$ values of 23 +- 5 for fidelity $>$ 0.7, 20 +- 2 for fidelity $>$ 0.6, 8 +- 1.5 for fidelity $>$ 0.5, and no $r_0$ for fidelity > 0.4, as the $A$ value is consistent with 0. 
+As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well. The change is most significant when only fitting the positive points.  When converted to $r_0$, the fidelity cuts result in $r_0$ values of 23 +- 5 for fidelity $>$ 0.7, 20 +- 2 for fidelity $>$ 0.6, 8 +- 1.5 for fidelity $>$ 0.5, and no $r_0$ for fidelity > 0.4, as the $A$ value is consistent with 0. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Fidelity/Log_4Panel_Data_Vs_Random_bin10_NFalse_Num10000.png}
@@ -69,7 +87,7 @@ As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases,
 \label{fig:Angular_correlation}
 \end{figure}
 
-Besides the different fidelity cuts, different binnings also are included to study their effects on the final $r_0$ results. 
+Besides the different fidelity cuts, different binnings also are included to study their effects on the final $r_0$ results. The results seem to be very dependent on the binning. While the values for the only positively fitted bins does not change dramatically as the binning changes, the number of bins does make a different whether there are enough 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Fidelity/Log_4Panel_Data_Vs_Random_bin10_NFalse_Num10000.png}
@@ -92,6 +110,8 @@ As should be expected, as the fidelity cut goes up, meaning a larger portion of 
 The clustering results do show that there is a larger $r_0$ as the fidelity cut becomes higher, suggesting that there are real sources in the sample. On the other hand, the clustering measurement is still very noisy and future work will be required to get a better final clustering measurement. 
 
 In comparison to other clustering measurements, \cite{hickox2011clustering} found an $r_0$ for quasers to be between 5.5 and 
+
+\cite{hickox2011clustering} showed that for SMG galaxies, around a redshift of 2, the autocorrelation length $r_0 \approx 6 h^{-1} Mpc$. 
 
 [INCLUDE DISCUSSION OF CLUSTERING OF OTHER GALAXY TYPES, HOW ODDLY HIGH THIS IS]
 
