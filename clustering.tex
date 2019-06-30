@@ -6,8 +6,8 @@ Wide ASPECS' well-defined, large cosmic volume allows for some of the first dire
 
 Previous work on clustering has been looked at different populations of galaxies. \cite{hickox2011clustering} looked at the clustering of quasars and obscured quasars. \cite{10.1111/j.1365-2966.2011.20303.x} looks at the clustering in SMGs and compares their clustering to clustering found for other sets of astronomical objects. 
 
-\begin{figure}[tbp]
-\centering \includegraphics[width=120mm]{clustering/Hickox2012_Compare.png}
+\begin{figure}[!htb]
+\centering \includegraphics[width=87mm]{clustering/Hickox2012_Compare.png}
 \caption{$r_0$ values for a variety of celestial objects as a function of redshift. Figure adapted from \cite{10.1111/j.1365-2966.2011.20303.x}.}
 \label{fig:Hickox_compare}
 \end{figure}
@@ -18,7 +18,7 @@ Previous work on clustering has been looked at different populations of galaxies
 
 The clustering is computed through a two point correlation function. The first step s to calculate the angular correlation function $ \omega(\theta)$. Once $ \omega(\theta)$ is computed, the second step is to obtain the two-point correlation function parameters of $r_0$ and $\gamma$.
 
-The two-point correlation function, $\Eta(r)$, is the the probability of finding a galaxy at a separation $r$ from another randomly chosen galaxy in a volume $dV$ above Poisson, such that $$ dP = n[1 + \Eta(r)]dV$$, where $n$ is the mean space density of the galaxies in the sample\cite{hickox2011clustering}. 
+The two-point correlation function, $ \xi(r)$ is the the probability of finding a galaxy at a separation $r$ from another randomly chosen galaxy in a volume $dV$ above Poisson, such that $$ dP = n(1 + \xi(r))dV $$, where $n$ is the mean space density of the galaxies in the sample\cite{hickox2011clustering}. 
 
 To calculate the angular correlation function, the estimator from \cite{1993ApJ...412...64L} is used, where $$ \omega(\theta) = \frac{1}{RR}(DD-2DR + RR)$$, where $DD$, $DR$, and $RR$ are the number of data-data, data-random, and random-random galaxy pairs at a separation $\theta$, where each of the three collections is normalized to sum to 1 \cite{hickox2011clustering}.
 

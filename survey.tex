@@ -12,36 +12,46 @@ The PdBI survey was a molecular line survey in the Hubble Deep Field North (HDF-
 
 COLDz, or the CO Luminosity Density at High-z (COLDz) targeted CO(1-0) emissions from galaxies at redshifts between 1.95-2.85 and CO(2-1) emission between z = 4.91 - 6.70 using the Very Large Array (VLA)\cite{pavesi2018co}. This survey aimed to perform a similar role as ASPECS, covering a wide area of around 51 arcminute$^2$, as well as a roughly 9 arcminute$^2$ area much more deeply. This survey blindly selected starburst and massive main sequence galaxies in the GOODS-North and COSMOS fields. COLDz found seven secure CO line detections, and 57 above their S/N threshold, including many that did not have optical or near infrared counterparts, suggesting that those candidates could potentially be from a population of gas-rich, but optically dark galaxies \cite{pavesi2018co}.
 
-The ASPECS Pilot and Large Programs both looked at regions in the Hubble Ultra Deep Field, with Wide ASPECS being the third survey in the sequence. The Pilot program looked incredibly deeply in the 1.2mm and 3mm bands at a small, one arcsecond region of the Hubble eXtremely Deep Field (XDF). The spectral coverage of the Pilot meant that it could detect CO transitions almost continuously from z = 0 to z = 8, as well as CII emissions from z = 6 to z = 8 \cite{walter2016alma}. This allowed for the characterization of CO emitters all the way to a z = 8, as well as given constraints on the knee of the CO luminosity function \cite{walter2016alma}. 
+The ASPECS Pilot and Large Programs both looked at regions in the Hubble Ultra Deep Field. The Pilot program looked incredibly deeply in the 1.2mm and 3mm bands at a small, one arcsecond region of the Hubble eXtremely Deep Field (XDF). The spectral coverage of the Pilot meant that it could detect CO transitions almost continuously from z = 0 to z = 8, as well as CII emissions from z = 6 to z = 8 \cite{walter2016alma}. This allowed for the characterization of CO emitters all the way to a z = 8, as well as giving constraints on the knee of the CO luminosity function \cite{walter2016alma}. 
 
-The Large Program looked wider, but shallower, covering a roughly five square arcminute area of the Hubble Ultra Deep Field (HUDF) surrounding the ASPECS Pilot region. It was a 150 hour molecular deep field taken at 1.2mm and 3mm \cite{decarli2019alma}. The greater volume probed by the Large Program allowed for constraining the density of gas in the Universe, as well as better constraints on the CO luminosity function. The survey blindly revealed the molecular gas content in normal, star-forming main-sequence galaxies \cite{decarli2019alma}. 
+The Large Program looked wider, but shallower, covering a roughly five square arcminute area of the Hubble Ultra Deep Field (HUDF) surrounding the ASPECS Pilot region. It was a 150 hour molecular deep field taken at 1.2mm and 3mm \cite{decarli2019alma}. The greater volume probed by the Large Program allowed for constraining the density of gas in the universe, as well as better constraints on the CO luminosity function. The survey blindly revealed the molecular gas content in normal, star-forming main-sequence galaxies \cite{decarli2019alma}. 
 
 \section{This Survey}
 
-The Wide ASPECS survey builds upon the Pilot and Large Program, going much wider, but also shallower. This means that Wide ASPECS cannot capture as dim CO emitters, but because of the much larger cosmic volume looked at, it can find rarer, but very bright CO emitters that did not happen to fall within the Large Program and Pilot survey bounds [CITE/EXPAND].
+The Wide ASPECS survey builds upon the Pilot and Large Program, going much wider, but also shallower. This means that Wide ASPECS cannot capture as dim CO emitters, but because of the much larger cosmic volume looked at, it can find rarer, but very bright CO emitters that did not happen to fall within the Large Program and Pilot survey bounds.
 
-The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3 (3mm) for $~$20 hours in 130 pointings and six frequency settings. The survey covered $~$52.5 arcminutes$^2$ of the sky at 20\% sensitivity, and $~$43 arcminutes$^2$ at 50\% sensitivity. This means Wide ASPECS covers roughly five times the area of the ASPECS Large Program. This raw data was processed with the CASA ALMA pipeline into sixe datacubes, one for each frequency setting.
+The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3 (3mm) for ~20 hours in 130 pointings and six frequency settings. The survey covered ~52.5 arcminutes$^2$ of the sky at 20\% sensitivity, and ~43 arcminutes$^2$ at 50\% sensitivity. This means Wide ASPECS covers roughly five times the area of the ASPECS Large Program. This raw data was processed with the CASA ALMA pipeline into six datacubes, one for each frequency setting.
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Wide_ASPECS_Coverage.png}
-\caption{Spatial coverage of ASPECS Pilot (Green), Large Program (White), and Wide (Yellow) showing each of the individual pointings. The area covered by the Pilot is $~$1 arcmin$^2$, by the Large Program $~$5 arcmin$^2$, and by Wide ASPECS, $~$52.5 armin$^2$. The cyan box is the 50\% sensitivity extent of the survey. This region covers the area of the deepest CANDELS observations, where a wealth of ancillary data has been collected in over 30 wavelengths [CITE].}
+\caption{Spatial coverage of ASPECS Pilot (Green), Large Program (White), and Wide (Yellow) showing each of the individual pointings. The area covered by the Pilot is $~$1 arcmin$^2$, by the Large Program $~$5 arcmin$^2$, and by Wide ASPECS, $~$52.5 armin$^2$. The cyan box is the 50\% sensitivity extent of the survey. This region covers the area of the deepest CANDELS observations, where a wealth of ancillary data has been collected in over 30 wavelengths [CITE SURVEY DESCRIPTION].}
 \label{fig:ASPECS_Coverage}
 \end{figure}
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=120mm]{Wide_ASPECS_Freq.png}
-\caption{Spectral and redshift coverage of Wide ASPECS in relation to the redshift distribution of galaxies within the survey field. Wide ASPECS is designed to detect CO line transitions at z$<$0.4, 1.1 $<$ z $<$ 1.8, and 2.2 $<$ z $<$ 4.4. [CITE OR CHANGE PLOT]}
+\caption{Spectral and redshift coverage of Wide ASPECS in relation to the redshift distribution of galaxies within the survey field. Wide ASPECS is designed to detect CO line transitions at z$<$0.4, 1.1 $<$ z $<$ 1.8, and 2.2 $<$ z $<$ 4.4. [CITE SURVEY DESCRIPTION]}
 \label{fig:ASPECS_Freq}
 \end{figure}
 
-[INSERT TABLE OF COSMIC VOLUME PROBED AT EACH TRANSITION]
+\begin{table}[]
+\caption{Redshift limits and cosmic volume probed for each CO transition observable by Wide ASPECS.}
+\begin{tabular}{lllll}
+Transition & $z_{low}$ & $z_{high}$ & Freq. (GHz) & Volume (Mpc$^3$) \\
+\hline
+1-0        & 0.0030    & 0.3694     & 115.271     & 4461             \\
+2-1        & 1.0059    & 1.7387     & 230.538     & 107411           \\
+3-2        & 2.0088    & 3.1080     & 345.796     & 191232           \\
+4-3        & 3.0115    & 3.3771     & 461.041     & 237143          
+\end{tabular}
+\end{table}
 
 \subsection{Ancillary Data}
 
-In addition to each of those datacubes, there is a lot of ancillary data available as the GOODS-South region is one of the most studied regions of the sky. This data has been collected through combining multiple other catalogs, first described in \cite{walter2016alma} and expanded with new data in \cite{decarli2019alma}, comprising over 30 wavelength bands for over 63000 galaxies in and around the footprint of Wide ASPECS. $~$26000 galaxies lie within the footprint of Wide ASPECS, of which $~$2300 have spectroscopic redshifts, and $~$24000 have photometric redshifts. 
+In addition to each of those datacubes, there is a lot of ancillary data available as the GOODS-South region is one of the most studied regions of the sky. This data has been collected through combining multiple other catalogs, first described in \cite{walter2016alma} and expanded with new data in \cite{decarli2019alma}, comprising over 30 wavelength bands for over 63000 galaxies in and around the footprint of Wide ASPECS. 26251 galaxies lie within the footprint of Wide ASPECS, of which 2283 have spectroscopic redshifts, and 23968 have photometric redshifts. 
 
-The majority of the ancillary data comes from the Hubble Space Telescope (HST) Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey \cite{grogin2011candels, Koekemoer_2011}. Most of the photometric data comes from \cite{skelton20143d}, which additionally includes ground-based optical and NIR photometry from \cite{nonino2009deep, hildebrandt2006gabods, erben2005gabods, retzlaff2010great, Hsieh_2012, 2008ApJ...682..985W}, Cardamone et al. (2010), as well as Spitzer IRAC 3.6um, 4.5um, 5.8um, and 8.0um photometry from \cite{dickinson2003evolution, elbaz2011goods, 2013ApJ...769...80A}. There is also data from the Spitzer MIPS 24um photometric information from \cite{Whitaker_2014}, and ALMA 1.1mm data from \cite{franco2018goods}. Additional far-infrared data from Herschel PACS at 100 um and 160 um from \cite{elbaz2011goods}. Data from the MUSE Hubble Ultra Deep Survey \cite{bacon2017} was also included, being used for spectroscopic redshifts \cite{inami2017}, other catalogs used for spectroscopic information include \cite{le2005vimos, coe2006galaxies, skelton20143d, morris2015wfc3}. Hubble grism spectroscopy was taken from the 3D-HST survey \cite{momcheva20163d}.  All these catalogs were merged into a single catalog through matching sources within 0.5 arcseconds for the photometry, and 1.0 arcseconds for the spectroscopic data. Finally, these matches were then cross-matched with morphological parameters from \cite{van2012structural}.
+The majority of the ancillary data comes from the Hubble Space Telescope (HST) Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey \cite{grogin2011candels, Koekemoer_2011}. Most of the photometric data comes from \cite{skelton20143d}, which additionally includes ground-based optical and NIR photometry from \cite{nonino2009deep, hildebrandt2006gabods, erben2005gabods, retzlaff2010great, Hsieh_2012, 2008ApJ...682..985W, cardamone2010multiwavelength}, as well as Spitzer IRAC 3.6um, 4.5um, 5.8um, and 8.0um photometry from \cite{dickinson2003evolution, elbaz2011goods, 2013ApJ...769...80A}. There is also data from the Spitzer MIPS 24um photometric information from \cite{Whitaker_2014}, and ALMA 1.1mm data from \cite{franco2018goods}. Additional far-infrared data from Herschel PACS at 100 um and 160 um from \cite{elbaz2011goods}. Data from the MUSE Hubble Ultra Deep Survey \cite{bacon2017} was also included, being used for spectroscopic redshifts \cite{inami2017}, other catalogs used for spectroscopic information include \cite{le2005vimos, coe2006galaxies, skelton20143d, morris2015wfc3}. Hubble grism spectroscopy was taken from the 3D-HST survey \cite{momcheva20163d}.  All these catalogs were merged into a single catalog through matching sources within 0.5 arcseconds for the photometry, and 1.0 arcseconds for the spectroscopic data. Finally, these matches were then cross-matched with morphological parameters from \cite{van2012structural}.
 
 %26251 in footprint of Wide ASPECS
 %2283 wth Spectroscopic Z
@@ -57,11 +67,11 @@ The majority of the ancillary data comes from the Hubble Space Telescope (HST) C
 
 To estimate the properties of the galaxies in the catalog, the SED fitting program MAGPHYS was used \cite{da2008simple, da2015alma}. MAGPHYS computes a marginalized likelihood distribution for each of the different physical parameters of the observed galaxy through comparing the observed SED with the precomputed models. It also outputs the best-fit total SED for a given galaxy. In this report, the MAGPHYS high-z extension was used \cite{da2015alma}.
 
-An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showing the model, the likelihood values for various physical properties of the galaxy, and the data points used to compute the SED in red. The distribution of the stellar mass, and star formation rates of all the galaxies fitted with MAGPHYS are shown in Fig. \ref{fig:MAGPHYS_Properties}. Galaxies whose computed star formation rate was at or below a $log_{10}(SFR) = -1.99$ were removed from the rest of the analysis, as this indicated a very poor MAGPHYS fit. That left a total of $~$55000 galaxies in the sample, of which $~$22000 were in the Wide ASPECS footprint.
+An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showing the model, the likelihood values for various physical properties of the galaxy, and the data points used to compute the SED in red. The distribution of the stellar mass, and star formation rates of all the galaxies fitted with MAGPHYS are shown in Fig. \ref{fig:MAGPHYS_Properties}. Galaxies whose computed star formation rate was at or below a $log_{10}(SFR) = -1.99$ were removed from the rest of the analysis, as this indicated a very poor MAGPHYS fit. That left a total of $~$55000 galaxies in the sample, of which 22073 were in the Wide ASPECS footprint.
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{19265.pdf}
-\caption{Example MAGPHYS Output, from the most massive matched galaxy. The blue line is the spectrum of the galaxy without attenuation. The black line is the model used by MAGPHYS. The red dots are the data points. The bottom row of graphs show the probability distribution for various physical properties.}
+\caption{Example MAGPHYS output, from the most massive matched galaxy, ID.9 in Table \ref{table:Catalog}. The blue line is the spectrum of the galaxy without attenuation. The black line is the model used by MAGPHYS. The red dots are the data points. The bottom row of graphs show the probability distribution for various physical properties.}
 \label{fig:MAGPHYS_Example}
 \end{figure}
 
@@ -79,7 +89,7 @@ An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showi
 
 \section{Method}
 
-As an overview, the method for finding lines, computing the fidelity, cross-matching, and determining matches is the same process as used in the other ASPECS surveys \cite{walter2016alma, decarli2019alma}.
+As an overview, the method for finding lines, computing the fidelity, cross-matching, and determining matches is the same process as used in the other ASPECS surveys \cite{walter2016alma, decarli2019alma, gonzalez2019alma}.
 
 \subsection{Line Search and Fidelity}
 
@@ -89,7 +99,7 @@ To get a sense of how many of these line candidates are false positives, the fid
 
 $$ fideltiy(S/N) = 1 - \frac{N_{neg}(S/N)}{N_{pos}(S/N)} $$ where $N_{pos}(S/N)$ and $N_{neg}(S/N)$ are the number of positive and negative line candidates detected at that S/N and for a given line width\cite{gonzalez2019alma}.
 
-The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally larger for wider line widths as more independent resolution elements are included \cite{decarli2019alma}. For this report, there were 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 at $>$ 0.6, 52 at $>$ 0.5, and 69 at $>$ 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates. A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
+The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally higher for wider line widths as more independent resolution elements are included \cite{decarli2019alma}. For this report, there were 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 at $>$ 0.6, 52 at $>$ 0.5, and 69 at $>$ 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates. A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
 
 \begin{figure}[!htbp]
 \centering \includegraphics[width=120mm]{Fidelity_map.png}
@@ -99,7 +109,7 @@ The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. A
 
 \begin{table}
 \centering
-\caption{Number of sources, and S/N cutoffs, per channel width for the adopted fidelity cut of $>$ 0.6.}
+\caption{Number of sources, and S/N cutoffs, per channel width for the adopted fidelity cut of $>$ 0.6.}\label{table:Fid_NumTable}
 \begin{tabular}{ccc}
 Channels & S/N & N. Sources \\
 \hline
@@ -113,19 +123,19 @@ Channels & S/N & N. Sources \\
 17 & 6.19 & 3 \\
 19 & 6.00 & 2 \\
 \end{tabular}
-\end{table}\label{table:Fid_NumTable}
+\end{table}
 
 \subsection{Cross-matching and Redshift Determination}
 
-Once the lines and been found, and the fidelity computed, the next step is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. If a line matched to more than a single galaxy, then the following steps are performed to differentiate which galaxy the line should be matched to. The first step is to calculate the CO transition for the line assuming the line is matched to each of the galaxies. Once that is determined, the difference in redshift between the CO redshift and the galaxy's redshift, the $\delta z$, is calculated. The matched galaxy that gives the smallest $|\delta z|$ is then saved as the matched galaxy for that line candidate. 
+Once the lines and been found, and the fidelity computed, the next step is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. Then, assuming that the CO line is from that matched galaxy, the CO transition was calculated. The match was only kept if the offset betwen the CO line's redshift and the galaxy's redshift was ($|\delta z| < 0.01$) for galaxies with spectroscopic redshifts, or ($|\delta z| < 0.3$) for ones with photometric redshifts. The differences in $|\delta z|$ thresholds is because spectroscopic redshifts are much more reliable and precise than photometric redshifts. 
 
-To determine the redshift of the line candidates a few different steps were taken. As there are multiple CO transitions contained within frequency range for Wide ASPECS, a few different approaches are used to attempt to estimate the correct redshift. The first step is to attempt to match a line to one of the galaxies in the catalog. If there is a match in the catalog, then the available redshift of the matched galaxy is used for the redshift of the CO line. If the redshift of the matched galaxy is within the limits that Wide ASPECS can detect. The redshift determinations were only kept if the CO redshift was in very good agreement with spectroscopic redshifts ($|\delta z| < 0.01$) or ($|\delta z| < 0.3$) for photometric redshifts. The differences in $|\delta z|$ thresholds is because spectroscopic redshifts are much more reliable and precise than photometric redshifts.
+If a line matched to more than a single galaxy, then the following steps are performed to differentiate which galaxy the line should be matched to. The first step is to calculate the CO transition for the line assuming the line is matched to each of the galaxies. Once that is determined, the difference in redshift between the CO redshift and the galaxy's redshift, the $\delta z$, is calculated. The matched galaxy that gives the smallest $|\delta z|$, and whose redshift falls within the limits of Wide ASPECS, is then saved as the matched galaxy for that line candidate. 
 
 If there is not a match to a galaxy in the catalog, or if the galaxy's redshift is incompatible with the CO line identification, then the line identification is performed by a bootstrap method, where the probability of a line candidate being one of CO(1-0), CO(2-1), CO(3-2), or CO(4-3) is proportional to the volume of the universe sampled in each of those transitions \cite{walter2016alma, decarli2019alma}.
 
 \section{Results}
 
-The mass versus star formation rate is shown for the general galactic population and the ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Walter et al. 2014 [CITE] main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. [WHAT ARE MAIN SEQUENCE GALAXIES? WHY DOES IT MATTER?]
+The mass versus star formation rate is shown for the general galactic population and the ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Whitaker et al. 2014 \cite{Whitaker_2014} main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. 
 
 \begin{figure}[!htbp]
 \centering \includegraphics[width=120mm]{Survey/No_Cut_Mstar_vs_SFR_all_closest_sep_1_0_sn_fid_60.png}
@@ -135,13 +145,14 @@ The mass versus star formation rate is shown for the general galactic population
 
 \subsection{Catalog}
 
-The final catalog of CO line emitters is shown in Table \ref{table:Catalog}. 3 lines match to galaxies in the catalog. Of those three matches, only ID.1's match has a spectroscopic redshift. The redshift distribution of the whole catalog is shown in Fig. \ref{fig:cat_red}.
+The final catalog of CO line emitters is shown in Table \ref{table:Catalog}. 3 lines match to galaxies in the catalog. Of those three matches, only ID.1's match has a spectroscopic redshift. The redshift distribution of the whole catalog is shown in Fig. \ref{fig:cat_red}, and some of the physical properties of the three matched lines is shown in Table. \ref{table:matched_gal}.
 
 \begin{table}
 \centering
 \caption{RA and DEC are in the J2000 system. $v_{CO}$ is the observed frequency of the source in GHz. CO Tran. is the estimated CO transition. If available, $\delta z$ is the redshift difference between the source and the matched galaxy. S/N is the signal-to-noise of the source. Match tells whether there is a match to a galaxy in the catalog. Only ID.1 has a matched galaxy with a spectroscopic redshift.}
 \begin{tabular}{ccccccccc}
 ID & RA & DEC & $v_{CO}$ & CO Tran. & $z_{CO}$ & $\delta z$ & S/N & Match? \\
+\hline
 ID.1 & 53.14886 & -27.82118 & 96.701 & 3-2 & 2.576 & 0.006 & 7.31 & Y \\
 ID.2 & 53.19145 & -27.76985 & 91.657 & 2-1 & 1.515 & -- & 6.82 & N \\
 ID.3 & 53.14138 & -27.84409 & 96.834 & 4-3 & 3.761 & -- & 6.72 & N \\
@@ -186,7 +197,18 @@ ID.35 & 53.14828 & -27.84444 & 87.302 & 3-2 & 2.961 & -- & 6.1 & N \\
 \label{fig:cat_red}
 \end{figure}
 
-In addition, the line candidates are shown overlaid other wavelengths in the Appendix \ref{sec:A1}.
+\begin{table}
+\caption{This shows some of the physical parameters for the 3 matched line candidates. Sep is the separation in arcseconds between the CO line and the galaxy. $z_{catalog}$ is the master catalog's redshift for the galaxy.}
+\begin{tabular}{ccccccccccccccc}
+ID & Trans. & $z_{CO}$ & $z_{catalog}$ & $\delta z$ & Spec & S/N & Sep & Log(SFR) & Log(M*) \\
+\hline
+ID.1 & 3-2 & 2.576 & 2.582 & 0.006 & Y & 7.31 & 0.2824 & $2.782_{-0.005}^{+0.005}$ & $11.31_{-0.0}^{+0.0}$  \\
+ID.5 & 2-1 & 1.66 & 1.423 & -0.237 & N & 6.6 & 0.9723 & $-0.453_{-0.255}^{+0.255}$ & $8.017_{-0.175}^{+0.175}$ \\
+ID.9 & 3-2 & 2.309 & 2.39 & 0.081 & N & 6.43 & 0.4861 & $1.307_{-0.0}^{+0.0}$ & $9.757_{-0.0}^{+0.0}$ \\
+\end{tabular}\label{table:matched_gal}
+\end{table}
+
+In addition, the line candidates are shown overlaid over other wavelengths in the Appendix \ref{sec:A1}.
 
 \section{Discussion}
 
