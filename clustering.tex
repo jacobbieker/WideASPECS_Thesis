@@ -7,7 +7,6 @@ Wide ASPECS' well-defined, large cosmic volume allows for some of the first dire
 Previous work on clustering has been looked at different subpopulations of galaxies. Hickox et al. 2011 looked at the clustering of quasars and concealed quasars. Hickox et al. 2012 looks at the clustering in SMGs and compares them to clustering found in other surveys. 
 
 
-[INCLUDE THE HICKOX et al. 2012 PLOT]
 C
 
 [1. show the 4 panel plot (for only 1 binding choice), with the different S/N cuts (or better for fidelity cuts, if that is not so time consuming to do), to show how the clustering signal is going up. 
@@ -40,16 +39,18 @@ The clustering is computed through a two point correlation function. The first s
 
 The two-point correlation function is the the probability above Poisson of finding a galaxy in a volume element $dV$ at a physical separation $r$ from another randomly chosen galaxy, such that $$ dP = n[1 + \Eta(r)]dV$$, [REWORD] where $n$ is the mean space density of the galaxies in the sample. The estimator comes from Landy \& Szalay (1993) where $$ \omega(\theta) = \frac{1}{RR}(DD-2DR + RR)$$, there $DD$, $DR$, and $RR$ are the number of data-data, data-random, and random-random galaxy pairs at a separation $\theta$, where each of the three collections is normalized to sum to 1. 
 
-Once the angular correlation function is found, a power-law model is fitted following $$\omega(\theta) = A\theta^{-\beta} $$
+Once the angular correlation function is found, a power-law model is fitted following $$\omega(\theta) = A\theta^{-\beta} $$ where $\beta$ = 0.8, a value found for many other galaxy autocorrelations \cite{hickox2011clustering}.
 
-In this report, $\beta$ = 0.8, a value found for many other galaxy autocorrelations [CITE]. To convert the $A$ and $\beta$ to real-space $r_0$ and $\gamma$, the conversion can be found through the two equations
+\subsection{Obtaining $r_0$ and $\gamma$}
+
+To convert the $A$ and $\beta$ to real-space $r_0$ and $\gamma$, the conversion can be found through the two equations
 
 $$ \gamma = \beta + 1 $$ $$ A = H_{\gamma}\frac{\int_{0}^{\inf} (dN_1/dz)(dN_2/dz)E_z\chi^{1 - \gamma} dz}{[\int_{0}^{\inf} (dN_1/dz)dz][\int_{0}^{\inf} (dN_2/dz)dz]}r_0^{\gamma}$$
 
 where $H_{\gamma} = \Gamma(0.5)\Gamma(0.5[\gamma -1])\Gamma(0.5\gamma)$, where $\Gamma$ is the gamma function, $\chi$ is the radial comoving distance, $dN_{1,2}/dz$ are the redshift distributions of the samples, where in the case of autocorrelation, are equal to each other, and $E_z = H_z/c = dz/d\chi$ \cite{hickox2011clustering}. The Hubble parameter $H_z$ can be found from
 $$H_z^2 = H_0^2[\Omega_m(1+z)^3 + \Omega_{\lambda}]$$ \cite{hickox2011clustering}.
 
-For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 sources, shown in Fig. \ref{fig:Clustering_points}. Two catalogs of random points were created and their angular correlation computed to show that it is consistent with zero, shown in Fig.\ref{fig:random_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z = 1.5 to 3.5, as this is where the majority of the CO lines' redshifts are. Results over the range of z = 0 to z = 4.4 are also shown. 
+For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 sources, shown in Fig. \ref{fig:Clustering_points}. Two catalogs of random points were created and their angular correlation computed to show that it is consistent with zero, shown in Fig.\ref{fig:random_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z = 1.5 to 3.5, as this is the range where most of the CO candidates seem to lie. The angular correlation function was computed over the range of 8.39 to 582.10 arcseconds, using logarithmically spaced bins. 
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{PDFS/NX_V_Y_Sources_20000.png}
@@ -58,44 +59,44 @@ For this analysis, all CO line candidates above the 0.6 fidelity threshold were 
 \end{figure}
 
 \begin{figure}[tbp]
-\centering \includegraphics[width=120mm]{clustering/Log_Random_vs_Random_15000NoParenFlip_bin10.png}
+\centering \includegraphics[width=60mm]{clustering/Log_Random_vs_Random_15000NoParenFlip_bin10.png}
 \caption{Angular correlation two sets of random points used in this analysis, showing that the angular correlation is consistent with zero, as would be expected for uniformly distributed points.}
 \label{fig:random_points}
 \end{figure}
 
-\subsection{Projected Correlation Function}
 
-[INCLUDE PROJECTED ONE? SINCE NEED IT FOR THE DM CALCULATION?]
-
-\subsection{Halo Mass Calculation}
-
-To determine the halo mass from the calculations[INCLUDE HALO MASS CALCULATIONS]
-
-\cite{hickox2011clustering} used the HALOFIT code of Smith et al. 2003, to determine the non-linear power spectrum $\Delta_{NL}^2(k,z)$ of dark matter, assuming the cosmology and the slope of the initial fluctuation power spectrum $\Gamma = \Omega_mh = 0.21$. The Fourier transform of the nonlinear-dimensionless power spectrum gives the real-sapce correlation function $\Eta(r)$, which is then integrated to $\pi = 100 h^{-1} Mpc$ following Equation [INSERT] to obtain the dar kmatter projected correlation function $\omega^{DM}_p(R,z)$.
-
-To obtain $\omega(\theta)$ for the dark matter, Limber's equation is used to project the power spectrum into the angular correlation. Specifically a Monte Carlo integration of Equation (A6) in Myers et al. 2007 is used to obtain $\omega(\theta)$ for dark matter. For each angular correlation analysis, we compute the average ration between the best-fit power law model and the dark matter $\omega(\theta)$ on scales from 8 arcminutes to 50 arcminutes, where $\omega(\theta$ is dominated by the two-halo term. This ratio gives us $b^2_{CO}$ for the CO autocorrelations. 
-
-Finally, using $b^2_{CO}$ to estimate the charactersitic mass of the dark matter halos hosting each subset of galaxies. Sheth et al. 2001 derived a relation betwwen dark-matter halo mass and large-scale bias that agrees well with the results of comsological simulations. We use Eqn. (8) of Sheth et al. 2001 to convert $b_{C)}$ and $M_{halo}$, we obtain esimtaes for $M_{halo}$. 
 
 \section{Results}
 
 As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well. The change is most significant when only fitting the positive points.  When converted to $r_0$, the fidelity cuts result in $r_0$ values of 23 +- 5 for fidelity $>$ 0.7, 20 +- 2 for fidelity $>$ 0.6, 8 +- 1.5 for fidelity $>$ 0.5, and no $r_0$ for fidelity > 0.4, as the $A$ value is consistent with 0. 
 
 \begin{figure}[tbp]
-\centering \includegraphics[width=120mm]{Fidelity/Log_4Panel_Data_Vs_Random_bin10_NFalse_Num10000.png}
-\caption{Angular correlation function for various fidelity cuts. The red lines are from fitting $\omega(\theta) = A\theta^{-0.8} $ to all of the bins. The green dashed line is from fitting that same equation only to bins that had a positive value. As the fidelity goes up, the $A$ value increases as well, indicating stronger clustering, as is expected.}
+\centering \includegraphics[width=120mm]{clustering/Log_4Panel_Data_Vs_Random_bin6_NFalse_Num10000.png}
+\caption{Angular correlation function for various fidelity cuts. The bins increase logarithmically from 8.39 arcsecs to  The red lines are from fitting $\omega(\theta) = A\theta^{-0.8} $ to all of the bins. The green dashed line is from fitting that same equation only to bins that had a positive value. As the fidelity goes up, the $A$ value mostly increases as well, indicating stronger clustering. The few line candidates means that the results are quite noisy, and are sensitive to the bins chosen.}
 \label{fig:Angular_correlation}
 \end{figure}
 
-Besides the different fidelity cuts, different binnings also are included to study their effects on the final $r_0$ results. The results seem to be very dependent on the binning. While the values for the only positively fitted bins does not change dramatically as the binning changes, the number of bins does make a different whether there are enough 
+Besides the different fidelity cuts, different binnings also are included to study their effects on the final $r_0$ results. The results seem to be very dependent on the binning. While the values for the only positively fitted bins does not change dramatically as the binning changes, the number of bins does make a different whether there are enough positively valued bins for a positive $A$ value.
 
-\begin{figure}[tbp]
-\centering \includegraphics[width=120mm]{Fidelity/Log_4Panel_Data_Vs_Random_bin10_NFalse_Num10000.png}
-\caption{Angular correlation function for various binnings.}
+\begin{figure}[!tbp]
+\centering \includegraphics[width=90mm]{clustering/Data_vs_Random_10000_bin6_sn0_6_NFalse.png}
+\caption{Angular correlation function for 6 bins for the chosen fidelity cut of 0.6. Red is the fit $\omega(\theta) = A\theta^{-0.8}$ to all the bins, while the green line is the fit to only the positive bins. }
 \label{fig:Angular_binnings}
 \end{figure}
 
-As should be expected, as the fidelity cut goes up, meaning a larger portion of the CO lines remaining are true sources, the clustering value becomes larger as well. Once the fidelity drops below 0.5, such that the majority of the lines should be false positives, the clustering values drop to be consistent with 0. The clustering values for a variety of fidelity cuts are shown in Table \ref{table:Clsutering}
+\begin{figure}[!tbp]
+\centering \includegraphics[width=90mm]{clustering/Data_vs_Random_10000_bin5_sn0_6_NFalse.png}
+\caption{Angular correlation function for 5 bins  for fidelity $>$ 0.6.}
+\label{fig:Angular_bin_5}
+\end{figure}
+
+\begin{figure}[!tbp]
+\centering \includegraphics[width=90mm]{clustering/Data_vs_Random_10000_bin8_sn0_6_NFalse.png}
+\caption{Angular correlation function for 8 bins for fidelity $>$ 0.6.}
+\label{fig:Angular_bin_8}
+\end{figure}
+
+As should be expected, as the fidelity cut goes up, meaning a larger portion of the CO lines remaining are true sources, the clustering value becomes larger as well. Once the fidelity drops below 0.5, such that the majority of the lines should be false positives, the clustering values drop to be consistent with 0. The clustering values for a variety of fidelity cuts are shown in Table \ref{table:Clustering}
 
 [INCLUDE CLUSTERING TABLE HERE WITH RESULTS, A, r0, errors on both, number of sources used in each] \label{table:Clustering}
 
@@ -111,9 +112,5 @@ The clustering results do show that there is a larger $r_0$ as the fidelity cut 
 
 In comparison to other clustering measurements, \cite{hickox2011clustering} found an $r_0$ for quasers to be between 5.5 and 
 
-\cite{hickox2011clustering} showed that for SMG galaxies, around a redshift of 2, the autocorrelation length $r_0 \approx 6 h^{-1} Mpc$. 
-
-[INCLUDE DISCUSSION OF CLUSTERING OF OTHER GALAXY TYPES, HOW ODDLY HIGH THIS IS]
-
-[WHY THE HIGH FIDELITY ONES MIGHT BE SO CLUSTERED AND BRIGHT?]
+\cite{hickox2011clustering} showed that for SMG galaxies, around a redshift of 2, the autocorrelation length $r_0 \approx 6 h^{-1} Mpc$. For the 35 sources used here, a slightly higher, but similar $r_0$ has been found. 
 

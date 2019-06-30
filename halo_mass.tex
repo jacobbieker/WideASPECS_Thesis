@@ -1,0 +1,9 @@
+\subsection{Halo Mass Calculation}
+
+From the $r_0$ and $\gamma$ values obtained from the angular autocorrelation, an estimate of the clustering bias and halo mass of CO emitters can be determined.
+
+\cite{hickox2011clustering} used the HALOFIT code of Smith et al. 2003, to determine the non-linear power spectrum $\Delta_{NL}^2(k,z)$ of dark matter, assuming the cosmology and the slope of the initial fluctuation power spectrum $\Gamma = \Omega_mh = 0.21$. The Fourier transform of the nonlinear-dimensionless power spectrum gives the real-sapce correlation function $\Eta(r)$, which is then integrated to $\pi = 100 h^{-1} Mpc$ following Equation [INSERT] to obtain the dark matter projected correlation function $\omega^{DM}_p(R,z)$.
+
+To obtain $\omega(\theta)$ for the dark matter, Limber's equation is used to project the power spectrum into the angular correlation. Specifically a Monte Carlo integration of Equation (A6) in Myers et al. 2007 is used to obtain $\omega(\theta)$ for dark matter. For each angular correlation analysis, we compute the average ration between the best-fit power law model and the dark matter $\omega(\theta)$ on scales from 8 arcseconds to 50 arcminutes, where $\omega(\theta$ is dominated by the two-halo term. This ratio gives us $b^2_{CO}$ for the CO autocorrelations. 
+
+Finally, using $b^2_{CO}$ to estimate the charactersitic mass of the dark matter halos hosting each subset of galaxies. Sheth et al. 2001 derived a relation betwwen dark-matter halo mass and large-scale bias that agrees well with the results of comsological simulations. We use Eqn. (8) of Sheth et al. 2001 to convert $b_{C)}$ and $M_{halo}$, we obtain esimtaes for $M_{halo}$. 
