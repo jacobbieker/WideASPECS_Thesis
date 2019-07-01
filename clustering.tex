@@ -4,11 +4,11 @@ Wide ASPECS' well-defined, large cosmic volume allows for some of the first dire
 
 \section{Previous Work}
 
-Previous work on clustering has been looked at different populations of galaxies. \cite{hickox2011clustering} looked at the clustering of quasars and obscured quasars. \cite{10.1111/j.1365-2966.2011.20303.x} looks at the clustering in SMGs and compares their clustering to clustering found for other sets of astronomical objects. 
+Previous work on clustering has been looked at different populations of galaxies. \cite{hickox2011clustering} looked at the clustering of quasars and obscured quasars. \cite{10.1111/j.1365-2966.2011.20303.x} looks at the clustering in SMGs and compares their clustering to clustering found for other sets of astronomical objects, as can be seen in Fig. \ref{fig:Hickox_compare}. \cite{hickox2011clustering} found, in the Bo\"otes field, an $r_0$ for unobscured quasars to be $5.6 \pm 0.8$, and for obscured quasars $6.0 \pm 1.0 $. In \cite{10.1111/j.1365-2966.2011.20303.x}, SMGs in the Extended Chandra Deep Field South were found to have a $r_0$ of $7.7_{-2.3}^{+1.8}$.
 
 \begin{figure}[!htb]
 \centering \includegraphics[width=87mm]{clustering/Hickox2012_Compare.png}
-\caption{$r_0$ values for a variety of celestial objects as a function of redshift. Figure adapted from \cite{10.1111/j.1365-2966.2011.20303.x}.}
+\caption{$r_0$ values for a variety of celestial objects as a function of redshift. The grey dotted lines show the evolution of $r_0$ for dark matter haloes of different masses. Figure adapted from \cite{10.1111/j.1365-2966.2011.20303.x}.}
 \label{fig:Hickox_compare}
 \end{figure}
 
@@ -33,7 +33,7 @@ $$ \gamma = \beta + 1 $$ and $$ A = H_{\gamma}\frac{\int_{0}^{\inf} (dN_1/dz)(dN
 where $H_{\gamma} = \Gamma(0.5)\Gamma(0.5[\gamma -1])\Gamma(0.5\gamma)$, with $\Gamma$ being the gamma function, $\chi$ the radial comoving distance, $dN_{1,2}/dz$ are the redshift distributions of the samples, where in the case of autocorrelation are equal to each other, and $E_z = H_z/c = dz/d\chi$ \cite{hickox2011clustering}. The Hubble parameter $H_z$ can be found from
 $$H_z^2 = H_0^2[\Omega_m(1+z)^3 + \Omega_{\lambda}]$$ \cite{hickox2011clustering}.
 
-For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 sources, shown in Fig. \ref{fig:Clustering_points}. Two catalogs of random points were created, of 20000 points each, and their angular correlation computed to show that it is consistent with zero, shown in Fig.\ref{fig:random_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z = 1.5 to 3.5, as this is the range where most of the CO candidates seem to lie. To calculate $dN_{1,2}/dz$, the redshift distribution of the CO lines was fitted with a Gaussian, and the integral was taken over the Gaussian fit. The angular correlation function was computed over the range of 8.39 to 516.77 arcseconds, using logarithmically spaced bins. 
+For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 sources, shown in Fig. \ref{fig:Clustering_points}. Two catalogs of random points were created, of 20000 points each, and their angular correlation computed to show that it is consistent with zero, shown in Fig.\ref{fig:random_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z = 1.5 to 3.5, as this is the range where most of the CO candidates seem to lie. To calculate $dN_{1,2}/dz$, the redshift distribution of the CO lines was fitted with a Gaussian, and the integral was taken over the Gaussian fit. The angular correlation function was computed over the range of 8.39 to 582.10 arcseconds, using logarithmically spaced bins. 
 
 % Random points: 582.10 arcseconds, DD points, 516 arcseconds
 
@@ -44,22 +44,22 @@ For this analysis, all CO line candidates above the 0.6 fidelity threshold were 
 \end{figure}
 
 \begin{figure}[tbp]
-\centering \includegraphics[width=60mm]{clustering/Log_Random_vs_Random_15000NoParenFlip_bin10.png}
+\centering \includegraphics[width=100mm]{clustering/Log_Random_vs_Random_15000NoParenFlip_bin10.png}
 \caption{Angular correlation two sets of random points used in this analysis, showing that the angular correlation is consistent with zero, as would be expected for uniformly distributed points.}
 \label{fig:random_points}
 \end{figure}
 
 \section{Results}
 
-As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well. The change is most significant when only fitting the positive points.  When converted to $r_0$, the fidelity cuts result in $r_0$ values of 23 +- 5 for fidelity $>$ 0.7, 20 +- 2 for fidelity $>$ 0.6, 8 +- 1.5 for fidelity $>$ 0.5, and no $r_0$ for fidelity > 0.4, as the $A$ value is consistent with 0. 
+As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well.  When converted to $r_0$, the fidelity cuts result in $r_0$ values of $7.89_{-7.89}^{+5.83}$ for fidelity $>$ 0.7, $7.22_{-0.9}^{+0.83}$ for fidelity $>$ 0.6, $0.0_{-0.0}^{+4.03}$ for fidelity $>$ 0.5, and $r_0 = 0.0_{-0.0}^{+0.0}$ for fidelity $>$ 0.4, as the $A$ value is always negative. 
 
 \begin{figure}[tbp]
-\centering \includegraphics[width=120mm]{Log_4Panel_Data_Vs_Random_bin8_NFalse_Num10000.png}
-\caption{Angular correlation function for various fidelity cuts. The bins increase logarithmically from 8.39 arcsecs to 516.77 arcseconds. The red lines are from fitting $\omega(\theta) = A\theta^{-0.8} $ to all of the bins. The green dashed line is from fitting that same equation only to bins that had a positive value. As the fidelity goes up, the $A$ value increases as well, indicating stronger clustering. The few line candidates means that the results are quite noisy, and are sensitive to the bins chosen.}
+\centering \includegraphics[width=120mm]{Log_4Panel_Data_Vs_Random_bin6_NFalse_Num10000.png}
+\caption{Angular correlation function for various fidelity cuts. The bins increase logarithmically from 8.39 arcsecs to 582.10 arcseconds. The red lines are from fitting $\omega(\theta) = A\theta^{-0.8} $ to all of the bins. The green dashed line is from fitting that same equation only to bins that had a positive value. As the fidelity goes up, the $A$ value increases as well, indicating stronger clustering. The few line candidates means that the results are quite noisy, and are sensitive to the bins chosen.}
 \label{fig:Angular_correlation}
 \end{figure}
 
-Besides the different fidelity cuts, different binnings also are included to study their effects on the final $r_0$ results. The results seem to be very dependent on the binning. While the values for the only positively fitted bins does not change dramatically as the binning changes, the number of bins does make a large difference in the final $A$, and therefore $r_0$ values, as can be seen in Figures \ref{fig:Angular_bin_10} and \ref{fig:Angular_bin_8}.
+Besides the different fidelity cuts, different binnings also are included to study their effects on the final $r_0$ results. The results seem to be very dependent on the binning. While the values for the only positively fitted bins does not change dramatically as the binning changes, the number of bins does make a large difference in the final $A$, and therefore $r_0$ values, as can be seen in Figures \ref{fig:Angular_bin_8} and \ref{fig:Angular_bin_5} in comparison to Fig. \ref{fig:Angular_binnings}.
 
 \begin{figure}[!tbp]
 \centering \includegraphics[width=90mm]{Data_vs_Random_10000_bin6_sn0_6_NFalse.png}
@@ -68,24 +68,20 @@ Besides the different fidelity cuts, different binnings also are included to stu
 \end{figure}
 
 \begin{figure}[!tbp]
-\centering \includegraphics[width=90mm]{Data_vs_Random_10000_bin10_sn0_6_NFalse.png}
-\caption{Angular correlation function for 10 bins  for fidelity $>$ 0.6.}
-\label{fig:Angular_bin_10}
-\end{figure}
-
-\begin{figure}[!tbp]
 \centering \includegraphics[width=90mm]{Data_vs_Random_10000_bin8_sn0_6_NFalse.png}
-\caption{Angular correlation function for 8 bins for fidelity $>$ 0.6.}
+\caption{Angular correlation function for 8 bins  for fidelity $>$ 0.6. In this case, an increase in the number of bins decreases the $r_0$ value, although it is still consistent with the original $r_0$ value.}
 \label{fig:Angular_bin_8}
 \end{figure}
 
-As should be expected, as the fidelity cut goes up, meaning a larger portion of the CO lines remaining are true sources, the clustering value becomes larger as well. Once the fidelity drops below 0.5, such that the majority of the lines should be false positives, the clustering values drop to be consistent with 0.
+\begin{figure}[!tbp]
+\centering \includegraphics[width=90mm]{Data_vs_Random_10000_bin5_sn0_6_NFalse.png}
+\caption{Angular correlation function for 5 bins for fidelity $>$ 0.6. In this case, decreasing the number of bins also decreases the $r_0$ value, which are not consistent with the $r_0$ found originally.}
+\label{fig:Angular_bin_5}
+\end{figure}
 
 \section{Discussion}
 
-The clustering results do show that there is a larger $r_0$ as the fidelity cut becomes higher, suggesting that there are real sources in the sample. On the other hand, the clustering measurement is still very noisy and future work will be required to get a better final clustering measurement. 
+The clustering results do show that there is a larger $r_0$ as the fidelity cut becomes higher, suggesting that there are real sources in the sample. On the other hand, the clustering measurement is still very noisy and future work will be required to get a better final clustering measurement. The current measurement for $r_0$ seems to depend greatly on the number of bins chosen. 
 
-In comparison to other clustering measurements, \cite{hickox2011clustering} found an $r_0$ for quasers to be between 5.5 and 
-
-\cite{hickox2011clustering} showed that for SMG galaxies, around a redshift of 2, the autocorrelation length $r_0 \approx 6 h^{-1} Mpc$. For the 35 sources used here, a slightly higher, but similar $r_0$ has been found. 
+In comparison to previous results, the $r_0$ of the CO emitters here are quite similar to the values for the SMGs found in \cite{10.1111/j.1365-2966.2011.20303.x}.
 
