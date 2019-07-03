@@ -51,9 +51,14 @@ For this analysis, all CO line candidates above the 0.6 fidelity threshold were 
 
 \section{Results}
 
+% How are error bars computed on these points
+
+% Binning in what?
+
 As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well.  When converted to $r_0$, the fidelity cuts result in $r_0$ values of $7.89_{-7.89}^{+5.83}$ for fidelity $>$ 0.7, $7.22_{-0.9}^{+0.83}$ for fidelity $>$ 0.6, $0.0_{-0.0}^{+4.03}$ for fidelity $>$ 0.5, and $r_0 = 0.0_{-0.0}^{+0.0}$ for fidelity $>$ 0.4, as the $A$ value is always negative. 
 
 \begin{figure}[tbp]
+% Expand axis to show bottom of points, need to show fit for the red values
 \centering \includegraphics[width=120mm]{Log_4Panel_Data_Vs_Random_bin6_NFalse_Num10000.png}
 \caption{Angular correlation function for various fidelity cuts. The bins increase logarithmically from 8.39 arcsecs to 582.10 arcseconds. The red lines are from fitting $\omega(\theta) = A\theta^{-0.8} $ to all of the bins. The green dashed line is from fitting that same equation only to bins that had a positive value. As the fidelity goes up, the $A$ value increases as well, indicating stronger clustering. The few line candidates means that the results are quite noisy, and are sensitive to the bins chosen.}
 \label{fig:Angular_correlation}
@@ -62,6 +67,7 @@ As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases,
 Besides the different fidelity cuts, different binnings also are included to study their effects on the final $r_0$ results. The results seem to be very dependent on the binning. While the values for the only positively fitted bins does not change dramatically as the binning changes, the number of bins does make a large difference in the final $A$, and therefore $r_0$ values, as can be seen in Figures \ref{fig:Angular_bin_8} and \ref{fig:Angular_bin_5} in comparison to Fig. \ref{fig:Angular_binnings}.
 
 \begin{figure}[!tbp]
+% xplain how bins can be negative and what this means for fitting only positive bins
 \centering \includegraphics[width=90mm]{Data_vs_Random_10000_bin6_sn0_6_NFalse.png}
 \caption{Angular correlation function for 6 bins for the chosen fidelity cut of 0.6. Red is the fit $\omega(\theta) = A\theta^{-0.8}$ to all the bins, while the green line is the fit to only the positive bins. This is the final binning used for the analysis. }
 \label{fig:Angular_binnings}

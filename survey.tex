@@ -24,14 +24,14 @@ The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Wide_ASPECS_Coverage.png}
-\caption{Spatial coverage of ASPECS Pilot (Green), Large Program (White), and Wide (Yellow) showing each of the individual pointings. The area covered by the Pilot is $~$1 arcmin$^2$, by the Large Program $~$5 arcmin$^2$, and by Wide ASPECS, $~$52.5 armin$^2$. The cyan box is the 50\% sensitivity extent of the survey. This region covers the area of the deepest CANDELS observations, where a wealth of ancillary data has been collected in over 30 wavelengths [CITE SURVEY DESCRIPTION].}
+\caption{Spatial coverage of ASPECS Pilot (Green), Large Program (White), and Wide (Yellow) showing each of the individual pointings. The area covered by the Pilot is $~$1 arcmin$^2$, by the Large Program $~$5 arcmin$^2$, and by Wide ASPECS, $~$52.5 armin$^2$. The cyan box is the 50\% sensitivity extent of the survey. This region covers the area of the deepest CANDELS observations, where a wealth of ancillary data has been collected in over 30 wavelengths Figure adapted from Decarlie et al. (in prep.)}
 \label{fig:ASPECS_Coverage}
 \end{figure}
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=120mm]{Wide_ASPECS_Freq.png}
-\caption{Spectral and redshift coverage of Wide ASPECS in relation to the redshift distribution of galaxies within the survey field. Wide ASPECS is designed to detect CO line transitions at z$<$0.4, 1.1 $<$ z $<$ 1.8, and 2.2 $<$ z $<$ 4.4. [CITE SURVEY DESCRIPTION]}
+\caption{Spectral and redshift coverage of Wide ASPECS in relation to the redshift distribution of galaxies within the survey field. Wide ASPECS is designed to detect CO line transitions at z$<$0.4, 1.1 $<$ z $<$ 1.8, and 2.2 $<$ z $<$ 4.4. Figure adapted from Decarlie et al. (in prep.)}
 \label{fig:ASPECS_Freq}
 \end{figure}
 
@@ -47,7 +47,7 @@ Transition & $z_{low}$ & $z_{high}$ & Freq. (GHz) & Volume (Mpc$^3$) \\
 \end{tabular}
 \end{table}
 
-\subsection{Ancillary Data}
+\subsection{Ancillary Data}\label{sec:ancillary}
 
 In addition to each of those datacubes, there is a lot of ancillary data available as the GOODS-South region is one of the most studied regions of the sky. This data has been collected through combining multiple other catalogs, first described in \cite{walter2016alma} and expanded with new data in \cite{decarli2019alma}, comprising over 30 wavelength bands for over 63000 galaxies in and around the footprint of Wide ASPECS. 26251 galaxies lie within the footprint of Wide ASPECS, of which 2283 have spectroscopic redshifts, and 23968 have photometric redshifts. 
 
@@ -99,16 +99,17 @@ To get a sense of how many of these line candidates are false positives, the fid
 
 $$ fideltiy(S/N) = 1 - \frac{N_{neg}(S/N)}{N_{pos}(S/N)} $$ where $N_{pos}(S/N)$ and $N_{neg}(S/N)$ are the number of positive and negative line candidates detected at that S/N and for a given line width\cite{gonzalez2019alma}.
 
-The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally higher for wider line widths as more independent resolution elements are included \cite{decarli2019alma}. For this report, there were 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 at $>$ 0.6, 52 at $>$ 0.5, and 69 at $>$ 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates. A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
+The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally higher for wider line widths as more independent resolution elements are included \cite{decarli2019alma}. This means that the S/N cut depends on the width of the line. For example, with a line width of 3 channels, a CO line candidate has to have a S/N $>$ 6.28 to be included in the sample, while for a line candidate with a width of 19 channels, the S/N cutoff is $>$ 6.00. For this report, there were 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 at $>$ 0.6, 52 at $>$ 0.5, and 69 at $>$ 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates. A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
 
 \begin{figure}[!htbp]
 \centering \includegraphics[width=120mm]{Fidelity_map.png}
-\caption{Fidelity vs S/N for the different widths used by FindClump. The red dotted line shows the fidelity = 0.6 cutoff used for the analysis in this report. There are a total of 35 line candidates above that cutoff.}
+\caption{Fidelity vs S/N for the different widths[Define] used by FindClump. The red dotted line shows the fidelity = 0.6 cutoff used for the analysis in this report. There are a total of 35 line candidates above that cutoff.}
 \label{fig:Fid_map}
 \end{figure}
 
 \begin{table}
 \centering
+% its a little confusing how the S/N varies with channel width. May want to explain this in the text. 
 \caption{Number of sources, and S/N cutoffs, per channel width for the adopted fidelity cut of $>$ 0.6.}\label{table:Fid_NumTable}
 \begin{tabular}{ccc}
 Channels & S/N & N. Sources \\
@@ -138,8 +139,9 @@ If there is not a match to a galaxy in the catalog, or if the galaxy's redshift 
 The mass versus star formation rate is shown for the general galactic population and the ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Whitaker et al. 2014 \cite{Whitaker_2014} main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. 
 
 \begin{figure}[!htbp]
+% What sample is this? Explain where these 3 matched sources come from when you were talking about 35 above and clarify in the legend that they are all ASPECS matches
 \centering \includegraphics[width=120mm]{Survey/No_Cut_Mstar_vs_SFR_all_closest_sep_1_0_sn_fid_60.png}
-\caption{Mass vs Star Formation Rate for the matched galaxies. Red points are matched galaxies with spectroscopic redshifts, while blue points are matched galaxies with photometric redshifts. Grey points are all the galaxies in the catalog. The green lines are the galaxy main sequence fits from \cite{schreiber2015herschel}. The yellow line is from \cite{Whitaker_2014}'s galactic main sequence fit, where the solid line means it is computed within the range mentioned in the paper, while dotted means that the values are extrapolated from the paper to higher, or lower, redshifts. Two of the three matches are on the upper edge of the main sequence, while the third match has a much lower mass and star formation rate than expected for this survey. Error bars are the 16/84th percentile outputs from MAGPHYS.}
+\caption{Mass vs Star Formation Rate for galaxies that the fidelity $>$ 0.6 CO line sample matched to. Red points are matched galaxies with spectroscopic redshifts, while blue points are matched galaxies with photometric redshifts. Grey points are all the galaxies in the compiled catalog from \ref{sec:ancillary}. The green lines are the galaxy main sequence fits from \cite{schreiber2015herschel}. The yellow line is from \cite{Whitaker_2014}'s galactic main sequence fit, where the solid line means it is computed within the range mentioned in the paper, while dotted means that the values are extrapolated from the paper to higher, or lower, redshifts. Two of the three matches are on the upper edge of the main sequence, while the third match has a much lower mass and star formation rate than expected for this survey. Error bars are the 16/84th percentile outputs from MAGPHYS.}
 \label{fig:Cross_match}
 \end{figure}
 
@@ -147,11 +149,12 @@ The mass versus star formation rate is shown for the general galactic population
 
 The final catalog of CO line emitters is shown in Table \ref{table:Catalog}. 3 lines match to galaxies in the catalog. Of those three matches, only ID.1's match has a spectroscopic redshift. The redshift distribution of the whole catalog is shown in Fig. \ref{fig:cat_red}, and some of the physical properties of the three matched lines is shown in Table. \ref{table:matched_gal}. 
 
-\begin{table}
+\begin{table}[!h]
 \centering
-\caption{RA and DEC are in the J2000 system. $v_{CO}$ is the observed frequency of the source in GHz. CO Tran. is the estimated CO transition. If available, $\delta z$ is the redshift difference between the source and the matched galaxy. S/N is the signal-to-noise of the source. Match tells whether there is a match to a galaxy in the catalog. Only ID.1 has a matched galaxy with a spectroscopic redshift.}
+% Add table footnotes to explain each column, particularly CO Trans
+\caption{The 35 CO line candidates from the fidelity $>$ 0.6 cut.}
 \begin{tabular}{ccccccccc}
-ID & RA & DEC & $v_{CO}$ & CO Tran. & $z_{CO}$ & $\delta z$ & S/N & Match? \\
+ID\tablefootnote{Assigned ID for the candidate} & RA\tablefootnote{J2000 system (degrees)} & DEC\tablefootnote{J2000 system (degrees)} & $v_{CO}$\tablefootnote{Observed frequency of the source in GHz.} & CO Tran.\tablefootnote{Estimated CO transition for the line candidate. Goes from $J_{up}$ to $J_{lower}$, e.g. 3-2 is the CO(3-2) transition.} & $z_{CO}$\tablefootnote{Redshift as determined by the CO transition.} & $\delta z$\tablefootnote{Difference in redshift between the CO line transition and the galaxy the line is matched to, if there is one.} & S/N\tablefootnote{Signal-to-noise of the CO line.}& Match?\tablefootnote{If there is a match between the CO line and the galaxy catalog.} \\
 \hline
 ID.1 & 53.14886 & -27.82118 & 96.701 & 3-2 & 2.576 & 0.006 & 7.31 & Y \\
 ID.2 & 53.19145 & -27.76985 & 91.657 & 2-1 & 1.515 & -- & 6.82 & N \\
@@ -192,12 +195,16 @@ ID.35 & 53.14828 & -27.84444 & 87.302 & 3-2 & 2.961 & -- & 6.1 & N \\
 \end{table}\label{table:Catalog}
 
 \begin{figure}[tbp]
+% Need more details. What defines the sample of galaxies shown here? Those above S/N>XX with counterpart matches? Are they photoz/specz?
+% Need to add the photo and spec z ones as their own thing
 \centering \includegraphics[width=120mm]{Survey/redshift_catalog.png}
-\caption{Redshift distribution for the CO redshifts.}
+\caption{Redshift distribution for all CO line candidate redshifts with a fidelity above 0.6, shown in Table \ref{table:Catalog}. These are the redshifts of the CO lines.}
 \label{fig:cat_red}
 \end{figure}
 
 \begin{table}
+% Do these really have 0.0 error on SFR and Mstar?
+% TODO: Update the lower limit from MAGPHYS for these.
 \caption{This shows some of the physical parameters for the 3 matched line candidates. Sep is the separation in arcseconds between the CO line and the galaxy. $z_{catalog}$ is the master catalog's redshift for the galaxy.}
 \begin{tabular}{ccccccccccccccc}
 ID & Trans. & $z_{CO}$ & $z_{catalog}$ & $\delta z$ & Spec & S/N & Sep & Log(SFR) & Log(M*) \\
@@ -215,3 +222,4 @@ In addition, the line candidates are shown overlaid over other wavelengths in th
 There are significantly less matches than was expected. Only $~$9\% percent of the lines match to galaxies. Of those that do, only two matched to the kind of galaxies that were expected, which are the most massive, most star forming galaxies in the field. 
 
 Possible explanations include issues with MAGPHYS' fitting of the galaxies in the catalog, as many of the galaxies seem poorly constrained. 
+% This is just one explanation. What if the galaxies are really dusty and so they just don't show up at shorter wavelengths?
