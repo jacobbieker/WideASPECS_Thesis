@@ -35,6 +35,8 @@ $$H_z^2 = H_0^2[\Omega_m(1+z)^3 + \Omega_{\lambda}]$$ \cite{hickox2011clustering
 
 For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 sources, shown in Fig. \ref{fig:Clustering_points}. Two catalogs of random points were created, of 20000 points each, and their angular correlation computed to show that it is consistent with zero, shown in Fig.\ref{fig:random_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z = 1.5 to 3.5, as this is the range where most of the CO candidates seem to lie. To calculate $dN_{1,2}/dz$, the redshift distribution of the CO lines was fitted with a Gaussian, and the integral was taken over the Gaussian fit. The angular correlation function was computed over the range of 8.39 to 582.10 arcseconds, using logarithmically spaced bins. 
 
+To calculate the errors on $\omega(\theta)$ the method from \cite{1986ApJ...303..336G} is used. Because there are not many line candidates in the catalog, the small statistics means Possion errors are used. Using the binned $\omega(\theta)$ values, the error for each bin is calculated as follows. If the number of values in a given bin is less than 30, then the upper error is taken from  the 1$\sigma$ column in Table 1 in \cite{1986ApJ...303..336G}, while the lower errors were taken from the 1$\sigma$ column of Table 2 in \cite{1986ApJ...303..336G}. If the number of values in a given bin was above 30, then the error was calculated as $ \frac{1 + \omega(\theta)}{\sqrt{N_{gal}(\theta)}}$, where $N_{gal}(\theta)$ is the number of line candidate pairs in the $\theta$ arcsecond bin from each other. 
+
 % Random points: 582.10 arcseconds, DD points, 516 arcseconds
 
 \begin{figure}[tbp]
@@ -44,6 +46,7 @@ For this analysis, all CO line candidates above the 0.6 fidelity threshold were 
 \end{figure}
 
 \begin{figure}[tbp]
+% Use symlog to plot negative points, rescaling it
 \centering \includegraphics[width=100mm]{clustering/Log_Random_vs_Random_15000NoParenFlip_bin10.png}
 \caption{Angular correlation two sets of random points used in this analysis, showing that the angular correlation is consistent with zero, as would be expected for uniformly distributed points.}
 \label{fig:random_points}
@@ -51,42 +54,41 @@ For this analysis, all CO line candidates above the 0.6 fidelity threshold were 
 
 \section{Results}
 
-% How are error bars computed on these points
-
-% Binning in what?
-
-As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well.  When converted to $r_0$, the fidelity cuts result in $r_0$ values of $7.89_{-7.89}^{+5.83}$ for fidelity $>$ 0.7, $7.22_{-0.9}^{+0.83}$ for fidelity $>$ 0.6, $0.0_{-0.0}^{+4.03}$ for fidelity $>$ 0.5, and $r_0 = 0.0_{-0.0}^{+0.0}$ for fidelity $>$ 0.4, as the $A$ value is always negative. 
+As can be seen in Fig. \ref{fig:Angular_correlation}, as the fidelity increases, $A$ increases as well. When converted to $r_0$, the fidelity cuts result in $r_0$ values of $7.89_{-7.89}^{+5.83}$ for fidelity $>$ 0.7, $7.22_{-0.9}^{+0.83}$ for fidelity $>$ 0.6, $0.0_{-0.0}^{+4.03}$ for fidelity $>$ 0.5, and $r_0 = 0.0_{-0.0}^{+0.0}$ for fidelity $>$ 0.4, as the $A$ value is always negative. 
 
 \begin{figure}[tbp]
 % Expand axis to show bottom of points, need to show fit for the red values
-\centering \includegraphics[width=120mm]{Log_4Panel_Data_Vs_Random_bin6_NFalse_Num10000.png}
-\caption{Angular correlation function for various fidelity cuts. The bins increase logarithmically from 8.39 arcsecs to 582.10 arcseconds. The red lines are from fitting $\omega(\theta) = A\theta^{-0.8} $ to all of the bins. The green dashed line is from fitting that same equation only to bins that had a positive value. As the fidelity goes up, the $A$ value increases as well, indicating stronger clustering. The few line candidates means that the results are quite noisy, and are sensitive to the bins chosen.}
+% Use Symlog to plot it then, will keep negative values and such
+\centering \includegraphics[width=120mm]{clustering_two/Log_4Panel_Data_Vs_Random_bin6_NFalse_Num10000.png}
+\caption{Angular correlation function for various fidelity cuts. The bins increase logarithmically from 8.39 arcsecs to 582.10 arcseconds. The red lines are from fitting $\omega(\theta) = A\theta^{-0.8} $ to all of the bins. The green dashed line is from fitting that same equation only to bins that had a positive value. The yellow dashed line is the fit from the fidelity $>$ 0.4 catalog. As the fidelity goes up, the $A$ value increases as well, indicating stronger clustering. The few line candidates means that the results are quite noisy, and are sensitive to the bins chosen.}
 \label{fig:Angular_correlation}
 \end{figure}
 
-Besides the different fidelity cuts, different binnings also are included to study their effects on the final $r_0$ results. The results seem to be very dependent on the binning. While the values for the only positively fitted bins does not change dramatically as the binning changes, the number of bins does make a large difference in the final $A$, and therefore $r_0$ values, as can be seen in Figures \ref{fig:Angular_bin_8} and \ref{fig:Angular_bin_5} in comparison to Fig. \ref{fig:Angular_binnings}.
+Besides the different fidelity cuts, different distance binnings also are included to study their effects on the final $r_0$ results. The results seem to be very dependent on the binning. While the values for the only positively fitted bins does not change dramatically as the binning changes, the number of bins does make a large difference in the final $A$, and therefore $r_0$ values, as can be seen in Figures \ref{fig:Angular_bin_8} and \ref{fig:Angular_bin_5} in comparison to Fig. \ref{fig:Angular_binnings}.
 
 \begin{figure}[!tbp]
-% xplain how bins can be negative and what this means for fitting only positive bins
-\centering \includegraphics[width=90mm]{Data_vs_Random_10000_bin6_sn0_6_NFalse.png}
+% explain how bins can be negative and what this means for fitting only positive bins
+% Bins can be negative through.... 0, so not negative I guess? 
+\centering \includegraphics[width=90mm]{clustering_two/Data_vs_Random_10000_bin6_sn0_6_NFalse.png}
 \caption{Angular correlation function for 6 bins for the chosen fidelity cut of 0.6. Red is the fit $\omega(\theta) = A\theta^{-0.8}$ to all the bins, while the green line is the fit to only the positive bins. This is the final binning used for the analysis. }
 \label{fig:Angular_binnings}
 \end{figure}
 
 \begin{figure}[!tbp]
-\centering \includegraphics[width=90mm]{Data_vs_Random_10000_bin8_sn0_6_NFalse.png}
+\centering \includegraphics[width=90mm]{clustering_two/Data_vs_Random_10000_bin8_sn0_6_NFalse.png}
 \caption{Angular correlation function for 8 bins  for fidelity $>$ 0.6. In this case, an increase in the number of bins decreases the $r_0$ value, although it is still consistent with the original $r_0$ value.}
 \label{fig:Angular_bin_8}
 \end{figure}
 
 \begin{figure}[!tbp]
-\centering \includegraphics[width=90mm]{Data_vs_Random_10000_bin5_sn0_6_NFalse.png}
+\centering \includegraphics[width=90mm]{clustering_two/Data_vs_Random_10000_bin5_sn0_6_NFalse.png}
 \caption{Angular correlation function for 5 bins for fidelity $>$ 0.6. In this case, decreasing the number of bins also decreases the $r_0$ value, which are not consistent with the $r_0$ found originally.}
 \label{fig:Angular_bin_5}
 \end{figure}
 
 \section{Discussion}
 
+% Add more about the effects of binning, negative/0 values 
 The clustering results do show that there is a larger $r_0$ as the fidelity cut becomes higher, suggesting that there are real sources in the sample. On the other hand, the clustering measurement is still very noisy and future work will be required to get a better final clustering measurement. The current measurement for $r_0$ seems to depend greatly on the number of bins chosen. 
 
 In comparison to previous results, the $r_0$ of the CO emitters here are quite similar to the values for the SMGs found in \cite{10.1111/j.1365-2966.2011.20303.x}.
