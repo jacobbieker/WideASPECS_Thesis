@@ -1,10 +1,11 @@
-\chapter{Clustering}
+\chapter{Clustering of CO emitters}
 
-Wide ASPECS' well-defined, large cosmic volume allows for some of the first direct constraints on the clustering bias of CO emitters. This clustering bias can be then used to constrain the typical halo mass in which they reside \cite{10.1111/j.1365-2966.2011.20303.x}.
+% Remove this first part.
+Wide ASPECS' well-defined, large cosmic volume allows for some of the first direct constraints on the clustering of CO emitters.
 
-\section{Previous Work}
+Galaxies are not distributed entirely randomly in the universe. On the largest scales, the universe is isotropic and homogeneous, but on smaller scales, galaxies tend to cluster in space. One way to quantify how densely packed a population of galaxies is to compute the so-called two-point correlation function. This allows for the measuring of the mass of the dark matter halos in which these galaxies reside \cite{hickox2011clustering}. For a certain redshift, the more clustered a population of galaxies are, the more massive the halo that they are in.
 
-Previous work on clustering has been looked at different populations of galaxies. \cite{hickox2011clustering} looked at the clustering of quasars and obscured quasars. \cite{10.1111/j.1365-2966.2011.20303.x} looks at the clustering in SMGs and compares their clustering to clustering found for other sets of astronomical objects, as can be seen in Fig. \ref{fig:Hickox_compare}. \cite{hickox2011clustering} found, in the Bo\"otes field, an $r_0$ for unobscured quasars to be $5.6 \pm 0.8$, and for obscured quasars $6.0 \pm 1.0 $. In \cite{10.1111/j.1365-2966.2011.20303.x}, SMGs in the Extended Chandra Deep Field South were found to have a $r_0$ of $7.7_{-2.3}^{+1.8}$.
+The clustering of different populations of galaxies has been constrained by previous works, some of which is summarized in Fig. \ref{fig:Hickox_compare}, where the correlation length parameter, r0, which is a proxy for the amplitude of the clustering, is shown as a function of redshift for different populations. For example, \cite{hickox2011clustering} looked at the clustering of unobscured quasars and obscured quasars. \cite{10.1111/j.1365-2966.2011.20303.x} looks at the clustering in SMGs and compares their clustering to clustering found for other sets of astronomical objects, as can be seen in Fig. \ref{fig:Hickox_compare}. \cite{hickox2011clustering} found, in the Bo\"otes field, an $r_0$ for unobscured quasars to be $5.6 \pm 0.8$ at 0<z<1 and $r_0$ = [ADD], and for obscured quasars $6.0 \pm 1.0 $. In \cite{10.1111/j.1365-2966.2011.20303.x}, SMGs in the Extended Chandra Deep Field South were found to have a $r_0$ of $7.7_{-2.3}^{+1.8}$.
 
 \begin{figure}[!htb]
 \centering \includegraphics[width=87mm]{clustering/Hickox2012_Compare.png}
@@ -14,13 +15,26 @@ Previous work on clustering has been looked at different populations of galaxies
 
 \section{Method}
 
-\subsection{Angular Correlation Function}
+The clustering is computed through a two point correlation function. %The first step s to calculate the angular correlation function $ \omega(\theta)$. Once $ \omega(\theta)$ is computed, the second step is to obtain the two-point correlation function parameters of $r_0$ and $\gamma$.
 
-The clustering is computed through a two point correlation function. The first step s to calculate the angular correlation function $ \omega(\theta)$. Once $ \omega(\theta)$ is computed, the second step is to obtain the two-point correlation function parameters of $r_0$ and $\gamma$.
+The two-point correlation function, $ \xi(r)$ is the the probability of finding a galaxy at a separation $r$ from another randomly chosen galaxy in a volume $dV$ above Poisson, such that $$ dP = n(1 + \xi(r))dV $$, where $n$ is the mean space density of the galaxies in the universe\cite{hickox2011clustering}, and $\xi(r)$ is normally modeled as a power-law such that $\xi(r)$ = $(\frac{r}{r_0})^{-\gamma}$. In practice, the 3D separation $r$ between objects is hard to measure, then projected separations ($R$) or angular separations ($\theta$) are instead used. Here, we focus in the computation of the angular auto-correlation function $\omega(\theta)$. This quantity can be computed using the estimator from \cite{1993ApJ...412...64L} is used, where $$ \omega(\theta) = \frac{1}{RR}(DD-2DR + RR)$$, where $DD$, $DR$, and $RR$ are the number of data-data, data-random, and random-random galaxy pairs at a separation $\theta$, where each of the three collections is normalized to sum to 1 \cite{hickox2011clustering}. Here the 'data' catalog is represented by our actual CO emitter catalog, while the 'random' catalog is created by randomly distributing 20000 sources over the geometry of our survey, mimics exactly the same area where CO emitters were detected. The distribution of data and random sources are shown in Fig. \ref{fig:Clustering_points}.
 
-The two-point correlation function, $ \xi(r)$ is the the probability of finding a galaxy at a separation $r$ from another randomly chosen galaxy in a volume $dV$ above Poisson, such that $$ dP = n(1 + \xi(r))dV $$, where $n$ is the mean space density of the galaxies in the sample\cite{hickox2011clustering}. 
+%I think you are mixing a bit the things here. All the things about the fitting and getting r0 and gamma, z distribution, should be explained after to show all your clustering measurements.
 
-To calculate the angular correlation function, the estimator from \cite{1993ApJ...412...64L} is used, where $$ \omega(\theta) = \frac{1}{RR}(DD-2DR + RR)$$, where $DD$, $DR$, and $RR$ are the number of data-data, data-random, and random-random galaxy pairs at a separation $\theta$, where each of the three collections is normalized to sum to 1 \cite{hickox2011clustering}.
+%Then here
+%1. first put that you checked your code using 2 random catalogs as you wrote below. And show the figure.
+
+%2. put that you use your CO catalog (with fidelity >0.6) and the random catalog, and show your figure 3.5. Mention that you cut in z (put the redshift range used), Mention that you measured this in logaritmically spaced bins and put those numbers, and that you defined your lower bin as the minimum distance between objects in the catalog (although in your plot it looks like you are not doing that).
+
+%3. Explain how the error bars were computed.
+
+%4. Then put what you wrote: Once the angular correlation function is found...angular correlations [7].
+%Explain that you fit for all, and then for only positive values.
+
+%5. Then put the section 3.2.2 until the part where you describe all the equations to compute r0 and gamma. Also here explain that you used the CO z distribution, and the gaussian fit to it. Then report the r0 and gamma values that you measured. And mention somewhere that you have low statistcs.
+
+%6. Then put a discussion section, and comment about if the r0 values that you got is higher or lower to other populations (as you can see in Fig. 3.1). Then say that you did the same procedure for other fidelity cuts to compare, and show your 4panel plot and comment about the fact that signal goes up with fidelity.
+
 
 Once the angular correlation function is found, a power-law model is fitted following $$\omega(\theta) = A\theta^{-\beta} $$ where $\beta$ = 0.8, a value used for many other galaxy angular correlations \cite{hickox2011clustering}.
 
@@ -33,9 +47,9 @@ $$ \gamma = \beta + 1 $$ and $$ A = H_{\gamma}\frac{\int_{0}^{\inf} (dN_1/dz)(dN
 where $H_{\gamma} = \Gamma(0.5)\Gamma(0.5[\gamma -1])\Gamma(0.5\gamma)$, with $\Gamma$ being the gamma function, $\chi$ the radial comoving distance, $dN_{1,2}/dz$ are the redshift distributions of the samples, where in the case of autocorrelation are equal to each other, and $E_z = H_z/c = dz/d\chi$ \cite{hickox2011clustering}. The Hubble parameter $H_z$ can be found from
 $$H_z^2 = H_0^2[\Omega_m(1+z)^3 + \Omega_{\lambda}]$$ \cite{hickox2011clustering}.
 
-For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 sources, shown in Fig. \ref{fig:Clustering_points}. Two catalogs of random points were created, of 20000 points each, and their angular correlation computed to show that it is consistent with zero, shown in Fig.\ref{fig:random_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z = 1.5 to 3.5, as this is the range where most of the CO candidates seem to lie. To calculate $dN_{1,2}/dz$, the redshift distribution of the CO lines was fitted with a Gaussian, and the integral was taken over the Gaussian fit. The angular correlation function was computed over the range of 8.39 to 582.10 arcseconds, using logarithmically spaced bins. 
+For this analysis, all CO line candidates above the 0.6 fidelity threshold were used, resulting in 35 sources, shown in Fig. \ref{fig:Clustering_points}. In order to check our code for clustering computation, we created 2 additional random catalogs, of 20000 points each, and their angular correlation computed to show that it is consistent with zero, shown in Fig.\ref{fig:random_points}. As a comparison, the two point correlation function was also computed for other fidelity cuts. The redshift distribution was taken from the CO redshifts of the lines, and the calculations were calculated over the range z = 1.5 to 3.5, as this is the range where most of the CO candidates seem to lie. To calculate $dN_{1,2}/dz$, the redshift distribution of the CO lines was fitted with a Gaussian, and the integral was taken over the Gaussian fit. The angular correlation function was computed over the range of 8.39 to 582.10 arcseconds, using logarithmically spaced bins. 
 
-To calculate the errors on $\omega(\theta)$ the method from \cite{1986ApJ...303..336G} is used. Because there are not many line candidates in the catalog, the small statistics means Possion errors are used. Using the binned $\omega(\theta)$ values, the error for each bin is calculated as follows. If the number of values in a given bin is less than 30, then the upper error is taken from  the 1$\sigma$ column in Table 1 in \cite{1986ApJ...303..336G}, while the lower errors were taken from the 1$\sigma$ column of Table 2 in \cite{1986ApJ...303..336G}. If the number of values in a given bin was above 30, then the error was calculated as $ \frac{1 + \omega(\theta)}{\sqrt{N_{gal}(\theta)}}$, where $N_{gal}(\theta)$ is the number of line candidate pairs in the $\theta$ arcsecond bin from each other. 
+To calculate the errors on $\omega(\theta)$ the method from \cite{1986ApJ...303..336G} is used. The error bars are computed using possion errors for small statistics \cite{1986ApJ...303..336G}.
 
 % Random points: 582.10 arcseconds, DD points, 516 arcseconds
 
@@ -48,7 +62,7 @@ To calculate the errors on $\omega(\theta)$ the method from \cite{1986ApJ...303.
 \begin{figure}[tbp]
 % Use symlog to plot negative points, rescaling it
 \centering \includegraphics[width=100mm]{clustering/Log_Random_vs_Random_15000NoParenFlip_bin10.png}
-\caption{Angular correlation two sets of random points used in this analysis, showing that the angular correlation is consistent with zero, as would be expected for uniformly distributed points.}
+\caption{Angular correlation two sets of random points used in this analysis, showing that the angular correlation is consistent with zero, as would be expected for cross-correlating two sets of uniformly distributed points.}
 \label{fig:random_points}
 \end{figure}
 

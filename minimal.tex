@@ -30,12 +30,22 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
+%In general, I think the introduction is a bit messy, this is my suggestion:
 
-Gas is the building block of stars and galaxies, and molecular gas in the interstellar medium (ISM) is the fuel for star formation \cite{decarli2019alma}. This gas can inform us about the evolution of galaxies and large scale structure in the universe, especially as observations cover larger and larger volumes of space. Using radio and submm telescopes, such as the Atacama Large Millimeter/submillimeter Array (ALMA), this gas can be observed through looking for the transition lines of carbon monoxide (CO). In the Wide ALMA Spectroscopic Survey in the Hubble Ultra Deep Field (Wide ASPECS) survey, ALMA has been used to observe the largest volume of space yet for CO emissions, on the order of 550,000 cMpc. This enables the ability to look at these CO emitters in bulk for the first time.
+%I would start the introduction with what you wrote in 1.1 section (but I wouldn't use the title "creating galaxies", just write after the introduction title).
 
-This project is focused on using Wide ASPECS to estimate the properties of CO emitters, and to determine the spatial density of CO emitters. Building upon the success of the previous ASPECS Pilot and Large Program surveys \cite{walter2016alma, decarli2019alma}, this research also works to cross-match detected CO lines with galaxies present in the survey volume, and builds the basis for future work with this data on constraining the CO luminosity function, the cosmic density of molecular gas in galaxies $\rho(H_2)$, and the clustering bias of CO emitters.
+%Then I would add a section called soemthing like "Molecular gas in galaxies", and put there the first 4 lines of your current introduction (Gas is the building...volumes of space) and then continue with what you wrote in your current 1.2 section (but I would to avoid the first paragraph where you say that stars are easy to detect).
 
-\section{Creating Galaxies}
+%After that I would create a subsection called something like "Blind surveys of molecular gas" and put what you wrote in your section 2.1 (but not using the previous work title).
+
+%Finally I would add a sebsection called "This thesis" and I would put the second parragraph of your current intriduction (This project is focused on using ....CO emitters) as editted according to my comment (see below).
+
+%Then put the 2 last parragraph you wrote in section 1.4 (This report is organized...ASPECS).
+
+Gas is the building block of stars and galaxies, and molecular gas in the interstellar medium (ISM) is the fuel for star formation \cite{decarli2019alma}. This gas can inform us about the evolution of galaxies and large scale structure in the universe, especially as observations cover larger and larger volumes of space. %Using radio and submm telescopes, such as the Atacama Large Millimeter/submillimeter Array (ALMA), this gas can be observed through looking for the transition lines of carbon monoxide (CO). 
+
+This project is focused on using the Wide ALMA Spectroscopic Survey in the Hubble Ultra Deep Field (Wide ASPECS) survey, ALMA has been used to observe the largest volume of space yet for CO emissions, on the order of 550,000 cMpc. This enables the ability to look at these CO emitters in bulk for the first time. Building upon the success of the previous ASPECS Pilot and Large Program surveys \cite{walter2016alma, decarli2019alma}, this research also works to cross-match detected CO lines with galaxies present in the survey volume, and builds the basis for future work with this data on constraining the CO luminosity function, the cosmic density of molecular gas in galaxies $\rho(H_2)$, and the clustering bias of CO emitters.
+
 
 The initial seeds that created the large scale structure of the universe all came from tiny perturbations which are observable today in the cosmic microwave background. These slight differences in density caused dark matter to clump together. These clumps of dark matter pulled in gas, creating giant clouds. Some of the gas further collapsed to create stars, which in turn formed galaxies.
 
@@ -45,21 +55,20 @@ These differences in behavior result in varying amounts and types of light being
 
 \section{Observing Galaxies}
 
-Parts of a galaxy are easy to observe, and other parts are not. Stars are relatively simple to observe; simply point a telescope like Hubble for long enough at a particular point in the sky and stars become visible. Gas on the other hand, especially the cold gas that collapses to form stars, is much more difficult to detect.
+Parts of a galaxy are easy to observe, and other parts are not. Stars are relatively simple to observe; simply point a telescope like Hubble for long enough at a particular point in the sky and stars become visible. Gas on the other hand, especially the cold gas that collapses to form stars, is much more difficult to detect. % Wouldn't put this here, so delete?
 
-Most of the gas in the universe is made up of hydrogen. Unfortunately for astronomers, molecular hydrogen, $H_2$, is only bright enough to observe when it is relatively hot, around 500 Kelvin \cite{decarli2019alma}. As the cold gas that births stars does not usually reach 500 Kelvin, carbon monoxide (CO) is observed instead. CO is the second most common molecule after $H_2$, but has the advantages of having bright rotational transitions that can be observed all the way to very high redshifts \cite{walter2016alma, decarli2019alma}. Additionally, the amount of $H_2$ gas present can be inferred from the amount of CO that can be detected by using a conversion factor $\alpha_{CO}$ \cite{decarli2019alma}. 
+Most of the gas in the universe is made up of hydrogen. Unfortunately for astronomers, molecular hydrogen, $H_2$, is only bright enough to observe when it is relatively hot, around 500 Kelvin \cite{decarli2019alma}. As the cold gas that births stars does not usually reach 500 Kelvin, carbon monoxide (CO) is observed instead. CO is the second most common molecule after $H_2$, but has the advantages of having bright rotational transitions that can be observed all the way to very high redshifts \cite{walter2016alma, decarli2019alma}. Additionally, CO emission is thought to be a good tracer of molecular hydrogen, and then the amount of $H_2$ gas present can be inferred from the amount of CO that can be detected by using a conversion factor $\alpha_{CO}$ \cite{decarli2019alma}. 
 
-These CO transition lines show up in the radio and (sub)mm spectrum, requiring telescopes such as ALMA and the Jansky Very Large Array (VLA) to be used to detect them on Earth \cite{decarli2019alma}. 
+The CO molecular gas can be observed through the detection of the CO emission lines which show up in the radio and (sub)mm spectrum, requiring telescopes such as ALMA and the Jansky Very Large Array (VLA) to be used to detect them on Earth \cite{decarli2019alma}. 
 
 \section{From Observations to Models}
 
+% Not here, but in Section 2.2.2
 All observations of a galaxy recorded in gamma and X-rays, visible light, infrared, radio and other wavelengths gives us part of the total spectral energy distribution (SED) of that galaxy. The more wavelengths a galaxy is measured in, the better constrained the SED, and the more complete our understanding of its energy distribution. Software, such as MAGPHYS \cite{da2008simple, da2015alma}, can use these observations to estimate a galaxy's physical parameters. These programs match the observed SED to precomputed models and outputs likelihood estimates for the properties of a given galaxy, such as the star formation rate, mass, dust temperature, and more.
 
 \section{Galaxies in Groups}
 
-The next stage after observing and modeling individual galaxies is to look at galaxies in clusters. By looking at the distribution of galaxies in a given region of space we can determine how densely packed together they are and that in turn, gives us an insight into the amount of dark matter that surrounds them.
-
-Galaxies are not distributed entirely randomly in the universe. On the largest scales, the universe is isotropic and homogeneous, but on smaller scales, galaxies tend to cluster in space. One way to quantify how densely packed a population of galaxies is to compute the so-called two-point correlation function. This allows for the measuring of the mass of the dark matter halos in which these galaxies reside \cite{hickox2011clustering}. The more clustered a population of galaxies are, the more massive the halo that they are in.
+Galaxies are not distributed randomly in the universe. On the largest scales, the universe is isotropic and homogeneous, but on smaller scales, galaxies tend to cluster in space. One way to quantify how densely packed a population of galaxies is to compute the so-called two-point correlation function. This allows for the measuring of the mass of the dark matter halos in which these galaxies reside \cite{hickox2011clustering}. For a certain redshift, the more clustered a population of galaxies are, the more massive the halo that they are in.
 
 This report is organized as follows. Chapter 2 focuses on the setup of the survey, the methods used to detect and cross-match lines, and the properties of those matched galaxies. Chapter 3 focuses on the clustering of CO emitters in the survey volume, and compares the clustering of sources in this survey to those of other populations of galaxies. The final chapter, Chapter 4, contains the conclusions and possible future work. 
 
