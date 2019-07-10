@@ -1,30 +1,12 @@
 \chapter{Physical Properties of CO emitters}
 
-\section{Previous Work}
-
-There have been two main types of surveys for searching for CO emitters in the universe, targeted and blind surveys. In targeted surveys, targets are chosen based on some type of preselection, such as star formation rate, mass, or some other parameter \cite{walter2016alma, decarli2019alma}, and are looked at specifically to see what CO emissions can be found in that galaxy or galaxies. While these surveys have given useful information on the role gas plays in these galaxies, the preselection process means that there could be a bias in our knowledge of CO. For example, these surveys could miss out on dark, gas-rich galaxies that are hard to detect, giving us an incomplete picture of the variety of galaxies with gas and CO emission in the universe. 
-
-Blind surveys are the opposite of targeted surveys. Instead of choosing the targets and looking at them specifically, blind surveys choose an area of the sky and search for any CO emissions within that cosmic volume, allowing for any emissions above the sensitivity limit of the survey to be found. This allows for a sort of census of all the gas within a cosmic volume \cite{decarli2019alma}. 
-
-Previous blind surveys include the COLDz survey in the GOODS-North region, the PdBI survey, as well as the first two surveys in the ASPECS program, ASPECS Pilot and ASPECS Large Program. 
-
-The PdBI survey was a molecular line survey in the Hubble Deep Field North (HDF-N) in 3mm using the IRAM Plateau de Bure Interferometer (PdBI) \cite{decarli2014molecular}. This survey was designed to cover all CO transitions detectable above z $>$ 2, and well as covering the redshift ranges of z $<$ 0.45, and 1 $<$ z $<$ 1.9. The survey identified 17 line candidates, with most of the candidates falling in intermediate redshifts (z $<$ 3), and with 7 of the line candidates matching to galaxies in their catalog \cite{decarli2014molecular}. 
-
-COLDz, or the CO Luminosity Density at High-z (COLDz) targeted CO(1-0) emissions from galaxies at redshifts between 1.95-2.85 and CO(2-1) emission between z = 4.91 - 6.70 using the Very Large Array (VLA)\cite{pavesi2018co}. This survey covers a wide area of around 51 arcminute$^2$, as well as a roughly 9 arcminute$^2$ area much more deeply. This survey blindly selected starburst and massive main sequence galaxies in the GOODS-North and COSMOS fields. COLDz found seven secure CO line detections, and 57 above their S/N threshold, including many that did not have optical or near infrared counterparts, suggesting that those candidates could potentially be from a population of gas-rich, but optically dark galaxies \cite{pavesi2018co}.
-
-% Add exactly how deeply it looked
-The ASPECS Pilot and Large Programs both looked at regions in the Hubble Ultra Deep Field. The Pilot program looked incredibly deeply in the 1.2mm and 3mm bands at a small, one arcsecond region of the Hubble eXtremely Deep Field (XDF). The spectral coverage of the Pilot meant that it could detect CO transitions almost continuously from z = 0 to z = 8, as well as CII emissions from z = 6 to z = 8 \cite{walter2016alma}. This allowed for the characterization of CO emitters all the way to a z = 8, as well as giving constraints on the knee of the CO luminosity function \cite{walter2016alma}. 
-
-% Add how deeply it looked, how sensetive, in decarli paper
-The Large Program looked wider, but shallower, covering a roughly five square arcminute area of the Hubble Ultra Deep Field (HUDF) surrounding the ASPECS Pilot region. It was a 150 hour molecular deep field taken at 1.2mm and 3mm \cite{decarli2019alma}. The greater volume probed by the Large Program allowed for constraining the density of gas in the universe, as well as better constraints on the CO luminosity function. The survey blindly revealed the molecular gas content in normal, star-forming main-sequence galaxies \cite{decarli2019alma}. 
-
 \section{The Wide ASPECS Survey}
 
 The Wide ASPECS survey builds upon the Pilot and Large Program, going much wider, but also shallower. This means that Wide ASPECS cannot capture as dim CO emitters, but because of the much larger cosmic volume looked at, it can find rarer, but very bright CO emitters that did not happen to fall within the Large Program and Pilot survey bounds.
 % Specify the six frequency settings range, and that it allows the detection of CO in the z ranges it does and refer to Fig 2.2 and Table 2.1
 
-The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3 (3mm) for ~20 hours in 130 pointings and six frequency settings. The survey covered ~52.5 arcminutes$^2$ of the sky at 20\% sensitivity, and ~43 arcminutes$^2$ at 50\% sensitivity. This means Wide ASPECS covers roughly five times the area of the ASPECS Large Program. This raw data was processed with the CASA ALMA pipeline into six datacubes, one for each frequency setting.
-% Add the senseitivity, refer to table 2.1
+The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3 (3mm) for ~20 hours in 130 pointings and six frequency settings. The frequency ranges from 84.21-87.95 GHz, 91.70-95.45 GHz, 87.95-91.70 GHz, 96.21-99.95 gHz, 99.95-103.70 GHz, 103.70-107.45 GHz [MAKE CLEANER]. The survey covered ~52.5 arcminutes$^2$ of the sky at 20\% sensitivity, and ~43 arcminutes$^2$ at 50\% sensitivity. This means Wide ASPECS covers roughly five times the area of the ASPECS Large Program. This raw data was processed with the CASA ALMA pipeline into six datacubes, one for each frequency setting.
+% Add the sensitivity, refer to table 2.1
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Wide_ASPECS_Coverage.png}
@@ -139,6 +121,8 @@ The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. A
 
 \subsection{Determination of the redshift of the CO emitters and cross-matching with the galaxy catalog}
 %Start this section explaining why it is hard to determine what is the CO transition that we are observing. That means, first mention that there are several CO transitions CO(1-0), CO (2-1), etc, and provide the frequency at which this transition is located (in rest-frame). Then mention that these transition are almost equally separated between each other and explain why is hard to know what correspond to the line that you are observing (see section 3.2.3 in pilot paper (walter et al) and there they talk a bit on this I think). And then explain what procedure you follow to determine the redshift, i.e first you look for a counterpart in the galaxy catalog (explain how as you already stated in the text and mention that it also will provide information about the physical parameters of the candidate). Mention how many counterparts you found and refer to table 2.3. Put the information that you wrote in your current section 2.4.1. Also provide the images of the cross-matched galaxies (choose an optical image and plot the countours of the CO detection over it, I think you already did these images). And maybe mention that you will discuss some explanation for the low number of counterparts found in section 2.5.
+
+
 
 %Then explain the procedure that you follow when you don't find a counterpart (i.e. explain that as seen in Fig. 2.2, each CO transition is detectable in certain z range, then the volume sampled can be computed. Then provide the volume sampled by each transition (then basically refer to table 2.1) and explain how ou decide what what is the transition of the CO line, and then how you compute the corresponding redshift. Then refer to table 2.3.
 
