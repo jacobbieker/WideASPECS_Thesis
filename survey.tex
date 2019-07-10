@@ -22,7 +22,7 @@ The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3
 \label{fig:ASPECS_Freq}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[!htb]\label{table:CO_freq}
 \caption{Redshift limits and cosmic volume probed for each CO transition observable by Wide ASPECS.}
 \begin{tabular}{lllll}
 Transition & $z_{low}$ & $z_{high}$ & Freq. (GHz) & Volume (Mpc$^3$) \\
@@ -120,31 +120,27 @@ The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. A
 %\end{table}
 
 \subsection{Determination of the redshift of the CO emitters and cross-matching with the galaxy catalog}
-%Start this section explaining why it is hard to determine what is the CO transition that we are observing. That means, first mention that there are several CO transitions CO(1-0), CO (2-1), etc, and provide the frequency at which this transition is located (in rest-frame). Then mention that these transition are almost equally separated between each other and explain why is hard to know what correspond to the line that you are observing (see section 3.2.3 in pilot paper (walter et al) and there they talk a bit on this I think). And then explain what procedure you follow to determine the redshift, i.e first you look for a counterpart in the galaxy catalog (explain how as you already stated in the text and mention that it also will provide information about the physical parameters of the candidate). Mention how many counterparts you found and refer to table 2.3. Put the information that you wrote in your current section 2.4.1. Also provide the images of the cross-matched galaxies (choose an optical image and plot the countours of the CO detection over it, I think you already did these images). And maybe mention that you will discuss some explanation for the low number of counterparts found in section 2.5.
+%Start this section explaining why it is hard to determine what is the CO transition that we are observing. That means, first mention that there are several CO transitions CO(1-0), CO (2-1), etc, and provide the frequency at which this transition is located (in rest-frame). Then mention that these transition are almost equally separated between each other and explain why is hard to know what correspond to the line that you are observing (see section 3.2.3 in pilot paper (walter et al) and there they talk a bit on this I think). 
 
+It is hard to determine which CO transition a given line, and therefore the source's redshift, that we observe is. There are several CO transitions spaced almost equally apart in frequency. The CO(1-0) transition has a rest-frame frequency of ~115 GHz, CO(2-1) at ~230 GHz, CO(3-2) occurs at ~345 GHz, and CO(4-3) occurs at ~460 GHz, as shown in Table \ref{table:CO_freq}. [LOOK AT WALTER ET AL]. 
 
+% And then explain what procedure you follow to determine the redshift, i.e first you look for a counterpart in the galaxy catalog (explain how as you already stated in the text and mention that it also will provide information about the physical parameters of the candidate). Mention how many counterparts you found and refer to table 2.3. Put the information that you wrote in your current section 2.4.1. Also provide the images of the cross-matched galaxies (choose an optical image and plot the countours of the CO detection over it, I think you already did these images). And maybe mention that you will discuss some explanation for the low number of counterparts found in section 2.5.
 
-%Then explain the procedure that you follow when you don't find a counterpart (i.e. explain that as seen in Fig. 2.2, each CO transition is detectable in certain z range, then the volume sampled can be computed. Then provide the volume sampled by each transition (then basically refer to table 2.1) and explain how ou decide what what is the transition of the CO line, and then how you compute the corresponding redshift. Then refer to table 2.3.
-
-Once the lines and been found, and the fidelity computed, the next step is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. Then, assuming that the CO line is from that matched galaxy, the CO transition was calculated. The match was only kept if the offset betwen the CO line's redshift and the galaxy's redshift, $\delta z$, was ($|\delta z| < 0.01$) for galaxies with spectroscopic redshifts, or ($|\delta z| < 0.3$) for ones with photometric redshifts. The differences in $|\delta z|$ thresholds is because spectroscopic redshifts are much more reliable and precise than photometric redshifts. 
+Once the lines have been found, and the fidelity computed, the next step is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. Then, assuming that the CO line is from that matched galaxy, the CO transition was calculated. The match was only kept if the offset betwen the CO line's redshift and the galaxy's redshift, $\delta z$, was ($|\delta z| < 0.01$) for galaxies with spectroscopic redshifts, or ($|\delta z| < 0.3$) for ones with photometric redshifts. The differences in $|\delta z|$ thresholds is because spectroscopic redshifts are much more reliable and precise than photometric redshifts. 
 
 If a line matches to more than a single galaxy, then the following steps are performed to differentiate which galaxy the line should be matched to. The first step is to calculate the CO transition for the line assuming the line is matched to each of the galaxies. Once that is determined, the difference in redshift between the CO redshift and the galaxy's redshift is calculated. The matched galaxy that gives the smallest $|\delta z|$, and whose redshift falls within the limits of Wide ASPECS, is then saved as the matched galaxy for that line candidate. 
 
-If there is not a match to a galaxy in the catalog, or if the galaxy's redshift is incompatible with the CO line identification, then the line identification is performed by a bootstrap method, where the probability of a line candidate being one of CO(1-0), CO(2-1), CO(3-2), or CO(4-3) is proportional to the volume of the universe sampled in each of those transitions \cite{walter2016alma, decarli2019alma}.
+These counterparts provide information about the physical parameters of the line candidate. A summary of the line candidate counterparts for the fidelity $>$0.6 catalog are shown in Table \ref{table:matched_gal}. Cutouts of the three line candidates and their counterparts are shown in Figures [ADD FIGURES].
+
+[PUT CATALOG OF MATCHED SOURCES HERE]
 
 The final catalog of CO line emitters is shown in Table \ref{table:Catalog}. 3 lines match to galaxies in the catalog. Of those three matches, only ID.1's match has a spectroscopic redshift. The redshift distribution of the whole catalog is shown in Fig. \ref{fig:cat_red}, and some of the physical properties of the three matched lines is shown in Table. \ref{table:matched_gal}. 
 
-\section{Physical properties of the CO emitters}
+[ADD IN 3 OR 4 PANEL PLOT OF THE SOURCES OVERLAID]
 
-The mass versus star formation rate is shown for the general galactic population and the 3 ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Whitaker et al. 2014 \cite{Whitaker_2014} main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. 
+%Then explain the procedure that you follow when you don't find a counterpart (i.e. explain that as seen in Fig. 2.2, each CO transition is detectable in certain z range, then the volume sampled can be computed. Then provide the volume sampled by each transition (then basically refer to table 2.1) and explain how you decide what what is the transition of the CO line, and then how you compute the corresponding redshift. Then refer to table 2.3.
 
-\begin{figure}[!htbp]
-% What sample is this? Explain where these 3 matched sources come from when you were talking about 35 above and clarify in the legend that they are all ASPECS matches
-\centering \includegraphics[width=120mm]{Survey/No_Cut_Mstar_vs_SFR_all_closest_sep_1_0_sn_fid_60.png}
-\caption{Mass vs Star Formation Rate for galaxies that the fidelity $>$ 0.6 CO line sample matched to. Red points are matched galaxies with spectroscopic redshifts, while blue points are matched galaxies with photometric redshifts. Grey points are all the galaxies in the compiled catalog from \ref{sec:ancillary}. The green lines are the galaxy main sequence fits from \cite{schreiber2015herschel}. The yellow line is from \cite{Whitaker_2014}'s galactic main sequence fit, where the solid line means it is computed within the range mentioned in the paper, while dotted means that the values are extrapolated from the paper to higher, or lower, redshifts. Two of the three matches are on the upper edge of the main sequence, while the third match has a much lower mass and star formation rate than expected for this survey. Error bars are the 16/84th percentile outputs from MAGPHYS.}
-\label{fig:Cross_match}
-\end{figure}
-
+If there is not a match to a galaxy in the catalog, or if the galaxy's redshift is incompatible with the CO line identification, then the line identification is performed by a bootstrap method. As seen in Table \ref{table:CO_freq}, each CO transition is detectable within a certain redshift range, and that redshift range determines the volume sampled at each transition. The larger the cosmic volume probed by a given transition, the more likely that an unidentified line is that transition, where the probability of a line candidate being one of CO(1-0), CO(2-1), CO(3-2), or CO(4-3) is proportional to the volume of the universe sampled in each of those transitions \cite{walter2016alma, decarli2019alma}. Once the transition of the CO line candidate is determined, the redshift for that line is found by calculating the redshift needed for the transition's rest-frame frequency to become the observed frequency [MAKE CLEARER]. The results of the line matching for the fidelity $>$ 0.6 sample are shown in Table \ref{table:Catalog}.
 
 \begin{table}[!h]
 \centering
@@ -191,6 +187,17 @@ ID.35 & 53.14828 & -27.84444 & 87.302 & 3-2 & 2.961 & -- & 6.1 & N \\
 \end{tabular}
 \end{table}\label{table:Catalog}
 
+\section{Physical properties of the CO emitters}
+
+The mass versus star formation rate is shown for the general galactic population and the 3 ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Whitaker et al. 2014 \cite{Whitaker_2014} main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. 
+
+\begin{figure}[!htbp]
+% What sample is this? Explain where these 3 matched sources come from when you were talking about 35 above and clarify in the legend that they are all ASPECS matches
+\centering \includegraphics[width=120mm]{Survey/No_Cut_Mstar_vs_SFR_all_closest_sep_1_0_sn_fid_60.png}
+\caption{Mass vs Star Formation Rate for galaxies that the fidelity $>$ 0.6 CO line sample matched to. Red points are matched galaxies with spectroscopic redshifts, while blue points are matched galaxies with photometric redshifts. Grey points are all the galaxies in the compiled catalog from \ref{sec:ancillary}. The green lines are the galaxy main sequence fits from \cite{schreiber2015herschel}. The yellow line is from \cite{Whitaker_2014}'s galactic main sequence fit, where the solid line means it is computed within the range mentioned in the paper, while dotted means that the values are extrapolated from the paper to higher, or lower, redshifts. Two of the three matches are on the upper edge of the main sequence, while the third match has a much lower mass and star formation rate than expected for this survey. Error bars are the 16/84th percentile outputs from MAGPHYS.}
+\label{fig:Cross_match}
+\end{figure}
+
 \begin{figure}[tbp]
 % Need more details. What defines the sample of galaxies shown here? Those above S/N>XX with counterpart matches? Are they photoz/specz?
 % Need to add the photo and spec z ones as their own thing
@@ -221,7 +228,7 @@ Of the 35 line candidates chosen for the final catalog, only $~$9\% percent of t
 
 % Software based explanations
 
-Possible explanations include issues with MAGPHYS' fitting of the galaxies in the catalog, as many of the galaxies seem poorly constrained.
+Possible explanations include issues with MAGPHYS' fitting of the galaxies in the catalog, as many of the galaxies seem poorly constrained. The errors in imprecise photometric redshifts could effect the estimation of the physical parameters, potentially explaining why the counterparts are not at the more massive end of the mass versus star formation rate plot that was expected.
 
 % Physics based explanations
 
