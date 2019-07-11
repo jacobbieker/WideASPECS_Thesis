@@ -5,8 +5,9 @@
 The Wide ASPECS survey builds upon the Pilot and Large Program, going much wider, but also shallower. This means that Wide ASPECS cannot capture as dim CO emitters, but because of the much larger cosmic volume looked at, it can find rarer, but very bright CO emitters that did not happen to fall within the Large Program and Pilot survey bounds.
 % Specify the six frequency settings range, and that it allows the detection of CO in the z ranges it does and refer to Fig 2.2 and Table 2.1
 
-The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3 (3mm) for ~20 hours in 130 pointings and six frequency settings. The frequency ranges from 84.21-87.95 GHz, 91.70-95.45 GHz, 87.95-91.70 GHz, 96.21-99.95 gHz, 99.95-103.70 GHz, 103.70-107.45 GHz [MAKE CLEANER]. The survey covered ~52.5 arcminutes$^2$ of the sky at 20\% sensitivity, and ~43 arcminutes$^2$ at 50\% sensitivity. This means Wide ASPECS covers roughly five times the area of the ASPECS Large Program. This raw data was processed with the CASA ALMA pipeline into six datacubes, one for each frequency setting.
+The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3 (3mm) for ~20 hours in 130 pointings and three frequency settings. The frequency ranges from 84.21-87.95 GHz, 91.70-95.45 GHz, 87.95-91.70 GHz, 96.21-99.95 gHz, 99.95-103.70 GHz, 103.70-107.45 GHz [MAKE CLEANER]. The survey covered ~52.5 arcminutes$^2$ of the sky at 20\% sensitivity, and ~43 arcminutes$^2$ at 50\% sensitivity. The sensitivity of the survey reaces 0.66 mJy beam$^{-1}$ per 100 kms$^{-1}$. This means Wide ASPECS covers roughly five times the area of the ASPECS Large Program. This raw data was processed with the CASA ALMA pipeline into six datacubes, one for each upper side band and lower side band for the three frequency settings.
 % Add the sensitivity, refer to table 2.1
+% The frequency settings are actually only 3, but each of them comes with a "upper side band" and a "lower side band" (as apparent in Fig. 2.2). This explains the 6 cubes. Please rephrase the last sentence before Sec 2.2.1.
 
 \begin{figure}[tbp]
 \centering \includegraphics[width=120mm]{Wide_ASPECS_Coverage.png}
@@ -53,9 +54,11 @@ The majority of the ancillary data comes from the Hubble Space Telescope (HST) C
 \subsection{Galaxy SED Fitting}
 
 % Put this here from intro, into 2.2.2
-All observations of a galaxy recorded in gamma and X-rays, visible light, infrared, radio and other wavelengths gives us part of the total spectral energy distribution (SED) of that galaxy. The more wavelengths a galaxy is measured in, the better constrained the SED, and the more complete our understanding of its energy distribution. Software, such as MAGPHYS \cite{da2008simple, da2015alma}, can use these observations to estimate a galaxy's physical parameters. These programs match the observed SED to precomputed models and outputs likelihood estimates for the properties of a given galaxy, such as the star formation rate, mass, dust temperature, and more.
+All observations of a galaxy recorded in gamma and X-rays, visible light, infrared, radio and UV gives us part of the total spectral energy distribution (SED) of that galaxy. The more wavelengths a galaxy is measured in, the better constrained the SED, and the more complete our understanding of its energy distribution. Software, such as MAGPHYS \cite{da2008simple, da2015alma}, can use these observations to estimate a galaxy's physical parameters. These programs match the observed SED to precomputed models and output likelihood estimates for the properties of a given galaxy, such as the star formation rate, mass, dust temperature, and more.
 
 % Introduce the section 1.3 stuff here again
+
+%With the same idea that motivates your SFR cut, I guess that you could also remove galaxies with Mstar~10^{13} Msun. These are probably lower redshift galaxies with a highly uncertain or wrong redshift estimate, that puts them much further than they actually are.
 
 To estimate the properties of the galaxies in the catalog, the SED fitting program MAGPHYS was used \cite{da2008simple, da2015alma}. MAGPHYS computes a marginalized likelihood distribution for each of the different physical parameters of the observed galaxy through comparing the observed SED with the precomputed models. It also outputs the best-fit total SED for a given galaxy. In this report, the MAGPHYS high-z extension was used \cite{da2015alma}. % Write what makes high-z dfferent
 
@@ -63,7 +66,7 @@ An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showi
 
 \begin{figure}[tbp]
 % Make Larger
-\centering \includegraphics[width=180mm]{19265.pdf}
+\centering \includegraphics[width=160mm]{19265.pdf}
 \caption{Example MAGPHYS output, from the most massive matched galaxy, ID.9 in Table \ref{table:Catalog}. The blue line is the spectrum of the galaxy without attenuation. The black line is the model used by MAGPHYS. The red dots are the data points. The bottom row of graphs show the probability distribution for various physical properties.}
 \label{fig:MAGPHYS_Example}
 \end{figure}
@@ -85,6 +88,7 @@ An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showi
 As an overview, the method for finding CO emission lines in the ALMA data cubes, computing the fidelity of the lines, cross-matching the CO emitter candidates with the galaxy catalog, and determining matches is the same process as used in the other ASPECS surveys \cite{walter2016alma, decarli2019alma, gonzalez2019alma}.
 
 \subsection{Line Search and Fidelity}
+% When you mention the kernel widths in channels, please also provide the corresponding velocity, assuming that you're in the center of the band (~96 GHz, see Fig. 2.2)
 
 To find possible CO emitters, a search for CO lines was done with the FindClump algorithm first described in \cite{walter2016alma}. This code searches along the spectral axis with different kernel widths in order to maximize the sensitivity to signal associated with line candidates of different intrinsic widths. The widths range from 3 spectral channels up to 19 channels, with each channel being 7.813 MHz wide. The data cubes are searched for lines at any spatial position and spectral coordinate, without any prior based on data from other wavelengths. This is done to minimize any bias in the selection. FindClump returns a list of potential line candidates that then have duplicates removed, which is done by grouping line candidates based on their spatial and spectral position in the cube from each group, only storing the candidate with the highest S/N. This results in 11941 candidates at S/N$>$5.0, 1096 at S/N$>$5.5, 78 at S/N$>$6.0, and 6 at S/N$>$6.5. 
 
@@ -92,7 +96,7 @@ To get a sense of how many of these line candidates are false positives, the fid
 
 $$ fideltiy(S/N) = 1 - \frac{N_{neg}(S/N)}{N_{pos}(S/N)} $$ where $N_{pos}(S/N)$ and $N_{neg}(S/N)$ are the number of positive and negative line candidates detected at that S/N and for a given line width\cite{gonzalez2019alma}. % Maybe delete the last bit
 
-The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally higher for wider line widths as more independent resolution elements are included \cite{decarli2019alma}. The CO emission line catalog contains 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 at $>$ 0.6, 52 at $>$ 0.5, and 69 at $>$ 0.4, and 81372 below a fidelity of 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates, which are listed in Table \ref{table:Catalog}. %A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
+The fidelity of the different line widths is shown in Fig. \ref{fig:Fid_map}. As can be seen, the fidelity of the lines is generally lower for narrower line widths as more independent resolution elements yield a larger probability of finding a few, high-S/N noise peaks in the cubes \cite{decarli2019alma}. The CO emission line catalog contains 16 lines at a fidelity $>$0.8, 20 at $>$0.7, 35 at $>$ 0.6, 52 at $>$ 0.5, and 69 at $>$ 0.4, and 81372 below a fidelity of 0.4. The fidelity cut used for the rest of this analysis is set at 0.6, where every given line has a 60\% chance of being a real line, and leaving us with 35 line candidates, which are listed in Table \ref{table:Catalog}. %A breakdown of the number of line candidates as a function of the channel width is shown in Table \ref{table:Fid_NumTable}. 
 
 \begin{figure}[!htbp]
 \centering \includegraphics[width=120mm]{Fidelity_map.png}
@@ -122,21 +126,38 @@ The fidelity of the different line widths are shown in Fig. \ref{fig:Fid_map}. A
 \subsection{Determination of the redshift of the CO emitters and cross-matching with the galaxy catalog}
 %Start this section explaining why it is hard to determine what is the CO transition that we are observing. That means, first mention that there are several CO transitions CO(1-0), CO (2-1), etc, and provide the frequency at which this transition is located (in rest-frame). Then mention that these transition are almost equally separated between each other and explain why is hard to know what correspond to the line that you are observing (see section 3.2.3 in pilot paper (walter et al) and there they talk a bit on this I think). 
 
-It is hard to determine which CO transition a given line, and therefore the source's redshift, that we observe is. There are several CO transitions spaced almost equally apart in frequency. The CO(1-0) transition has a rest-frame frequency of ~115 GHz, CO(2-1) at ~230 GHz, CO(3-2) occurs at ~345 GHz, and CO(4-3) occurs at ~460 GHz, as shown in Table \ref{table:CO_freq}. [LOOK AT WALTER ET AL]. 
+It is hard to determine which CO transition a given line, and therefore the source's redshift, that we observe is. There are several CO transitions spaced almost equally apart in frequency. The CO(1-0) transition has a rest-frame frequency of ~115 GHz, CO(2-1) at ~230 GHz, CO(3-2) occurs at ~345 GHz, and CO(4-3) occurs at ~460 GHz, as shown in Table \ref{table:CO_freq}. 
+
+Because the almost equi-distant spacing of rotational transitions of CO, it is difficult to determine a unique redshift to each candidate in a number of cases. In the ASPECS Pilot, the multiple CO transitions covered by the different bands. 
 
 % And then explain what procedure you follow to determine the redshift, i.e first you look for a counterpart in the galaxy catalog (explain how as you already stated in the text and mention that it also will provide information about the physical parameters of the candidate). Mention how many counterparts you found and refer to table 2.3. Put the information that you wrote in your current section 2.4.1. Also provide the images of the cross-matched galaxies (choose an optical image and plot the countours of the CO detection over it, I think you already did these images). And maybe mention that you will discuss some explanation for the low number of counterparts found in section 2.5.
 
-Once the lines have been found, and the fidelity computed, the next step is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. Then, assuming that the CO line is from that matched galaxy, the CO transition was calculated. The match was only kept if the offset betwen the CO line's redshift and the galaxy's redshift, $\delta z$, was ($|\delta z| < 0.01$) for galaxies with spectroscopic redshifts, or ($|\delta z| < 0.3$) for ones with photometric redshifts. The differences in $|\delta z|$ thresholds is because spectroscopic redshifts are much more reliable and precise than photometric redshifts. 
+Once the lines have been found, and the fidelity computed, the next step is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. Then, assuming that the CO line is from that matched galaxy, the CO transition was calculated. The match was only kept if the offset between the CO line's redshift and the galaxy's redshift, $\delta z$, was ($|\delta z| < 0.01$) for galaxies with spectroscopic redshifts, or ($|\delta z| < 0.3$) for ones with photometric redshifts. The differences in $|\delta z|$ thresholds is because spectroscopic redshifts are much more reliable and precise than photometric redshifts. 
 
 If a line matches to more than a single galaxy, then the following steps are performed to differentiate which galaxy the line should be matched to. The first step is to calculate the CO transition for the line assuming the line is matched to each of the galaxies. Once that is determined, the difference in redshift between the CO redshift and the galaxy's redshift is calculated. The matched galaxy that gives the smallest $|\delta z|$, and whose redshift falls within the limits of Wide ASPECS, is then saved as the matched galaxy for that line candidate. 
 
-These counterparts provide information about the physical parameters of the line candidate. A summary of the line candidate counterparts for the fidelity $>$0.6 catalog are shown in Table \ref{table:matched_gal}. Cutouts of the three line candidates and their counterparts are shown in Figures [ADD FIGURES].
-
-[PUT CATALOG OF MATCHED SOURCES HERE]
+These counterparts provide information about the physical parameters of the line candidate. A summary of the line candidate counterparts for the fidelity $>$0.6 catalog are shown in Table \ref{table:matched_gal}. Cutouts of the three line candidates and their counterparts are shown in Figures \ref{fig:Match_One}, \ref{fig:Match_Five}, and \ref{fig:Match_Nine}.
 
 The final catalog of CO line emitters is shown in Table \ref{table:Catalog}. 3 lines match to galaxies in the catalog. Of those three matches, only ID.1's match has a spectroscopic redshift. The redshift distribution of the whole catalog is shown in Fig. \ref{fig:cat_red}, and some of the physical properties of the three matched lines is shown in Table. \ref{table:matched_gal}. 
 
-[ADD IN 3 OR 4 PANEL PLOT OF THE SOURCES OVERLAID]
+\begin{figure}[tbp]
+\centering \includegraphics[width=120mm]{Matched/ASPECS_Cutout_0.jpg}
+\caption{ID.1. Red contours are the CO detections at +2$\sigma$,4$\sigma$,6$\sigma$,and 8$\sigma$.}
+\label{fig:Match_One}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering \includegraphics[width=120mm]{Matched/ASPECS_Cutout_4.jpg}
+\caption{ID.5}
+\label{fig:Match_Five}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering \includegraphics[width=120mm]{Matched/ASPECS_Cutout_8.jpg}
+\caption{ID.9}
+\label{fig:Match_Nine}
+\end{figure}
+
 
 %Then explain the procedure that you follow when you don't find a counterpart (i.e. explain that as seen in Fig. 2.2, each CO transition is detectable in certain z range, then the volume sampled can be computed. Then provide the volume sampled by each transition (then basically refer to table 2.1) and explain how you decide what what is the transition of the CO line, and then how you compute the corresponding redshift. Then refer to table 2.3.
 
@@ -189,26 +210,17 @@ ID.35 & 53.14828 & -27.84444 & 87.302 & 3-2 & 2.961 & -- & 6.1 & N \\
 
 \section{Physical properties of the CO emitters}
 
-The mass versus star formation rate is shown for the general galactic population and the 3 ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Whitaker et al. 2014 \cite{Whitaker_2014} main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. 
+The stellar mass versus star formation rate is shown for the general galactic population and the 3 ASPECS sources in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Whitaker et al. 2014 \cite{Whitaker_2014} main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. 
 
 \begin{figure}[!htbp]
 % What sample is this? Explain where these 3 matched sources come from when you were talking about 35 above and clarify in the legend that they are all ASPECS matches
 \centering \includegraphics[width=120mm]{Survey/No_Cut_Mstar_vs_SFR_all_closest_sep_1_0_sn_fid_60.png}
-\caption{Mass vs Star Formation Rate for galaxies that the fidelity $>$ 0.6 CO line sample matched to. Red points are matched galaxies with spectroscopic redshifts, while blue points are matched galaxies with photometric redshifts. Grey points are all the galaxies in the compiled catalog from \ref{sec:ancillary}. The green lines are the galaxy main sequence fits from \cite{schreiber2015herschel}. The yellow line is from \cite{Whitaker_2014}'s galactic main sequence fit, where the solid line means it is computed within the range mentioned in the paper, while dotted means that the values are extrapolated from the paper to higher, or lower, redshifts. Two of the three matches are on the upper edge of the main sequence, while the third match has a much lower mass and star formation rate than expected for this survey. Error bars are the 16/84th percentile outputs from MAGPHYS.}
+\caption{Stellar mass versus Star Formation Rate for galaxies that the fidelity $>$ 0.6 CO line sample matched to. Red points are matched galaxies with spectroscopic redshifts, while blue points are matched galaxies with photometric redshifts. Grey points are all the galaxies in the compiled catalog from \ref{sec:ancillary}. The green lines are the galaxy main sequence fits from \cite{schreiber2015herschel}. The yellow line is from \cite{Whitaker_2014}'s galactic main sequence fit, where the solid line means it is computed within the range mentioned in the paper, while dotted means that the values are extrapolated from the paper to higher, or lower, redshifts. Two of the three matches are on the upper edge of the main sequence, while the third match has a much lower mass and star formation rate than expected for this survey. Error bars are the 16/84th percentile outputs from MAGPHYS.}
 \label{fig:Cross_match}
-\end{figure}
-
-\begin{figure}[tbp]
-% Need more details. What defines the sample of galaxies shown here? Those above S/N>XX with counterpart matches? Are they photoz/specz?
-% Need to add the photo and spec z ones as their own thing
-\centering \includegraphics[width=120mm]{Survey/redshift_catalog.png}
-\caption{Redshift distribution for all CO line candidate redshifts with a fidelity above 0.6, shown in Table \ref{table:Catalog}. These are the redshifts of the CO lines as determined by matching them to a CO transition, not including the redshifts of the 3 matched galaxies.}
-\label{fig:cat_red}
 \end{figure}
 
 \begin{table}
 % Do these really have 0.0 error on SFR and Mstar?
-% TODO: Update the lower limit from MAGPHYS for these.
 \caption{This shows some of the physical parameters for the 3 matched line candidates. Sep is the separation in arcseconds between the CO line and the galaxy. $z_{catalog}$ is the master catalog's redshift for the galaxy.}
 \begin{tabular}{ccccccccccccccc}
 ID & Trans. & $z_{CO}$ & $z_{catalog}$ & $\delta z$ & Spec & S/N & Sep & Log(SFR) & Log(M*) \\
@@ -218,6 +230,14 @@ ID.5 & 2-1 & 1.66 & 1.423 & -0.237 & N & 6.6 & 0.9723 & $-0.453_{-0.115}^{+0.255
 ID.9 & 3-2 & 2.309 & 2.39 & 0.081 & N & 6.43 & 0.4861 & $1.307_{-0.0}^{+0.0}$ & $9.757_{-0.0}^{+0.0}$ \\
 \end{tabular}\label{table:matched_gal}
 \end{table}
+
+\begin{figure}[tbp]
+% Need more details. What defines the sample of galaxies shown here? Those above S/N>XX with counterpart matches? Are they photoz/specz?
+% Need to add the photo and spec z ones as their own thing
+\centering \includegraphics[width=120mm]{Survey/redshift_catalog.png}
+\caption{Redshift distribution for all CO line candidate redshifts with a fidelity above 0.6, shown in Table \ref{table:Catalog}. These are the redshifts of the CO lines as determined by matching them to a CO transition, not including the redshifts of the 3 matched galaxies.}
+\label{fig:cat_red}
+\end{figure}
 
 % Make these in less wavelengths -> smaller too so it fits -> Detail them more here
 % In addition, the line candidates are shown overlaid over other wavelengths in the Appendix \ref{sec:A1}.
