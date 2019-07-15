@@ -184,7 +184,8 @@
 \gdef\@studentid{\color{red}use $\backslash$\texttt{studentid\{\ldots\}} to define}
 \gdef\@abstract{\color{red}Please use $\backslash$\texttt{abstract\{\ldots\}} to define an abstract in the document preamble.}
 \gdef\@supervisor{\color{red}use $\backslash$\texttt{supervisor\{\ldots\}} to define}
-\gdef\@corrector{\color{red}use $\backslash$\texttt{corrector\{\ldots\}} to define}
+\gdef\@correctorone{\color{red}use $\backslash$\texttt{correctorone\{\ldots\}} to define}
+\gdef\@correctortwo{\color{red}use $\backslash$\texttt{correctortwo\{\ldots\}} to define}
 \gdef\@affiliation{\color{black}Huygens-Kamerlingh Onnes Laboratory, Leiden University}
 \gdef\@address{\color{black}P.O. Box 9500, 2300 RA Leiden, The Netherlands}
 \gdef\@degree{\color{black}Bachelor of Science}
@@ -193,7 +194,8 @@
 \def\studentid#1{\gdef\@studentid{#1}}
 \def\abstract#1{\gdef\@abstract{#1}}
 \def\supervisor#1{\gdef\@supervisor{#1}}
-\def\corrector#1{\gdef\@corrector{#1}}
+\def\correctorone#1{\gdef\@correctorone{#1}}
+\def\correctortwo#1{\gdef\@correctortwo{#1}}
 \gdef\affiliation#1{\gdef\@affiliation{#1}}
 \gdef\address#1{\gdef\@address{#1}}
 \gdef\degree#1{\gdef\@degree{#1}}   % 22/05/2014 corrected mix-up of degree and major: Error spotted by Leandros Talman
@@ -249,7 +251,8 @@
             Author :             \hfill {\@author} \\
             Student ID :         \hfill {\@studentid} \\
             Supervisor :         \hfill {\@supervisor} \\
-            2$^{nd}$ corrector : \hfill {\@corrector}
+            1$^{st}$ grader : \hfill {\@correctorone} \\
+            2$^{nd}$ grader: \hfill {\@correctortwo}
             \par
             \vskip 1em
             Leiden, The Netherlands, \@date

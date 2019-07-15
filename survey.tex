@@ -11,7 +11,7 @@ The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3
 
 \begin{figure}[!htbp]
 \centering \includegraphics[width=120mm]{Wide_ASPECS_Coverage.png}
-\caption{Spatial coverage of ASPECS Pilot (Green), Large Program (White), and Wide (Yellow) showing each of the individual pointings. The area covered by the Pilot is $~$1 arcmin$^2$, by the Large Program $~$5 arcmin$^2$, and by Wide ASPECS, $~$52.5 armin$^2$. The cyan box is the 50\% sensitivity extent of the survey. This region covers the area of the deepest CANDELS observations, where a wealth of ancillary data has been collected in over 30 photometric bands. Figure adapted from Decarlie et al. (in prep.)} % Decarli in report
+\caption{Spatial coverage of ASPECS Pilot (Green), Large Program (White), and Wide (Yellow) showing each of the individual pointings. The area covered by the Pilot is $~$1 arcmin$^2$, by the Large Program $~$5 arcmin$^2$, and by Wide ASPECS, $~$52.5 armin$^2$. The cyan box is the 50\% sensitivity extent of the survey. This region covers the area of the deepest CANDELS observations, where a wealth of ancillary data has been collected in over 30 photometric bands. Figure adapted from Decarli et al. (in prep.)} % Decarli in report
 % Put this in the Wide ASPECS description stuff
 \label{fig:ASPECS_Coverage}
 \end{figure}
@@ -19,7 +19,7 @@ The data for this survey was observed in ALMA Cycle 5 and was observed in Band 3
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=120mm]{Wide_ASPECS_Freq.png}
-\caption{Spectral and redshift coverage of Wide ASPECS in relation to the redshift distribution of galaxies within the survey field. Wide ASPECS is designed to detect CO line transitions at z$<$0.4, 1.1 $<$ z $<$ 1.8, and 2.2 $<$ z $<$ 4.4. Green, red, and yellow are the frequency ranges for A, B, and C frequency settings respectively. Figure adapted from Decarlie et al. (in prep.)}
+\caption{Spectral and redshift coverage of Wide ASPECS in relation to the redshift distribution of galaxies within the survey field. Wide ASPECS is designed to detect CO line transitions at z$<$0.4, 1.1 $<$ z $<$ 1.8, and 2.2 $<$ z $<$ 4.4. Green, red, and yellow are the frequency ranges for A, B, and C frequency settings respectively. Figure adapted from Decarli et al. (in prep.)}
 \label{fig:ASPECS_Freq}
 \end{figure}
 
@@ -67,7 +67,7 @@ An example output from MAGPHYS is shown in Fig. \ref{fig:MAGPHYS_Example}, showi
 \begin{figure}[!hbp]
 % Make Larger
 \centering \includegraphics[width=160mm]{19265.pdf}
-\caption{Example MAGPHYS output, from the most massive matched galaxy, ID.9 in Table \ref{table:Catalog}. The blue line is the spectrum of the galaxy without attenuation. The black line is the model used by MAGPHYS. The red dots are the data points. The bottom row of graphs show the probability distribution for various physical properties.}
+\caption{Example MAGPHYS output, from the most massive matched galaxy, ID.1 in Table \ref{table:Catalog}. The blue line is the spectrum of the galaxy without attenuation. The black line is the model used by MAGPHYS. The red dots are the data points. The bottom row of graphs show the probability distribution for various physical properties.}
 \label{fig:MAGPHYS_Example}
 \end{figure}
 
@@ -130,7 +130,7 @@ To determine the redshift of the CO emitters, we need to know the transition of 
 
 % And then explain what procedure you follow to determine the redshift, i.e first you look for a counterpart in the galaxy catalog (explain how as you already stated in the text and mention that it also will provide information about the physical parameters of the candidate). Mention how many counterparts you found and refer to table 2.3. Put the information that you wrote in your current section 2.4.1. Also provide the images of the cross-matched galaxies (choose an optical image and plot the countours of the CO detection over it, I think you already did these images). And maybe mention that you will discuss some explanation for the low number of counterparts found in section 2.5.
 
-Once the lines have been found, and the fidelity computed, the next step is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. Then, assuming that the CO line is from that matched galaxy, the CO transition was calculated. The match was only kept if the offset between the CO line's redshift and the galaxy's redshift, $\delta z$, was ($|\delta z| < 0.01$) for galaxies with spectroscopic redshifts, or ($|\delta z| < 0.3$) for ones with photometric redshifts. The differences in $|\delta z|$ thresholds is because spectroscopic redshifts are much more reliable and precise than photometric redshifts. 
+To determine the transition, and therefore the redshift, the next step after performing the line search and fidelity cut is to cross-match the CO lines to already known galaxies within the Wide ASPECS footprint. To do this, the spatial location of the line candidates were matched to galaxies that were within one arcsecond of the line candidate's location. Then, assuming that the CO line is from that matched galaxy, the CO transition was calculated. The match was only kept if the offset between the CO line's redshift and the galaxy's redshift, $\delta z$, was ($|\delta z| < 0.01$) for galaxies with spectroscopic redshifts, or ($|\delta z| < 0.3$) for ones with photometric redshifts. The differences in $|\delta z|$ thresholds is because spectroscopic redshifts are much more reliable and precise than photometric redshifts. 
 
 If a line matches to more than a single galaxy, then the following steps are performed to differentiate which galaxy the line should be matched to. The first step is to calculate the CO transition for the line assuming the line is matched to each of the galaxies. Once that is determined, the difference in redshift between the CO redshift and the galaxy's redshift is calculated. The matched galaxy that gives the smallest $|\delta z|$, and whose redshift falls within the limits of Wide ASPECS, is then saved as the matched galaxy for that line candidate. 
 
@@ -204,7 +204,7 @@ ID.35 & 53.14828 & -27.84444 & 87.302 & 3-2 & 2.961 & -- & 6.1 & N \\
 \end{tabular}
 \end{table}\label{table:Catalog}
 
-\section{Physical properties of the CO emitters}
+\section{Physical Properties of the CO emitters}
 
 The stellar mass versus star formation rate is shown for the general galactic population and the 3 ASPECS counterparts in Fig. \ref{fig:Cross_match}. For comparison, the Schreiber et al. 2015 \cite{schreiber2015herschel} and Whitaker et al. 2014 \cite{Whitaker_2014} main sequence fits are plotted as well. As can be seen, two of the matched galaxies are above the main sequence and are massive, star-forming galaxies that are the expected type of galaxies for this survey to match to. The other galaxy is much less massive than expected. 
 
@@ -240,13 +240,13 @@ ID.9 & 3-2 & 2.309 & 2.39 & 0.081 & N & 6.43 & 0.4861 & $1.307_{-0.0}^{+0.0}$ & 
 
 \section{Discussion}
 
-Of the 35 line candidates chosen for the final catalog, only $\sim$9\% percent of the lines match to galaxies. Of those that do, only two matched to the most massive, most star forming galaxies in the field.
+Of the 35 line candidates chosen for the final catalog, only $\sim$9\% percent of the lines match to galaxies. Of those that do, only two matched to the most massive, most star forming galaxies in the field. %Expanding the matching radius to 1.5 arcseconds does \textbf{INCREASE NUMBER OF MATCHES TO WHAT?}
 
 % Software based explanations
 
 Possible explanations include issues with MAGPHYS' fitting of the galaxies in the catalog, as many of the galaxies seem poorly constrained. The errors in imprecise photometric redshifts could effect the estimation of the physical parameters, potentially explaining why one of the counterparts was not at the more massive end of the mass versus star formation rate plot. The only counterpart with a spectroscopic redshift, ID.1's match, is also the counterpart with the highest stellar mass and star formation rate, and the type of counterpart that was expected to be found in this survey.
 
-Using a lower fidelity cut, such as a cut of $>$ 0.4, does not change the counterparts being unexpectedly composed primarily of lower stellar mass and star forming galaxies, as seen in Fig. \ref{fig:fid_40_cross}. 
+Using a lower fidelity cut, such as a cut of $>$ 0.4, does not change the counterparts being unexpectedly composed primarily of lower stellar mass and star forming galaxies, as seen in Fig. \ref{fig:fid_40_cross}. In fact, essentially all the extra matches from using a lower fidelity cut come from the galaxies that are the least massive and least star forming in the field, suggesting that those matches might be spurious.
 
 \begin{figure}[!htbp]
 % What sample is this? Explain where these 3 matched sources come from when you were talking about 35 above and clarify in the legend that they are all ASPECS matches
@@ -257,7 +257,7 @@ Using a lower fidelity cut, such as a cut of $>$ 0.4, does not change the counte
 
 % Physics based explanations
 
-Other possible explanations include that the CO emitting galaxies are very dusty and optically dark, and so have not shown up in shorter wavelengths. Previous ASPECS surveys have found CO candidates without any obvious match to a previously known galaxy, same with the PdBI survey and COLDz. This potentially means that these CO lines without matches are too obscured in other wavelengths to have been detected before. 
+Other possible explanations include that the CO emitting galaxies are very dusty and optically dark, and so have not shown up in shorter wavelengths. Previous ASPECS surveys have found CO candidates without any obvious match to a previously known galaxy, same with the PdBI survey and COLDz \cite{decarli2014molecular, pavesi2018co}. This potentially means that these CO lines without matches are too obscured in other wavelengths to have been detected before. As can be seen in \ref{sec:A1}, a significant number of the CO line candidates that do not match to a counterpart seem to exist in area of the sky with very little or no other objects visible around them in optical wavelengths. 
 
 %Try to expand a bit more this, you can also make some comments about the plot for the section fidelity cut that I suggested.
 
