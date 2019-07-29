@@ -378,8 +378,8 @@
 %\renewcommand{\sectionmark}[1]{}
 
 \fancyhf{}
-\fancyfoot[CE,CO]{\vskip 5mm \scriptsize{\color{mygrey}Version of \@date -- Created \today~-~\currenttime}}
-\fancyfoot[RO,LE]{\thepage}
+%\fancyfoot[CE,CO]{\vskip 5mm \scriptsize{\color{mygrey}Version of \@date -- Created \today~-~\currenttime}}
+%\fancyfoot[RO,LE]{\thepage}
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[LO]{\rightmark}
 \fancyhead[RE]{\leftmark}
